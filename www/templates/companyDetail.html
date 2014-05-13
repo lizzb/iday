@@ -1,6 +1,5 @@
 <ion-view title="Company Details | {{company.name}}">
-  <ion-content class="has-header">
-    <!--h1>{{company.name}}</h1-->
+  <ion-content class="has-header padding">
 
 <!--
 Card Showcase
@@ -16,41 +15,55 @@ and a footer with the item-divider classname.
       a card-body consisting of an image and paragraph text. 
       The footer consists of tabs, icons aligned left,
       within the card-footer.
-
+http://lizzb.github.io/399/app/#/map/accenture
+http://lizzb.github.io/399/app/#/companies/accenture
 -->
+  <style>
+.locationLink {
+  display: inline-block;
+  padding: 22px;
+width: 42px;
+border-radius: 4px;
+list-style: none;
+text-align: center;
+font-size: 32px;
+cursor: pointer;
+}
 
+</style>
 
 <div class="list card">
+
 <img class="full-image" src="http://lizzb.github.io/399/app/img/logos/{{company.nameId}}-wide.png">
+
   <div class="item item-avatar">
-  <img src="http://lizzb.github.io/399/app/img/logos/{{company.nameId}}-square.png">
-    <!--img src="http://ionicframework.com/img/docs/mcfly.jpg"-->
+  
+  <img src="http://simpleicon.com/wp-content/uploads/map-7.svg">
+
     <h2> {{company.name}} </h2>
+
     <p>{{company.room}} Room, (Floor {{company.floor}}), # {{company.booth}}</p>
+    <span>
+    <a class="ion-navigate locationLink" href="/#/app/map/{{company.nameId}}"></a>
+    <a class="ion-compass locationLink" href="/#/app/map/{{company.booth}}"></a>
+</span>
+
+
+<div class="locationLink ion-star"></div>
   </div>
 
   <div class="item item-body">
 
-
-
-  <li ng-repeat="m in majors" ng-show="company[m.name]">{{m.friendlyName}}
+<h3> Majors </h3>
+  <li ng-repeat="m in majorsG" ng-show="company[m.name]">{{m.friendlyName}}
       </li>
 
-      <li ng-repeat="p in positions" ng-show="company[p.name]">{{p.friendlyName}}
+<h3> Positions </h3>
+      <li ng-repeat="p in positionsG" ng-show="company[p.name]">{{p.friendlyName}}
       </li>
 
 
 <!--
-
-  <ion-list>
-      <ion-item ng-repeat="m in majors" ng-show="company[m.name]">{{m.friendlyName}}
-      </ion-item>
-  </ion-list>
-
-    <ion-list>
-      <li ng-repeat="p in positions" ng-show="company[p.name]">{{p.friendlyName}}
-      </li>
-  </ion-list>
     {{company.am}} 
     {{company.bme}} 
     {{company.chem}} 
@@ -63,12 +76,6 @@ and a footer with the item-divider classname.
     {{company.made}} {{company.matsci}} {{company.mech}} {{company.noneng}} 
     {{company.intern}} {{company.coop}} {{company.fte}} {{company.msphd}} 
 
-
-
-  <h3> Majors </h3>
-    <li ng-repeat="m in majors" ng-show="company[m.name]">{{m.friendlyName}} &nbsp;&nbsp; &nbsp; 
-    </li>
-
 <hr>
 
 
@@ -76,21 +83,20 @@ and a footer with the item-divider classname.
     <span class="detailsPositions" ng-repeat="p in jobs">
       {{company[p.name] | checkmark }} {{p.friendlyName}}
     </span>
-
 -->
 
     <br><br>
 
 
-
+    <!-- this could be a focal recruiting-type image -->
     <img class="full-image" src="http://ionicframework.com/img/docs/delorean.jpg">
-    <!--img class="full-image" src="http://lizzb.github.io/399/app/img/logos/{{company.nameId}}-wide.png"-->
 
     <p> {{company.description}} </p>
     
     <p>
       <a href="#" class="subdued">{{company.idx}} idx</a>
       <a href="#" class="subdued">{{company.nameId}} nameId</a>
+      <i class="ion-archive"></i> Give Resume
     </p>
   </div>
 
@@ -124,12 +130,8 @@ and a footer with the item-divider classname.
 
 <ion-view title="{{company.name}}">
 
-<ion-content class="has-header padding">-->
 
-  <!--ion-content has-header="true" padding="true"-->
     <!--  header-shrink scroll-event-interval="5" shrinking header
     {{company.idx}} {{company.id}} {{company.nameId}}  
-    <div class="list card">
-
 
 -->

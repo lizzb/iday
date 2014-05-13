@@ -4,8 +4,9 @@ angular.module('idayIonic.controllers', [])
   
 
   $rootScope.all_companies = RecruitingCompanies.all();
-   //$scope.positions = [
-  $rootScope.positions = [ 
+  
+  //$scope.positions = [
+  $rootScope.positionsG = [ 
       { friendlyName: 'Full Time', name: 'fte'},
       { friendlyName: 'Intern', name: 'intern' },
       { friendlyName: 'Co-Op', name: 'coop' },
@@ -13,7 +14,7 @@ angular.module('idayIonic.controllers', [])
   ];
     
     //$scope.majors = [   
-    $rootScope.majors = [ 
+    $rootScope.majorsG = [ 
       { friendlyName: 'Applied Math', name: 'am'},
       { friendlyName: 'Biomedical', name: 'bme'},
       { friendlyName: 'Chemical', name: 'chem'},
@@ -31,6 +32,18 @@ angular.module('idayIonic.controllers', [])
 
     $rootScope.majorsIncluded = []; //$scope.majorsIncluded = [];
     $rootScope.positionsIncluded = []; //$scope.positionsIncluded = [];
+
+/*
+    $rootScope.includeInArray = function (item, arrayToAppend) {
+        var i = arrayToAppend.indexOf(item);
+        if (i > -1) { arrayToAppend.splice(i, 1); } 
+        else { arrayToAppend.push(item); }
+    }*/
+
+    //$rootScope.includeMajor = function (m, $rootScope.majorsIncluded)
+    //$rootScope.includeMajor = function (m, $rootScope.majorsIncluded)
+
+
 
 
      //$scope.includeMajor = function (m) {
@@ -99,14 +112,10 @@ $rootScope.userFilter = function (company) {
   $scope.companies = $rootScope.all_companies;
 
    
-
-
-
-
-
-
-
 })
+
+
+
 
 .controller('CompanyCtrl', function($scope, $stateParams, $rootScope) {//, RecruitingCompanies) {
  // $scope.company = RecruitingCompanies.get([$stateParams.companyURLId]);
@@ -123,29 +132,3 @@ $rootScope.userFilter = function (company) {
 
 })
 
-
-
-
-/*
-.controller('FriendsCtrl', function($scope, Friends) {
-  $scope.friends = Friends.all();
-})
-
-.controller('FriendDetailCtrl', function($scope, $stateParams, Friends) {
-  $scope.friend = Friends.get($stateParams.friendId);
-})
-
-.controller('CompanyListCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
-})
-
-.controller('CompanyCtrl', function($scope, $stateParams) {
-	})
-*/
