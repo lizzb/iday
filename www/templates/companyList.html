@@ -1,0 +1,69 @@
+<ion-view title="Recruiting Companies">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+
+  <ion-content class="has-header">
+
+  {{filteredList.length}} of {{all_companies.length}} total companies. 
+
+
+<br><br>
+   <!--ion-content has-header="true" has-tabs="true" on-refresh="#"-->
+          <label class="item item-input">
+            <i class="icon ion-search placeholder-icon"></i>
+            <input type="text" ng-model="searchText" />
+          </label>
+
+    <ion-list>
+      <ion-item ng-repeat="c in filteredList =(companies |  filter:searchText | orderBy:sortType:asc)" class="item-thumbnail-left" href="#/app/companies/{{c.idx}}">
+      <img ng-src="http://placehold.it/30x30" />
+        <h2>{{c.name}}</h2>
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+</ion-view>
+
+
+<!--ul class="companies">
+
+<span class="room-floor-label"> 
+              filter:userFilter |
+               {{company.room}} [{{company.floor}}]<br>
+               <!--Table {{company.booth}} <Br>--
+               </span>
+
+
+      <li ng-repeat="company in filteredList = (companies | filter:userFilter | filter:query | orderBy:sortType:asc)" class="thumbnail">
+ <i class="glyphicon glyphicon-star-empty listing-star"></i>
+
+        <a href="#/companies/{{company.id}}">
+          <img class="companies-list-square" ng-src="../app/img/logos/{{company.id}}-square.png">
+        </a>
+
+        <div class="companyBoothLocation">
+        <a href="#/map/{{company.id}}">
+              
+               <span class="fa-stack">
+               <i class="fa fa-circle fa-stack-2x fa-2x"></i>
+               <i class="fa fa-location-arrow fa-inverse fa-stack-1x fa-lg"></i>
+               </span>
+               
+              
+            </a>
+            </div>
+
+
+          <div class="companies-list-info">
+
+            <a href="#/companies/{{company.id}}">
+              {{company.name}}
+            </a>
+          </div>
+          
+        </li>
+
+
+        
+      </ul--->
