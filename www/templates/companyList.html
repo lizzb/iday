@@ -10,8 +10,8 @@
 Sorting controls...
 <i class="ion-arrow-up-b"></i> <i class="ion-arrow-down-b"></i>
 
-<br><br>
-<br><br>
+<br>...<br><br>
+
    <!--ion-content has-header="true" has-tabs="true" on-refresh="#"-->
           <label class="item item-input">
             <i class="icon ion-search placeholder-icon"></i>
@@ -44,10 +44,8 @@ Sorting controls...
 
       <li ng-repeat="company in filteredList = (companies | filter:userFilter | filter:query | orderBy:sortType:asc)" class="thumbnail">
  
-
         <a href="#/companies/{{company.id}}">
         <a href="#/map/{{company.id}}">
-          
-        </li>
+
         
       </ul--->

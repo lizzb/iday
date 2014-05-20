@@ -67,10 +67,22 @@ angular.module('idayIonic', ['ionic', 'idayIonic.controllers', 'idayIonic.servic
       url: "/map",
       views: {
         'menuContent' :{
-          templateUrl: "templates/map.html"
+          templateUrl: "templates/map.html",
+          controller: 'CompanyMapCtrl'
         }
       }
     })
+/*
+    .state('app.singleBooth', {
+      url: "/map/:companyMapId",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/map.html",
+          controller: 'CompanyMapCtrl'
+        }
+      }
+    })*/
+
     .state('app.companies', {
       url: "/companies",
       views: {
@@ -92,5 +104,6 @@ angular.module('idayIonic', ['ionic', 'idayIonic.controllers', 'idayIonic.servic
     });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/companies');
+  //console.log($urlRouterProvider);
 });
 

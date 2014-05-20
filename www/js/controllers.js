@@ -4,7 +4,64 @@ angular.module('idayIonic.controllers', [])
   
 
   $rootScope.all_companies = RecruitingCompanies.all();
+  //$rootScope.company_map = RecruitingCompanies.assignBooths();
+  $rootScope.all_booths = RecruitingCompanies.allBooths();
+      //  console.log('booths loaded');
+      //  console.log($rootScope.all_booths);
+
+/*
+  // temp vars for creating booth list from company list
+  $scope.compId = "";
+  $scope.isActive = "";
+
   
+$rootScope.booths = function() {
+
+  // initialize the floor plan / map with locations of ALL companies
+  // well really create the booths json array
+  // which is then used to generate the svg map in the map template
+
+  // go through every company in companies
+  // create a new unnamed "booth" json object
+  // with properties of compId and isActive
+  // compId = the text company id, same name as property for objects in companies
+  // initialize isActive to false
+  // 
+
+  angular.forEach(all_companies, function(comp) {
+
+    // add a new booth to the list of booths (no error checking!!!! TODO)
+  $rootScope.booths.push({
+            compId: comp[compId],
+            isActive: false
+        });
+
+  })*/
+
+  
+/*
+
+http://jsfiddle.net/7n8NR/3/
+
+      var i = 0;
+      angular.forEach(companies, function(company, booth) {
+        i = company.booth - 1;
+        var booth = 
+        this.push()
+        booths[i].compId = company.nameId;
+        booths[i].isActive = false;
+      })
+
+      return booths;
+
+      // Clear input fields after push
+        $scope.compId = "";
+        $scope.isActive = "";
+   
+    };
+*/
+   
+
   //$scope.positions = [
   $rootScope.positionsG = [ 
       { friendlyName: 'Full Time', name: 'fte'},
@@ -132,3 +189,15 @@ $rootScope.userFilter = function (company) {
 
 })
 
+
+.controller('CompanyMapCtrl', function($scope, /*$stateParams,*/ $rootScope) {
+   // $scope.companies = $rootScope.all_companies;
+
+   $scope.boothWidth = 80;
+   $scope.boothHeight = 40;
+   $scope.booths = $rootScope.all_booths;
+   $scope.companies = $rootScope.all_companies;
+
+   // if it came in with a specific parameter for a booth jupm to that one like an anchor
+   //$scope.company = $rootScope.all_companies[$stateParams.companyURLId];
+  })

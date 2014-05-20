@@ -1,8 +1,43 @@
-<ion-view title="Browse Map">
+<ion-view title="Company Layout">
   <ion-nav-buttons side="left">
     <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
   <ion-content class="has-header">
-    <h1>Browse Map page</h1>
+    <h1> Browse Map </h1>
+
+Map of Companies
+
+<style>
+.booth {
+  fill:#b8ecff;
+  stroke-width:2;
+  stroke:rgb(0,0,0);
+}
+</style>
+
+	<svg>
+        <g ng-repeat="b in booths">
+        <rect
+              ng-attr-id="{{b.compId}}"
+              class="booth" 
+              ng-attr-x="{{ ($index+1)*(boothWidth*0+0)}}" 
+              ng-attr-y="{{ ($index+1)*(boothHeight+15)}}" 
+              ng-attr-width="{{boothWidth}}"
+              ng-attr-height="{{boothHeight}}"
+              />
+          <text ng-attr-x="{{ ($index+1)*(boothWidth*0+0) }}"
+                ng-attr-y="{{ ($index+1)*(boothHeight+15)+(boothHeight+15)/2}}">
+          <a href="#/app/companies/{{b.boothNum - 1}}">{{b.compId}} </a>
+          <ion-item nav-clear href="#/app/companies/{{b.boothNum - 1}}">
+          {{b.boothNum - 1}}
+        </ion-item>
+          </text>
+          </g>
+      </svg>
+
+
   </ion-content>
 </ion-view>
+<!-- onclick="alert(this.id)"
+              href="http://localhost:8100/#/app/companies/0"</rect></a></g>
+               <a href="/#/app/companies/{{company.idx}}"> -->

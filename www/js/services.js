@@ -44,11 +44,44 @@ angular.module('idayIonic.services', [])
     description: "Established in 1858 in St. Louis, Missouri, as a manufacturer of machine sewn cotton bags for milled food and grain products, Bemis has played an influential role in the packaging industry ever since its founding. Now a global supplier of flexible packaging and pressure sensitive label materials headquartered in Neenah, Wisconsin, Bemis serves customers worldwide and produces packaging for products found in virtually every aisle of the grocery store. "
 }
   ];
+
+// nameId --> compId
+
+  var booths = [
+    {
+      boothNum: 1, room: 'Louis', floor: 2,
+      compId: 'fenwal',
+      isActive: false
+    },
+    {
+      boothNum: 2, room: 'Louis', floor: 2,
+      compId: 'carsdotcom',
+      isActive: false
+    },
+    {
+      boothNum: 3, room: 'Louis', floor: 2,
+      compId: 'epic',
+      isActive: false
+    },
+    {
+      boothNum: 4, room: 'Louis', floor: 2,
+      compId: 'fti',
+      isActive: false
+    },
+    {
+      boothNum: 5, room: 'Louis', floor: 2,
+      compId: 'bemis',
+      isActive: false
+    }
+  ];
   
 
   return {
     all: function() {
       return companies;
+    },
+    allBooths: function() {
+      return booths;
     },
     get: function(companyIdx) {
       // Simple index lookup - ie by original array index pos
@@ -56,3 +89,15 @@ angular.module('idayIonic.services', [])
     }
   }
 });
+
+/*assignBooths: function() {
+      var i = 0;
+      angular.forEach(companies, function(company, booth) {
+        i = company.booth - 1;
+        var booth = 
+        this.push()
+        booths[i].compId = company.nameId;
+        booths[i].isActive = false;
+      })
+      return booths;
+    },*/
