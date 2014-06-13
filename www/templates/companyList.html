@@ -23,10 +23,18 @@ Sorting controls...
 
       <ion-item ng-repeat="c in filteredList = (companies |  filter:searchText | orderBy:sortType:asc)" class="item-thumbnail-left" href="#/app/companies/{{c.nameId}}">
 
+      <!--a href="#/companies/{{company.id}}">
+          <img class="companies-list-square" ng-src="../app/img/logos/{{company.id}}/square.png">
+        </a-->
       <!--img ng-src="http://placehold.it/30x30" /
       <img ng-src="http://lizzb.github.io/399/app/img/logos/{{c.nameId}}-square.png" />-->
-      <img ng-src="./img/ionic.png" /> 
-      <!--logos/{{c.nameId}}-square.png" /-->
+      <!--img ng-src="./img/ionic.png" /--> 
+      <!--logos/{{c.nameId}}-square.png" /
+
+        <img ng-src="../app/img/logos/{{c.nameId}}/{{c.nameId}}-square.png" />-->
+
+
+      <img ng-src="./img/logos/{{c.nameId}}/{{c.nameId}}-square.png" /> 
         <h2>{{c.nameId}}</h2>
       </ion-item>
 
