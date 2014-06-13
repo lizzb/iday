@@ -19,6 +19,9 @@ this should be done with a parser but spending my time on other things
 
 .factory('RecruitingCompanies', function() {
 
+  // friendlyName = The name to display in the interface
+  // name = the csv/json-safe name for filtering etc
+
     var majors = [ 
       { friendlyName: 'Applied Math', name: 'am'},
       { friendlyName: 'Biomedical', name: 'bme'},
@@ -147,37 +150,6 @@ var companies =  [
   // especially if that room contains a LOT of booths/tables
 
 
-
-  var booths = [
-    {
-      boothNum: 1, room: 'Louis', floor: 2,
-      compId: 'fenwal',
-      isActive: false
-    },
-    {
-      boothNum: 2, room: 'Louis', floor: 2,
-      compId: 'carsdotcom',
-      isActive: false
-    },
-    {
-      boothNum: 3, room: 'Louis', floor: 2,
-      compId: 'epic',
-      isActive: false
-    },
-    {
-      boothNum: 4, room: 'Louis', floor: 2,
-      compId: 'fti',
-      isActive: false
-    },
-    {
-      boothNum: 5, room: 'Louis', floor: 2,
-      compId: 'bemis',
-      isActive: false
-    }
-  ];
-
-
-
   var booths = [
   {"booth":1,"Room":"Louis","Floor":2},
   {"booth":2,"Room":"Louis","Floor":2},
@@ -299,14 +271,10 @@ var companies =  [
           booths[currentCompanyBoothIdx].isActive = true;
         }
 
-
       return booths;
     },
 
-    /*
 
-    // this didn't work.... not sure why :(
- */
     allMajors: function() {
       return majors;
     },
@@ -331,8 +299,6 @@ var companies =  [
           // TODO: account for no valid return value
       };
     }
-
-
 
   }
 });

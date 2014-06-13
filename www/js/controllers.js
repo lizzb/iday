@@ -2,6 +2,8 @@ angular.module('idayIonic.controllers', [])
 
 .controller('AppCtrl', function($scope, $rootScope, RecruitingCompanies) {
   
+  // hacky, using global variables/rootscope
+  // one of these days need to really understand scope and such...
 
   $rootScope.all_companies = RecruitingCompanies.allCompanies();
 
@@ -11,43 +13,8 @@ angular.module('idayIonic.controllers', [])
   $rootScope.MAJORS = RecruitingCompanies.allMajors();
   $rootScope.POSITIONS = RecruitingCompanies.allPositions();
  
-
-  // hacky, G letter following indicates global variable
-  // one of these days need to really understand scope and such...
-
-  // friendlyName = The name to display in the interface
-  // name = the csv/json-safe name for filtering etc
-  // current implementation has different properties named
-  // company.am, company.cs... etc.
-
-  //$rootScope.positionsG = 
-  /*[ 
-      { friendlyName: 'Full Time', name: 'fte'},
-      { friendlyName: 'Intern', name: 'intern' },
-      { friendlyName: 'Co-Op', name: 'coop' },
-      { friendlyName: 'MS/PhD', name: 'msphd'}
-  ];*/
-    
-    
-    //$rootScope.majorsG = 
-    /*[ 
-      { friendlyName: 'Applied Math', name: 'am'},
-      { friendlyName: 'Biomedical', name: 'bme'},
-      { friendlyName: 'Chemical', name: 'chem'},
-      { friendlyName: 'Civil', name: 'civil'},
-      { friendlyName: 'Computer', name: 'ce'},
-      { friendlyName: 'CompSci', name: 'cs'},
-      { friendlyName: 'Electrical', name: 'ee'},
-      { friendlyName: 'Environmental', name: 'enve'},
-      { friendlyName: 'Industrial', name: 'ie'},
-      { friendlyName: 'MaDE', name: 'made'},
-      { friendlyName: 'Material Science', name:'matsci' },
-      { friendlyName: 'Mechanical', name: 'mech' },
-      { friendlyName: 'Non-engineering', name: 'noneng' }
-    ];*/
-
-    $rootScope.majorsIncluded = [];
-    $rootScope.positionsIncluded = [];
+  $rootScope.majorsIncluded = [];
+  $rootScope.positionsIncluded = [];
 
 
     $rootScope.includeMajor = function (m) {
@@ -139,7 +106,7 @@ angular.module('idayIonic.controllers', [])
     // this information doesn't need to be available on every page
     // probably a more efficient scope-conscious way to do this
     $scope.majors = $rootScope.MAJORS;  //.majors;
-    $scope.jobs = $rootScope.POSITIONS; // .positions; 
+    $scope.positions = $rootScope.POSITIONS; // .positions; 
 
 })
 

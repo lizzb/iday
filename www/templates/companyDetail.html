@@ -54,16 +54,21 @@ cursor: pointer;
 
   <div class="item item-body">
 
-<h3> Majors </h3>
-<li ng-repeat="m in MAJORS" ng-show="company[m.name]"> {{m.friendlyName}} </li>
-
-<h3> Positions </h3>
-<li ng-repeat="p in POSITIONS" ng-show="company[p.name]"> {{p.friendlyName}} </li>
-
-
-    <span class="detailsPositions" ng-repeat="p in POSITIONS">
+  <h3> Positions </h3>
+    <span ng-repeat="p in positions">
       {{company[p.name] | checkmark }} {{p.friendlyName}}
+      &nbsp;&nbsp;&nbsp;&nbsp;
     </span>
+    <!--li ng-repeat="p in positions" ng-show="company[p.name]"> {{p.friendlyName}} </li  class="detailsPositions" <br><br>-->
+
+
+
+<h3> Majors </h3>
+<li ng-repeat="m in majors" ng-show="company[m.name]"> {{m.friendlyName}} </li>
+<br>
+
+
+
 
 
    
