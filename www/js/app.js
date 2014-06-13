@@ -28,16 +28,6 @@ angular.module('idayIonic', ['ionic', 'idayIonic.controllers', 'idayIonic.servic
       controller: 'AppCtrl'
     })
 
-    .state('app.settings', {
-      url: "/settings",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/settings.html",
-          controller: 'AppCtrl' //SettingsCtrl
-        }
-      }
-    })
-
     .state('app.companies', {
       url: "/companies",
       views: {
@@ -79,7 +69,14 @@ angular.module('idayIonic', ['ionic', 'idayIonic.controllers', 'idayIonic.servic
     })
 
 
-
+    .state('app.settings', {
+      url: "/settings",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/settings.html"
+        }
+      }
+    })
 
     .state('app.favorites', {
       url: "/favorites",

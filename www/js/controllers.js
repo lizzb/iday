@@ -1,8 +1,5 @@
 angular.module('idayIonic.controllers', [])
 
-
-//.controller('SettingsCtrl')
-
 .controller('AppCtrl', function($scope, $rootScope, RecruitingCompanies) {
   
   // hacky, using global variables/rootscope
@@ -16,11 +13,6 @@ angular.module('idayIonic.controllers', [])
   $rootScope.MAJORS = RecruitingCompanies.allMajors();
   $rootScope.POSITIONS = RecruitingCompanies.allPositions();
  
-
-  $rootScope.currentCompanies = $rootScope.all_companies;
-  // want to figure out how to stop constantly refiltering?
-
-
   $rootScope.majorsIncluded = [];
   $rootScope.positionsIncluded = [];
 
@@ -37,8 +29,6 @@ angular.module('idayIonic.controllers', [])
         else { $rootScope.positionsIncluded.push(p); }
     }
 
-
-
     //
     //
     //
@@ -50,9 +40,6 @@ angular.module('idayIonic.controllers', [])
         if(includedMajors.length <= 0 && includedPositions.length <= 0)
             return company;
         
-          // THESE FUNCTIONS SHOULD BE FIXED
-          // TO FEED IN DATA FROM THE FACTORY
-
         if(includedPositions.length <= 0)
           includedPositions = ["fte","intern","coop","msphd"];
             
@@ -74,11 +61,6 @@ angular.module('idayIonic.controllers', [])
         }
         return;
     }
-
-
-
-   // $filter('filter')(currentCompanies, userFilter);
-
 })
 
 
@@ -91,7 +73,6 @@ angular.module('idayIonic.controllers', [])
 .controller('CompanyListCtrl', function($scope, $rootScope) {
   
   $scope.companies = $rootScope.all_companies;
-  $scope.userFilter = $rootScope.userFilter;
 
 })
 

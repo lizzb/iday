@@ -2,43 +2,13 @@
   <ion-nav-buttons side="left">
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
-  
 
+  <!-- hrm, header shrink isnt working... -->
+  <ion-content class="has-header" header-shrink scroll-event-interval="5">
 
-  
-
-  <!-- hrm, header shrink isnt working...header-shrink scroll-event-interval="5" -->
-  <ion-content class="has-header">
-
-
-  <!--div class="list">
-
-  <div class="item item-input-inset">
-    <label class="item-input-wrapper">
-      <input type="text" placeholder="Email">
-    </label>
-    <button class="button button-small">
-      Cancel
-    </button>
-  </div>
-
-</div-->
           <label class="item item-input">
             <i class="icon ion-search placeholder-icon"></i>
             <input type="text" ng-model="searchText" />
-          </label>
-
-          <div class="buttons">
-        <button class="button button-icon ion-compose" ng-click="modal.show()">
-        </button>
-      </div>
-
-          <label class="item item-input">
-           Showing {{filteredList.length}} of {{all_companies.length}} total.
-            
-            <button class="button button-small">
-      Filter <i class="icon ion-levels placeholder-icon"></i>
-    </button>
           </label>
 
 
@@ -59,59 +29,17 @@
 
     </div>
 
-    <!-- using <ion-list>
-    causes some weird formatting and i dont need the directives that are built into it
+    <!--
+    <ion-list>
+
+      <ion-item ng-repeat="c in filteredList = (companies |  filter:searchText | orderBy:sortType:asc)" class="item-thumbnail-left" href="#/app/companies/{{c.nameId}}">
+
+      <img ng-src="./img/logos/{{c.nameId}}/{{c.nameId}}-square.png" /> 
+        <h2>{{c.name}}</h2>
+      </ion-item>
+
+    </ion-list>
     -->
 
   </ion-content>
 </ion-view>
-
-<script id="modal.html" type="text/ng-template">
-      <div class="modal" ng-controller="ModalCtrl">
-        <ion-header-bar class="bar bar-header bar-positive">
-          <h1 class="title">New Contact</h1>
-          <button class="button button-clear button-primary" ng-click="modal.hide()">Cancel</button>
-        </ion-header-bar>
-        <ion-content>
-          <div class="padding">
-            <div class="list">
-              <label class="item item-input">
-                <span class="input-label">First Name</span>
-                <input ng-model="newUser.firstName" type="text">
-              </label>
-              <label class="item item-input">
-                <span class="input-label">Last Name</span>
-                <input ng-model="newUser.lastName" type="text">
-              </label>
-              <label class="item item-input">
-                <span class="input-label">Email</span>
-                <input ng-model="newUser.email" type="text">
-              </label>
-              <button class="button button-full button-positive" ng-click="createContact()">Create</button>
-            </div>
-          </div>
-        </ion-content>
-      </div>
-    </script>
-
-
-
-<!--div class="bar bar-header">
-  <button class="button button-icon icon ion-navicon"></button>
-  <button class="button button-clear button-positive">Edit</button>
-  <div class="bar bar-header item-input-inset">
-  <label class="item-input-wrapper">
-    <i class="icon ion-ios7-search placeholder-icon"></i>
-    <input type="search" placeholder="Search">
-  </label>
-  <button class="button button-clear">
-    Cancel
-  </button>
-</div>
-
-  <div class="bar bar-subheader">
-  <h2 class="title">Sub Header</h2>
-</div>
-
-
-</div-->
