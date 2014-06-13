@@ -7,7 +7,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
 
-angular.module('idayIonic', ['ionic', 'idayIonic.controllers', 'idayIonic.services'])
+angular.module('idayIonic', ['ionic', 'idayIonic.controllers', 'idayIonic.services', 'idayIonic.filters'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {

@@ -7,6 +7,9 @@ angular.module('idayIonic.controllers', [])
 
   //$rootScope.company_map = RecruitingCompanies.assignBooths();
   $rootScope.all_booths = RecruitingCompanies.allBooths();
+
+  $rootScope.MAJORS = RecruitingCompanies.allMajors();
+  $rootScope.POSITIONS = RecruitingCompanies.allPositions();
  
 
   // hacky, G letter following indicates global variable
@@ -17,14 +20,17 @@ angular.module('idayIonic.controllers', [])
   // current implementation has different properties named
   // company.am, company.cs... etc.
 
-  $rootScope.positionsG = [ 
+  //$rootScope.positionsG = 
+  /*[ 
       { friendlyName: 'Full Time', name: 'fte'},
       { friendlyName: 'Intern', name: 'intern' },
       { friendlyName: 'Co-Op', name: 'coop' },
       { friendlyName: 'MS/PhD', name: 'msphd'}
-  ];
+  ];*/
     
-    $rootScope.majorsG = [ 
+    
+    //$rootScope.majorsG = 
+    /*[ 
       { friendlyName: 'Applied Math', name: 'am'},
       { friendlyName: 'Biomedical', name: 'bme'},
       { friendlyName: 'Chemical', name: 'chem'},
@@ -38,7 +44,7 @@ angular.module('idayIonic.controllers', [])
       { friendlyName: 'Material Science', name:'matsci' },
       { friendlyName: 'Mechanical', name: 'mech' },
       { friendlyName: 'Non-engineering', name: 'noneng' }
-    ];
+    ];*/
 
     $rootScope.majorsIncluded = [];
     $rootScope.positionsIncluded = [];
@@ -132,8 +138,8 @@ angular.module('idayIonic.controllers', [])
     // Feed in the universal "pretty names" for majors and positions
     // this information doesn't need to be available on every page
     // probably a more efficient scope-conscious way to do this
-    $scope.majors = $rootScope.majors;
-    $scope.jobs = $rootScope.positions; 
+    $scope.majors = $rootScope.MAJORS;  //.majors;
+    $scope.jobs = $rootScope.POSITIONS; // .positions; 
 
 })
 
@@ -153,4 +159,4 @@ angular.module('idayIonic.controllers', [])
 
    // if it came in with a specific parameter for a booth jupm to that one like an anchor
    //$scope.company = $rootScope.all_companies[$stateParams.companyURLId];
-  })
+  });
