@@ -1,4 +1,4 @@
-<ion-view title="Company Details | {{company.name}}">
+<ion-view title="{{company.name}}">
   <ion-content class="has-header padding">
 
 <!--
@@ -42,7 +42,7 @@ cursor: pointer;
 
     <h2> {{company.name}} </h2>
 
-    <p>{{company.room}} Room, (Floor {{company.floor}}), # {{company.booth}}</p>
+    <p>{{company.Room}} Room, (Floor {{company.Floor}}), # {{company.booth}}</p>
     <span>
     <a class="ion-navigate locationLink" href="/#/app/map/{{company.nameId}}"></a>
     <a class="ion-compass locationLink" href="/#/app/map/{{company.booth}}"></a>
@@ -60,31 +60,13 @@ cursor: pointer;
 <h3> Positions </h3>
 <li ng-repeat="p in positionsG" ng-show="company[p.name]"> {{p.friendlyName}} </li>
 
-
 <!--
-    {{company.am}} 
-    {{company.bme}} 
-    {{company.chem}} 
-    {{company.civil}} 
-    {{company.ce}} 
-    {{company.cs}} 
-    {{company.ee}} 
-    {{company.enve}} 
-    {{company.ie}}
-    {{company.made}} {{company.matsci}} {{company.mech}} {{company.noneng}} 
-    {{company.intern}} {{company.coop}} {{company.fte}} {{company.msphd}} 
-
-<hr>
-
-
-  <h3> Positions </h3>
     <span class="detailsPositions" ng-repeat="p in jobs">
       {{company[p.name] | checkmark }} {{p.friendlyName}}
     </span>
 -->
 
-    <br><br>
-
+   
 
     <!-- this could be a focal recruiting-type image -->
     <img class="full-image" src="http://ionicframework.com/img/docs/delorean.jpg">
@@ -92,44 +74,36 @@ cursor: pointer;
     <p> {{company.description}} </p>
     
     <p>
-      <a href="#" class="subdued">{{company.idx}} idx</a>
-      <a href="#" class="subdued">{{company.nameId}} nameId</a>
-      <i class="ion-archive"></i> Give Resume
+      <a href="#" class="subdued">{{company.Room}} </a>
+      <a href="#" class="subdued">{{company.nameId}} </a>
+      <a href="#" class="subdued">
+        <i class="ion-archive"></i> Give Resume
+      </a>
     </p>
-  </div>
+  
 
   <div class="item tabs tabs-secondary tabs-icon-left">
     <a class="tab-item" href="#">
-      <i class="icon ion-thumbsup"></i>
-      Favorite
+      <i class="icon ion-share"></i>
+      Apply Online
     </a>
     <a class="tab-item" href="#">
       <i class="icon ion-person-stalker"></i>
       Recruiters
     </a>
     <a class="tab-item" href="#">
-      <i class="icon ion-share"></i>
-      Apply Online
+      <i class="ion-archive"></i>
+      Give Resume
     </a>
   </div>
 
 </div>
+
+ <br><br>
 
     
   </ion-content>
 </ion-view>
 
 
-    <!--
-  This template loads for the 'tab.friend-detail' state (app.js)
-  'firend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
-  The FriendsCtrl pulls data from the Friends service (service.js)
-  The Friends service returns an array of friend data
-
-<ion-view title="{{company.name}}">
-
-
-    <!--  header-shrink scroll-event-interval="5" shrinking header
-    {{company.idx}} {{company.id}} {{company.nameId}}  
-
--->
+   

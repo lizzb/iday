@@ -1,4 +1,4 @@
-// Ionic Starter App
+// Ionic Starter App - Side Menu
 
 // angular.module is a global place
 // for creating, registering and retrieving Angular modules
@@ -6,6 +6,7 @@
 // (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
+
 angular.module('idayIonic', ['ionic', 'idayIonic.controllers', 'idayIonic.services'])
 
 .run(function($ionicPlatform) {
@@ -26,6 +27,47 @@ angular.module('idayIonic', ['ionic', 'idayIonic.controllers', 'idayIonic.servic
       templateUrl: "templates/menu.html",
       controller: 'AppCtrl'
     })
+
+    .state('app.companies', {
+      url: "/companies",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/companyList.html",
+          controller: 'CompanyListCtrl'
+        }
+      }
+    })
+
+    .state('app.single', {
+      url: "/companies/:companyURLId",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/companyDetail.html",
+          controller: 'CompanyCtrl'
+        }
+      }
+    })
+
+    .state('app.map', {
+      url: "/map",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/map.html",
+          controller: 'CompanyMapCtrl'
+        }
+      }
+    })
+
+    .state('app.singleBooth', {
+      url: "/map/:companyMapId",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/map.html",
+          controller: 'CompanyMapCtrl'
+        }
+      }
+    })
+
 
     .state('app.settings', {
       url: "/settings",
@@ -52,58 +94,9 @@ angular.module('idayIonic', ['ionic', 'idayIonic.controllers', 'idayIonic.servic
           templateUrl: "templates/login.html"
         }
       }
-    })
-
-    .state('app.search', {
-      url: "/search",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/search.html"
-        }
-      }
-    })
-
-    .state('app.map', {
-      url: "/map",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/map.html",
-          controller: 'CompanyMapCtrl'
-        }
-      }
-    })
-/*
-    .state('app.singleBooth', {
-      url: "/map/:companyMapId",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/map.html",
-          controller: 'CompanyMapCtrl'
-        }
-      }
-    })*/
-
-    .state('app.companies', {
-      url: "/companies",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/companyList.html",
-          controller: 'CompanyListCtrl'
-        }
-      }
-    })
-
-    .state('app.single', {
-      url: "/companies/:companyURLId",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/companyDetail.html",
-          controller: 'CompanyCtrl'
-        }
-      }
     });
+
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/companies');
-  //console.log($urlRouterProvider);
 });
 

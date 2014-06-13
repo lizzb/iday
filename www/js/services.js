@@ -2,48 +2,23 @@ angular.module('idayIonic.services', [])
 
 /**
  * A simple example service that returns some data.
- */
+
+Might use a resource here that returns a JSON array
+
+
+We're just using a javascript array
+created from a .csv file from Excel
+then converted using http://shancarter.github.io/mr-data-converter/
+on JSON - properties setting
+
+and then manually sanitizing the data
+ie. adding escapes for quotes, removing line breaks, etc. 
+
+this should be done with a parser but spending my time on other things
+*/
+
 .factory('RecruitingCompanies', function() {
-  // Might use a resource here that returns a JSON array
 
-
-  // booth might change, id shouldn't
-  
-   /* var companies = [
-  { 
-    idx: 0, booth: 1, room: 'Louis', floor: 2,
-    nameId: 'fenwal', name: 'Fenwal Inc, a Fresenius-Kabi Company', 
-    am: 0, bme: 1, chem: 0, civil: 0, ce: 1, cs: 1, ee: 0, enve: 0, ie: 0, made: 0, matsci: 0, mech: 1, noneng: 0,
-    msphd: 0, fte: 1, coop: 1, intern: 1,
-    description: "Fenwal is a pioneer and global leader in the development of products that improve the safety and availability of blood. Our products help shape the practice of transfusion medicine, making life-saving blood therapies available to the medical professionals and patients worldwide who rely on them."
-},
-{ 
-    idx: 1, booth: 2, room: 'Louis', floor: 2,
-    nameId: 'carsdotcom', name: 'Cars.com', 
-    am: 0, bme: 0, chem: 0, civil: 0, ce: 1, cs: 1, ee: 0, enve: 0, ie: 0, made: 0, matsci: 0, mech: 0, noneng: 0,
-    msphd: 0, fte: 0, coop: 0, intern: 1,
-    description: "Visited by more than 11 million car shoppers each month, Cars.com is the leading destination for online car shoppers, offering credible and easy-to-understand information from consumers and experts to help buyers formulate opinions on what to buy, where to buy and how much to pay for a car.\n\nWith comprehensive pricing information, dealer reviews, side-by-side comparison tools, photo galleries, videos, unbiased editorial content and a large selection of new- and used-car inventory, Cars.com puts car buyers in control of their shopping process with the information they need to make confident buying decisions."
-},
-{ 
-    idx: 2, nameId: "epic", name: 'Epic', booth: 3, room: 'Louis', floor: 2,
-    am: 1, bme: 1, chem: 1, civil: 1, ce: 1, cs: 1, ee: 1, enve: 1, ie: 1, made: 1, matsci: 1, mech: 1, noneng: 1,
-    msphd: 0, fte: 1, coop: 0, intern: 0,
-    description: "Epic makes software for mid-size and large medical groups, hospitals and integrated healthcare organizations _ working with customers that include community hospitals, academic facilities, children's organizations, safety net providers and multi-hospital systems. Our integrated software spans clinical, access and revenue functions and extends into the home."
-},
-{ 
-    idx: 3, booth: 4, room: 'Louis', floor: 2,
-    nameId: 'fti', name: 'FTI Consulting', 
-    am: 0, bme: 0, chem: 0, civil: 0, ce: 0, cs: 0, ee: 0, enve: 0, ie: 0, made: 0, matsci: 0, mech: 0, noneng: 0,
-    msphd: 0, fte: 1, coop: 0, intern: 1,
-    description: "Global organizations increasingly face complex challenges created by unpredictable financial markets, ever-changing governmental regulation and increasing global interdependencies. The enterprise value of each organization depends on how well these threats or opportunities are handled. But few have the capability or objective to manage them internally."
-},
-{ 
-    idx: 4, booth: 5, nameId: 'bemis', name: 'Bemis', room: 'Louis', floor: 2,
-    am: 0, bme: 0, chem: 0, civil: 0, ce: 0, cs: 0, ee: 0, enve: 0, ie: 0, made: 0, matsci: 0, mech: 0, noneng: 0,
-    msphd: 0, fte: 0, coop: 0, intern: 0,
-    description: "Established in 1858 in St. Louis, Missouri, as a manufacturer of machine sewn cotton bags for milled food and grain products, Bemis has played an influential role in the packaging industry ever since its founding. Now a global supplier of flexible packaging and pressure sensitive label materials headquartered in Neenah, Wisconsin, Bemis serves customers worldwide and produces packaging for products found in virtually every aisle of the grocery store. "
-}
-  ];*/
 var companies =  [
 {"booth":1,"Room":"Louis","Floor":2,"nameId":"fenwal","name":"Fenwal Inc, a Fresenius-Kabi Company","am":null,"bme":1,"chem":null,"civil":null,"ce":1,"cs":1,"ee":null,"enve":null,"ie":null,"made":null,"matsci":null,"mech":1,"noneng":null,"msphd":null,"fte":1,"coop":1,"intern":1,"description":"Fenwal is a pioneer and global leader in the development of products that improve the safety and availability of blood. Our products help shape the practice of transfusion medicine, making life-saving blood therapies available to the medical professionals and patients worldwide who rely on them."},
 {"booth":2,"Room":"Louis","Floor":2,"nameId":"carsdotcom","name":"Cars.com","am":null,"bme":null,"chem":null,"civil":null,"ce":1,"cs":1,"ee":null,"enve":null,"ie":null,"made":null,"matsci":null,"mech":null,"noneng":null,"msphd":null,"fte":null,"coop":null,"intern":1,"description":"Visited by more than 11 million car shoppers each month, Cars.com is the leading destination for online car shoppers, offering credible and easy-to-understand information from consumers and experts to help buyers formulate opinions on what to buy, where to buy and how much to pay for a car.\n With comprehensive pricing information, dealer reviews, side-by-side comparison tools, photo galleries, videos, unbiased editorial content and a large selection of new- and used-car inventory, Cars.com puts car buyers in control of their shopping process with the information they need to make confident buying decisions."},
@@ -132,37 +107,19 @@ var companies =  [
 ];
 
 
-/*
-[
-  {
-    "id":"3m",
-    "name":"3M Company",
-    "description":"3M is a global innovation company that never stops inventing. Over the years, our innovations have improved daily life for hundreds of millions of people all over the world. We have made driving at night easier, made buildings safer, and made consumer electronics lighter, less energy-intensive and less harmful to the environment. We even helped put a man on the moon. Every day at 3M, one idea always leads to the next, igniting momentum to make progress possible around the world.",
-    "room":"Wildcat",
-    "floor":1,
-    "booth":79,
-    "am":false,
-    "bme":false,
-    "chem":true,
-    "civil":false,
-    "ce":true,
-    "cs":false,
-    "ee":true,
-    "enve":false,
-    "ie":true,
-    "made":true,
-    "matsci":true,
-    "mech":true,
-    "noneng":false,
-    "msphd":false,
-    "fte":true,
-    "coop":false,
-    "intern":true
-  },
-  */
+  // booth might change, id shouldn't
+  // also the room and floor of booth won't change
+  // hence lump all the booth information together
+  // reference booth number in company object in array
+  // access company by unique url identifier
+  // nameId --> compId
+  // have a separate array for booth info
+  // and possibly dynamically changing svg based on search inputs??
 
-
-// nameId --> compId
+  // Considered not having separate room and floor property fields
+  // but it seems reasonable that someone might filter by a certain room
+  // (or part of a room, perhaps)
+  // especially if that room contains a LOT of booths/tables
 
   var booths = [
     {
@@ -194,26 +151,27 @@ var companies =  [
   
 
   return {
-    all: function() {
+    allCompanies: function() {
       return companies;
     },
+
     allBooths: function() {
       return booths;
     },
 
-    /*get: function(companyIdx) {
-      // Simple index lookup - ie by original array index pos
-      return companies[companyIdx];
-    }*/
-
-    // idx used to be for simple index
+    // idx used to be for Simple index lookup - ie by original array index pos //return companies[companyIdx];
     // now using the company name/url-safe id
+    // probably not very efficient but ohwell, small data set
     get: function(companyIdx) {
-      // Simple index lookup - ie by original array index pos
-      //return companies[companyIdx];
+      // Get / look up company by its nameId
+      
+      // is this more efficient?
       //for (var i = companies.length - 1; i >= 0; i--) {
+
         for (var i = 0; i< companies.length; i++) {
           if (companies[i].nameId == companyIdx) return companies[i];
+
+          // TODO: account for no valid return value
       };
     }
 
@@ -224,35 +182,3 @@ var companies =  [
 
 
 
-
-/* OLD JANKY COMPANY FIND FUNCTION 399 REPO
-idayControllers.controller('CompanyDetailsController', ['$scope', '$routeParams', '$rootScope',
-  function($scope, $routeParams, $rootScope){
-    angular.forEach($rootScope.all_companies, function(comp) {
-          if (comp.id == $routeParams.companyId) //companyId???
-          {
-            $scope.company = comp;
-          }    
-        });
-    $scope.majors = $rootScope.majors;
-    $scope.jobs = $rootScope.positions; // pass from a diff scope??
-    // if its in rootscope its already accessible so this is redundant really
-    // both jobs and positions work,
-    // both are accessible from within companydetails
-  }])
-*/
-
-
-
-
-/*assignBooths: function() {
-      var i = 0;
-      angular.forEach(companies, function(company, booth) {
-        i = company.booth - 1;
-        var booth = 
-        this.push()
-        booths[i].compId = company.nameId;
-        booths[i].isActive = false;
-      })
-      return booths;
-    },*/
