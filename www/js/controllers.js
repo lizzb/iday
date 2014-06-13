@@ -176,7 +176,20 @@ $rootScope.userFilter = function (company) {
 
 .controller('CompanyCtrl', function($scope, $stateParams, $rootScope) {//, RecruitingCompanies) {
  // $scope.company = RecruitingCompanies.get([$stateParams.companyURLId]);
-  $scope.company = $rootScope.all_companies[$stateParams.companyURLId];
+  //$scope.company = $rootScope.all_companies[$stateParams.companyURLId];
+
+$scope.company = "";
+
+// im sure this is inefficient
+for (var i = 0; i < $rootScope.all_companies.length; i++)
+        {
+            // check if a position is true
+            if($rootScope.all_companies[i].nameId == $stateParams.companyURLId)
+            {
+              $scope.company = $rootScope.all_companies[i];
+            }
+            
+        }
 
     $scope.majors = $rootScope.majors;
     $scope.jobs = $rootScope.positions; 
