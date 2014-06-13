@@ -157,6 +157,9 @@ angular.module('idayIonic.controllers', [])
    $scope.booths = $rootScope.all_booths;
    $scope.companies = $rootScope.all_companies;
 
+   // this is handled by routing i think? but not positive
+   // actually no if you want to trigger a differnt event or look on current url booth
+   // will ahe to feed in
    // if it came in with a specific parameter for a booth jupm to that one like an anchor
    //$scope.company = $rootScope.all_companies[$stateParams.companyURLId];
   });

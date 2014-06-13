@@ -18,10 +18,6 @@ this should be done with a parser but spending my time on other things
 */
 
 .factory('RecruitingCompanies', function() {
-    /*
-
-    this didn't work, not sure why :(
-*/
 
     var majors = [ 
       { friendlyName: 'Applied Math', name: 'am'},
@@ -145,9 +141,12 @@ var companies =  [
   // and possibly dynamically changing svg based on search inputs??
 
   // Considered not having separate room and floor property fields
+  // and just rely on an svg position
   // but it seems reasonable that someone might filter by a certain room
   // (or part of a room, perhaps)
   // especially if that room contains a LOT of booths/tables
+
+
 
   var booths = [
     {
@@ -176,6 +175,95 @@ var companies =  [
       isActive: false
     }
   ];
+
+
+
+  var booths = [
+  {"booth":1,"Room":"Louis","Floor":2},
+  {"booth":2,"Room":"Louis","Floor":2},
+  {"booth":3,"Room":"Louis","Floor":2},
+  {"booth":4,"Room":"Louis","Floor":2},
+  {"booth":5,"Room":"Louis","Floor":2},
+  {"booth":6,"Room":"Louis","Floor":2},
+  {"booth":7,"Room":"Louis","Floor":2},
+  {"booth":8,"Room":"Louis","Floor":2},
+  {"booth":9,"Room":"Louis","Floor":2},
+  {"booth":10,"Room":"Louis","Floor":2},
+  {"booth":11,"Room":"Louis","Floor":2},
+  {"booth":12,"Room":"Louis","Floor":2},
+  {"booth":13,"Room":"Louis","Floor":2},
+  {"booth":14,"Room":"Louis","Floor":2},
+  {"booth":15,"Room":"Louis","Floor":2},
+  {"booth":16,"Room":"Louis","Floor":2},
+  {"booth":17,"Room":"Louis","Floor":2},
+  {"booth":18,"Room":"Louis","Floor":2},
+  {"booth":19,"Room":"Louis","Floor":2},
+  {"booth":20,"Room":"Louis","Floor":2},
+  {"booth":21,"Room":"Louis","Floor":2},
+  {"booth":22,"Room":"Louis","Floor":2},
+  {"booth":23,"Room":"Louis","Floor":2},
+  {"booth":24,"Room":"Louis","Floor":2},
+  {"booth":25,"Room":"Louis","Floor":2},
+  {"booth":26,"Room":"Louis","Floor":2},
+  {"booth":27,"Room":"Louis","Floor":2},
+  {"booth":28,"Room":"Louis","Floor":2},
+  {"booth":29,"Room":"Louis","Floor":2},
+  {"booth":30,"Room":"Louis","Floor":2},
+  {"booth":31,"Room":"Louis","Floor":2},
+  {"booth":32,"Room":"Louis","Floor":2},
+  {"booth":33,"Room":"Louis","Floor":2},
+  {"booth":34,"Room":"Louis","Floor":2},
+  {"booth":35,"Room":"Louis","Floor":2},
+  {"booth":36,"Room":"Louis","Floor":2},
+  {"booth":37,"Room":"Louis","Floor":2},
+  {"booth":38,"Room":"Louis","Floor":2},
+  {"booth":39,"Room":"Louis","Floor":2},
+  {"booth":40,"Room":"Louis","Floor":2},
+  {"booth":41,"Room":"Louis","Floor":2},
+  {"booth":42,"Room":"Louis","Floor":2},
+  {"booth":43,"Room":"Louis","Floor":2},
+  {"booth":44,"Room":"Louis","Floor":2},
+  {"booth":45,"Room":"Louis","Floor":2},
+  {"booth":46,"Room":"Louis","Floor":2},
+  {"booth":47,"Room":"Louis","Floor":2},
+  {"booth":48,"Room":"Louis","Floor":2},
+  {"booth":49,"Room":"Louis","Floor":2},
+  {"booth":50,"Room":"Louis","Floor":2},
+  {"booth":51,"Room":"Louis","Floor":2},
+  {"booth":52,"Room":"Louis","Floor":2},
+  {"booth":53,"Room":"Louis","Floor":2},
+  {"booth":54,"Room":"Lake","Floor":2},
+  {"booth":55,"Room":"Lake","Floor":2},
+  {"booth":56,"Room":"Lake","Floor":2},
+  {"booth":57,"Room":"Lake","Floor":2},
+  {"booth":58,"Room":"Lake","Floor":2},
+  {"booth":59,"Room":"Lake","Floor":2},
+  {"booth":60,"Room":"Lake","Floor":2},
+  {"booth":61,"Room":"Lake","Floor":2},
+  {"booth":62,"Room":"Lake","Floor":2},
+  {"booth":63,"Room":"Lake","Floor":2},
+  {"booth":64,"Room":"Northwestern","Floor":2},
+  {"booth":65,"Room":"Northwestern","Floor":2},
+  {"booth":66,"Room":"Northwestern","Floor":2},
+  {"booth":67,"Room":"Northwestern","Floor":2},
+  {"booth":68,"Room":"Northwestern","Floor":2},
+  {"booth":69,"Room":"Northwestern","Floor":2},
+  {"booth":70,"Room":"Northwestern","Floor":2},
+  {"booth":71,"Room":"Northwestern","Floor":2},
+  {"booth":72,"Room":"Wildcat Room","Floor":1},
+  {"booth":73,"Room":"Wildcat Room","Floor":1},
+  {"booth":74,"Room":"Wildcat Room","Floor":1},
+  {"booth":75,"Room":"Wildcat Room","Floor":1},
+  {"booth":76,"Room":"Wildcat Room","Floor":1},
+  {"booth":77,"Room":"Wildcat Room","Floor":1},
+  {"booth":78,"Room":"Wildcat Room","Floor":1},
+  {"booth":79,"Room":"Wildcat Room","Floor":1},
+  {"booth":80,"Room":"Big 10","Floor":1},
+  {"booth":81,"Room":"Big 10","Floor":1},
+  {"booth":82,"Room":"Big 10","Floor":1},
+  {"booth":83,"Room":"Big 10","Floor":1},
+  {"booth":84,"Room":"Big 10","Floor":1}
+  ];
   
 
   return {
@@ -184,6 +272,34 @@ var companies =  [
     },
 
     allBooths: function() {
+
+      // assumes that each company has only 1 booth assigned
+      // and that 2 companies don't/cant share a booth
+      // because it will overwrite
+      // does not check for sufficient number of booths
+      // assumes length of booths is same as length of companies....
+      // ... i think
+      // starting with 1 becauase normal people use 1 indexing
+      // not zero indexing IRL
+      // no wait actually this is janky
+      // ill use indexes
+      // but keep in mind companies refer to the booth numer
+      // so will subtract 1 to get actual booth index
+
+      // loop assigns companies to booths for generating svg
+       for (var i = 0; i < companies.length; i++) {
+          var currentCompanyBoothIdx = companies[i].booth - 1;
+          // will create a property if it doesnt exist, i think
+          booths[currentCompanyBoothIdx].compId = companies[i].nameId;
+
+          // need some conditional about how to display it
+          // based on if it is still an active company?
+          // this should be done elsewhere
+          // ehre in factory assume all active
+          booths[currentCompanyBoothIdx].isActive = true;
+        }
+
+
       return booths;
     },
 
