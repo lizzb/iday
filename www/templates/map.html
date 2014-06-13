@@ -7,16 +7,18 @@
 
 Map of Companies
 
-<style>
+
+
+	<svg>
+  <style>
 .booth {
   fill:#b8ecff;
   stroke-width:2;
   stroke:rgb(0,0,0);
 }
 </style>
-
-	<svg>
         <g ng-repeat="b in booths">
+        
         <rect
               ng-attr-id="{{b.compId}}"
               class="booth" 
@@ -27,7 +29,7 @@ Map of Companies
               />
           <text ng-attr-x="{{ ($index+1)*(boothWidth*0+0) }}"
                 ng-attr-y="{{ ($index+1)*(boothHeight+15)+(boothHeight+15)/2}}">
-          <a href="#/app/companies/{{b.boothNum - 1}}">{{b.compId}} </a>
+          <a href="{{b.compId}}">{{b.compId}} </a>
           <ion-item nav-clear href="#/app/companies/{{b.boothNum - 1}}">
           {{b.boothNum - 1}}
         </ion-item>
