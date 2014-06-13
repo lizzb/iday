@@ -44,8 +44,8 @@ cursor: pointer;
 
     <p>{{company.Room}} Room, (Floor {{company.Floor}}), # {{company.booth}}</p>
     <span>
-    <a class="ion-navigate locationLink" href="/#/app/map/{{company.nameId}}"></a>
-    <a class="ion-compass locationLink" href="/#/app/map/{{company.booth}}"></a>
+    <a class="ion-navigate locationLink" href="#/app/map/{{company.nameId}}"></a>
+    <!--a class="ion-compass locationLink" href="#/app/map/{{company.booth}}"></a-->
 </span>
 
 
@@ -59,17 +59,12 @@ cursor: pointer;
       {{company[p.name] | checkmark }} {{p.friendlyName}}
       &nbsp;&nbsp;&nbsp;&nbsp;
     </span>
-    <!--li ng-repeat="p in positions" ng-show="company[p.name]"> {{p.friendlyName}} </li  class="detailsPositions" <br><br>-->
 
 
 
 <h3> Majors </h3>
 <li ng-repeat="m in majors" ng-show="company[m.name]"> {{m.friendlyName}} </li>
 <br>
-
-
-
-
 
    
 
