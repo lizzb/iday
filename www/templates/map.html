@@ -55,16 +55,25 @@ left: 0;
       width: 100%; 
       height: 100%; 
       /*border: 1px solid black; 
-      box-sizing: border-box; */
+      box-sizing: border-box; 
+          <g ng-href="/app/companies/{{b.compId}}">           </g>
+
+
+          http://stackoverflow.com/questions/14201753/angular-js-how-when-to-use-ng-click-to-call-a-route
+          */
     }
 
 </style>
+
         
     <g ng-repeat="b in booths">
-    <g ng-href="/app/companies/{{b.compId}}"> 
+
+    <!--a xlink:href="/app/companies/{{b.compId}}"--> 
+
         <rect
               ng-attr-id="{{b.compId}}"
               class="booth" 
+              ng-click="go('/app/companies/{{b.compId}}')"
               ng-attr-x="{{ ($index+1)*(boothWidth*0+0)}}" 
               ng-attr-y="{{ ($index+1)*(boothHeight+15)}}" 
               ng-attr-width="{{boothWidth}}"
@@ -79,12 +88,14 @@ left: 0;
           </text>
 
           </a>
-          </g>
+
 
 
           </g>
       </svg>
       </figure>
+
+      <!-- http://tutorials.jenkov.com/svg/a-element.html -->
 
       <!--<ion-item nav-clear href="#/app/companies/{{b.compId}}">
           {{b.compId}}

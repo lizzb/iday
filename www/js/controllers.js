@@ -114,7 +114,7 @@ angular.module('idayIonic.controllers', [])
 //
 //
 //
-.controller('CompanyMapCtrl', function($scope, /*$stateParams,*/ $rootScope) {
+.controller('CompanyMapCtrl', function($scope, /*$stateParams,*/ $rootScope, $location) {
    
    // $scope.companies = $rootScope.all_companies;
 
@@ -123,6 +123,11 @@ angular.module('idayIonic.controllers', [])
 
    $scope.booths = $rootScope.all_booths;
    $scope.companies = $rootScope.all_companies;
+
+
+   $scope.go = function ( path ) {
+  $location.path( path );
+  };
 
    // this is handled by routing i think? but not positive
    // actually no if you want to trigger a differnt event or look on current url booth

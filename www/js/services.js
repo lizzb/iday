@@ -258,6 +258,7 @@ var companies =  [
       // but keep in mind companies refer to the booth numer
       // so will subtract 1 to get actual booth index
 
+      // Assign companies to booths
       // loop assigns companies to booths for generating svg
        for (var i = 0; i < companies.length; i++) {
           var currentCompanyBoothIdx = companies[i].booth - 1;
