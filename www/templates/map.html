@@ -3,44 +3,44 @@
     <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
   <ion-content class="has-header">
-    <h1> Company Map </h1>
 
     <style>
-    figure {
-margin: 0;
-}
-.svg-container {
-display: inline-block;
-position: relative;
-width: 100%;
-padding-bottom: 90%;
-vertical-align: middle;
-overflow: hidden;
-}
-element.style {
-}
-svg:not(:root) {
-overflow: hidden;
-}
-.svg-content {
-display: inline-block;
-position: absolute;
-top: 3rem;
-left: 0;
-}
+    figure { margin: 10; }
+    .svg-container {
+      display: inline-block;
+      position: relative;
+      width: 100%;
+      padding-bottom: 90%;
+      vertical-align: middle;
+      overflow: hidden;
+    }
+  element.style {
+  }
+  svg:not(:root) { overflow: hidden; }
+  .svg-content {
+    display: inline-block;
+    position: absolute;
+    top: 3rem;
+    left: 0;
+  }
 
     </style>
 
 
 
 <figure class="svg-container ng-scope">
-	<svg style="background-color: #ccc" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet" viewBox="0 0 900 2900" width="100%" height="100%" class="svg-content">
+	<svg style="background-color: #ccc" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet" viewBox="0 0 400 400" width="100%" height="100%" class="svg-content">
   
   <style>
 .booth {
   fill:#b8ecff;
   stroke-width:2;
   stroke:rgb(0,0,0);
+}
+
+.boothlabel {
+  text-anchor: "middle";
+  alignment-baseline: "middle";
 }
 
 
@@ -66,31 +66,23 @@ left: 0;
 </style>
 
         
-    <g ng-repeat="b in booths">
+    <g ng-repeat="b in floorplan">
 
     <!--a xlink:href="/app/companies/{{b.compId}}"--> 
-
-        <rect
+        <rect class="booth" 
               ng-attr-id="{{b.compId}}"
-              class="booth" 
               ng-click="go('/app/companies/{{b.compId}}')"
-              ng-attr-x="{{ ($index+1)*(boothWidth*0+0)}}" 
-              ng-attr-y="{{ ($index+1)*(boothHeight+15)}}" 
+              ng-attr-x="{{b.x}}"
+              ng-attr-y="{{b.y}}"
               ng-attr-width="{{boothWidth}}"
               ng-attr-height="{{boothHeight}}"
               />
-              <a ng-attr-id="{{b.compId}}"
-               > 
-          <text ng-attr-x="{{ ($index+1)*(boothWidth*0+0) }}"
-                ng-attr-y="{{ ($index+1)*(boothHeight+15)+(boothHeight+15)/2}}">
-          {{b.compId}} 
-          
+          <text class="boothlabel"
+            ng-attr-x="{{ b.x + boothWidth/2 }}"
+            ng-attr-y="{{ b.y + boothHeight/2 }}"
+            ng-click="alert('{{b.compId}} was selected')">
+          {{b.compId}}        
           </text>
-
-          </a>
-
-
-
           </g>
       </svg>
       </figure>

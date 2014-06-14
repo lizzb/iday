@@ -7,6 +7,8 @@ angular.module('idayIonic.controllers', [])
 
   $rootScope.all_companies = RecruitingCompanies.allCompanies();
 
+  $rootScope.booth_floorplan = RecruitingCompanies.getBoothLayoutSVG();
+
   //$rootScope.company_map = RecruitingCompanies.assignBooths();
   $rootScope.all_booths = RecruitingCompanies.allBooths();
 
@@ -123,6 +125,8 @@ angular.module('idayIonic.controllers', [])
 
    $scope.booths = $rootScope.all_booths;
    $scope.companies = $rootScope.all_companies;
+
+   $scope.floorplan = $rootScope.booth_floorplan;
 
 
    $scope.go = function ( path ) {
