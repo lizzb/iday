@@ -1,26 +1,3 @@
-angular.module('idayIonic.services', [])
-
-/**
- * A simple example service that returns some data.
-
-Might use a resource here that returns a JSON array
-
-
-We're just using a javascript array
-created from a .csv file from Excel
-then converted using http://shancarter.github.io/mr-data-converter/
-on JSON - properties setting
-
-and then manually sanitizing the data
-ie. adding escapes for quotes, removing line breaks, etc. 
-
-this should be done with a parser but spending my time on other things
-*/
-
-.factory('RecruitingCompanies', function() {
-
-  // friendlyName = The name to display in the interface
-  // name = the csv/json-safe name for filtering etc
 
     var majors = [ 
       { friendlyName: 'Applied Math', name: 'am'},
@@ -45,7 +22,27 @@ this should be done with a parser but spending my time on other things
       { friendlyName: 'MS/PhD', name: 'msphd'}
     ];
 
+
 /*
+
+this was a test - using just this subset of data works for only listing these companies and properly linking from map to detail san d back
+howeover still renders all other booths so... should fix that i guess idk
+
+var companies =  [
+{"booth":26,"nameId":"fenwal","name":"Fenwal Inc, a Fresenius-Kabi Company","am":null,"bme":1,"chem":null,"civil":null,"ce":1,"cs":1,"ee":null,"enve":null,"ie":null,"made":null,"matsci":null,"mech":1,"noneng":null,"msphd":null,"fte":1,"coop":1,"intern":1,"description":"Fenwal is a pioneer and global leader in the development of products that improve the safety and availability of blood. Our products help shape the practice of transfusion medicine, making life-saving blood therapies available to the medical professionals and patients worldwide who rely on them."},
+{"booth":20,"nameId":"carsdotcom","name":"Cars.com","am":null,"bme":null,"chem":null,"civil":null,"ce":1,"cs":1,"ee":null,"enve":null,"ie":null,"made":null,"matsci":null,"mech":null,"noneng":null,"msphd":null,"fte":null,"coop":null,"intern":1,"description":"Visited by more than 11 million car shoppers each month, Cars.com is the leading destination for online car shoppers, offering credible and easy-to-understand information from consumers and experts to help buyers formulate opinions on what to buy, where to buy and how much to pay for a car.\n With comprehensive pricing information, dealer reviews, side-by-side comparison tools, photo galleries, videos, unbiased editorial content and a large selection of new- and used-car inventory, Cars.com puts car buyers in control of their shopping process with the information they need to make confident buying decisions."},
+{"booth":12,"nameId":"bemis","name":"Bemis Company","am":null,"bme":1,"chem":1,"civil":null,"ce":null,"cs":null,"ee":1,"enve":null,"ie":null,"made":null,"matsci":1,"mech":1,"noneng":null,"msphd":null,"fte":1,"coop":1,"intern":null,"description":"Established in 1858 in St. Louis, Missouri, as a manufacturer of machine sewn cotton bags for milled food and grain products, Bemis has played an influential role in the packaging industry ever since its founding. Now a global supplier of flexible packaging and pressure sensitive label materials headquartered in Neenah, Wisconsin, Bemis serves customers worldwide and produces packaging for products found in virtually every aisle of the grocery store. "},
+{"booth":51,"nameId":"epic","name":"Epic","am":1,"bme":1,"chem":1,"civil":1,"ce":1,"cs":1,"ee":1,"enve":1,"ie":1,"made":1,"matsci":1,"mech":1,"noneng":1,"msphd":null,"fte":1,"coop":null,"intern":null,"description":"Epic makes software for mid-size and large medical groups, hospitals and integrated healthcare organizations _ working with customers that include community hospitals, academic facilities, children's organizations, safety net providers and multi-hospital systems. Our integrated software spans clinical, access and revenue functions and extends into the home."},
+{"booth":5,"nameId":"boeing","name":"Boeing Company","am":null,"bme":null,"chem":1,"civil":1,"ce":1,"cs":1,"ee":1,"enve":null,"ie":1,"made":1,"matsci":1,"mech":1,"noneng":1,"msphd":null,"fte":1,"coop":null,"intern":1,"description":"Boeing is the world's leading aerospace company and the largest manufacturer of commercial jetliners and military aircraft combined. Additionally, Boeing designs and manufactures rotorcraft, electronic and defense systems, missiles, satellites, launch vehicles and advanced information and communication systems. As a major service provider to NASA, Boeing is the prime contractor for the International Space Station. The company also provides numerous military and commercial airline support services. Boeing provides products and support services to customers in 150 countries and is one of the largest U.S. exporters in terms of sales."},
+{"booth":24,"nameId":"kiewit","name":"Kiewit","am":null,"bme":null,"chem":null,"civil":1,"ce":null,"cs":null,"ee":null,"enve":null,"ie":null,"made":null,"matsci":null,"mech":null,"noneng":null,"msphd":1,"fte":1,"coop":1,"intern":1,"description":"Excellence. It is the foundation of everything we do. What began in 1884 with two hardworking brothers has grown into a Fortune 500 construction, mining and engineering powerhouse.\n Kiewits ethical, forward-thinking workforce continues to build upon the companys reputation of safe, high-quality engineering. As an employee-owned company, Kiewits assets are managed by the people who know our work best. For us, business is personal. As our own stakeholders, we are invested in every project we take on. We continuously strive to build high-quality work at the lowest cost."},
+{"booth":15,"nameId":"alcatel-lucent","name":"Alcatel-Lucent","am":null,"bme":null,"chem":null,"civil":null,"ce":1,"cs":1,"ee":1,"enve":null,"ie":null,"made":null,"matsci":null,"mech":null,"noneng":null,"msphd":1,"fte":1,"coop":1,"intern":1,"description":"Alcatel-Lucent is at the forefront of global communications. We provide products and innovations in IP and cloud networking, as well as ultra-broadband fixed and wireless access. We serve service providers and their customers, as well as enterprises and institutions throughout the world. Alcatel-Lucent's Bell Labs, one of the worlds foremost technology research institutes, is responsible for countless breakthroughs that have shaped the networking and communications industry. "},
+{"booth":48,"nameId":"imc","name":"IMC Financial Markets","am":1,"bme":null,"chem":null,"civil":null,"ce":1,"cs":1,"ee":1,"enve":null,"ie":null,"made":null,"matsci":null,"mech":null,"noneng":null,"msphd":null,"fte":1,"coop":null,"intern":1,"description":"IMC financial markets is one of the worlds leading proprietary trading firms and a key market maker in various products listed on exchanges throughout the world.\n In general, our main strategies can be grouped into: Market Making or liquidity providing,  Algorithmic arbitrage,  Statistical arbitrage \n \n All of our strategies are proprietary and within IMC financial markets we do not have any external clients. All of our strategies have a short-term focus and are considered as ´high frequency trading. "},
+{"booth":9,"nameId":"cme-group","name":"CME Group","am":null,"bme":null,"chem":null,"civil":null,"ce":1,"cs":1,"ee":null,"enve":null,"ie":null,"made":null,"matsci":null,"mech":null,"noneng":null,"msphd":null,"fte":1,"coop":null,"intern":null,"description":"As the world's leading and most diverse derivatives marketplace, CME Group is where the world comes to manage risk. We offer the widest range of global benchmark products across all major asset classes. Helping businesses everywhere mitigate the myriad risks they face in todays uncertain global economy allows them to operate more effectively, create more jobs, and pass benefits on to consumers."},
+];
+*/
+
+
+
 var companies =  [
 {"booth":1,"Room":"Louis","Floor":2,"nameId":"fenwal","name":"Fenwal Inc, a Fresenius-Kabi Company","am":null,"bme":1,"chem":null,"civil":null,"ce":1,"cs":1,"ee":null,"enve":null,"ie":null,"made":null,"matsci":null,"mech":1,"noneng":null,"msphd":null,"fte":1,"coop":1,"intern":1,"description":"Fenwal is a pioneer and global leader in the development of products that improve the safety and availability of blood. Our products help shape the practice of transfusion medicine, making life-saving blood therapies available to the medical professionals and patients worldwide who rely on them."},
 {"booth":2,"Room":"Louis","Floor":2,"nameId":"carsdotcom","name":"Cars.com","am":null,"bme":null,"chem":null,"civil":null,"ce":1,"cs":1,"ee":null,"enve":null,"ie":null,"made":null,"matsci":null,"mech":null,"noneng":null,"msphd":null,"fte":null,"coop":null,"intern":1,"description":"Visited by more than 11 million car shoppers each month, Cars.com is the leading destination for online car shoppers, offering credible and easy-to-understand information from consumers and experts to help buyers formulate opinions on what to buy, where to buy and how much to pay for a car.\n With comprehensive pricing information, dealer reviews, side-by-side comparison tools, photo galleries, videos, unbiased editorial content and a large selection of new- and used-car inventory, Cars.com puts car buyers in control of their shopping process with the information they need to make confident buying decisions."},
@@ -132,7 +129,7 @@ var companies =  [
 {"booth":83,"Room":"Big 10","Floor":1,"nameId":"gaf","name":"GAF","am":null,"bme":null,"chem":1,"civil":null,"ce":null,"cs":null,"ee":1,"enve":null,"ie":null,"made":null,"matsci":1,"mech":1,"noneng":null,"msphd":null,"fte":null,"coop":1,"intern":null,"description":"Founded in 1886, GAF has become North Americas largest manufacturer of commercial and residential roofing. Our success in growing the company to nearly $3 billion in sales has been based on our unique philosophy of: Helping property owners & architects to make their best and safest roofing choices, Helping supportive distributors and roofing contractors to build their businesses and avoid hassles"},
 {"booth":84,"Room":"Big 10","Floor":1,"nameId":"microsoft","name":"Microsoft","am":null,"bme":null,"chem":null,"civil":null,"ce":1,"cs":1,"ee":1,"enve":null,"ie":null,"made":null,"matsci":null,"mech":null,"noneng":null,"msphd":1,"fte":1,"coop":1,"intern":1,"description":"At Microsoft, we're motivated and inspired every day by how our customers use our software to find creative solutions to business problems, develop breakthrough ideas, and stay connected to what's most important to them. We are committed long term to the mission of helping our customers realize their full potential. Just as we constantly update and improve our products, we want to continually evolve our company to be in the best position to accelerate new technologies as they emerge and to better serve our customers."}
 ];
-*/
+/*
 var companies =  [
 {"booth":1,"nameId":"fenwal","name":"Fenwal Inc, a Fresenius-Kabi Company","am":null,"bme":1,"chem":null,"civil":null,"ce":1,"cs":1,"ee":null,"enve":null,"ie":null,"made":null,"matsci":null,"mech":1,"noneng":null,"msphd":null,"fte":1,"coop":1,"intern":1,"description":"Fenwal is a pioneer and global leader in the development of products that improve the safety and availability of blood. Our products help shape the practice of transfusion medicine, making life-saving blood therapies available to the medical professionals and patients worldwide who rely on them."},
 {"booth":2,"nameId":"carsdotcom","name":"Cars.com","am":null,"bme":null,"chem":null,"civil":null,"ce":1,"cs":1,"ee":null,"enve":null,"ie":null,"made":null,"matsci":null,"mech":null,"noneng":null,"msphd":null,"fte":null,"coop":null,"intern":1,"description":"Visited by more than 11 million car shoppers each month, Cars.com is the leading destination for online car shoppers, offering credible and easy-to-understand information from consumers and experts to help buyers formulate opinions on what to buy, where to buy and how much to pay for a car.\n With comprehensive pricing information, dealer reviews, side-by-side comparison tools, photo galleries, videos, unbiased editorial content and a large selection of new- and used-car inventory, Cars.com puts car buyers in control of their shopping process with the information they need to make confident buying decisions."},
@@ -219,7 +216,7 @@ var companies =  [
 {"booth":83,"nameId":"gaf","name":"GAF","am":null,"bme":null,"chem":1,"civil":null,"ce":null,"cs":null,"ee":1,"enve":null,"ie":null,"made":null,"matsci":1,"mech":1,"noneng":null,"msphd":null,"fte":null,"coop":1,"intern":null,"description":"Founded in 1886, GAF has become North Americas largest manufacturer of commercial and residential roofing. Our success in growing the company to nearly $3 billion in sales has been based on our unique philosophy of: Helping property owners & architects to make their best and safest roofing choices, Helping supportive distributors and roofing contractors to build their businesses and avoid hassles"},
 {"booth":84,"nameId":"microsoft","name":"Microsoft","am":null,"bme":null,"chem":null,"civil":null,"ce":1,"cs":1,"ee":1,"enve":null,"ie":null,"made":null,"matsci":null,"mech":null,"noneng":null,"msphd":1,"fte":1,"coop":1,"intern":1,"description":"At Microsoft, we're motivated and inspired every day by how our customers use our software to find creative solutions to business problems, develop breakthrough ideas, and stay connected to what's most important to them. We are committed long term to the mission of helping our customers realize their full potential. Just as we constantly update and improve our products, we want to continually evolve our company to be in the best position to accelerate new technologies as they emerge and to better serve our customers."}
 ];
-
+*/
   // booth might change, id shouldn't
   // also the room and floor of booth won't change
   // hence lump all the booth information together
@@ -1261,150 +1258,3 @@ var companies =  [
             "y": 866.0000305175781
         }
     ];
-
-
-
-/*
-
-this was a test - using just this subset of data works for only listing these companies and properly linking from map to detail san d back
-howeover still renders all other booths so... should fix that i guess idk
-
-var companies =  [
-{"booth":26,"nameId":"fenwal","name":"Fenwal Inc, a Fresenius-Kabi Company","am":null,"bme":1,"chem":null,"civil":null,"ce":1,"cs":1,"ee":null,"enve":null,"ie":null,"made":null,"matsci":null,"mech":1,"noneng":null,"msphd":null,"fte":1,"coop":1,"intern":1,"description":"Fenwal is a pioneer and global leader in the development of products that improve the safety and availability of blood. Our products help shape the practice of transfusion medicine, making life-saving blood therapies available to the medical professionals and patients worldwide who rely on them."},
-{"booth":20,"nameId":"carsdotcom","name":"Cars.com","am":null,"bme":null,"chem":null,"civil":null,"ce":1,"cs":1,"ee":null,"enve":null,"ie":null,"made":null,"matsci":null,"mech":null,"noneng":null,"msphd":null,"fte":null,"coop":null,"intern":1,"description":"Visited by more than 11 million car shoppers each month, Cars.com is the leading destination for online car shoppers, offering credible and easy-to-understand information from consumers and experts to help buyers formulate opinions on what to buy, where to buy and how much to pay for a car.\n With comprehensive pricing information, dealer reviews, side-by-side comparison tools, photo galleries, videos, unbiased editorial content and a large selection of new- and used-car inventory, Cars.com puts car buyers in control of their shopping process with the information they need to make confident buying decisions."},
-{"booth":12,"nameId":"bemis","name":"Bemis Company","am":null,"bme":1,"chem":1,"civil":null,"ce":null,"cs":null,"ee":1,"enve":null,"ie":null,"made":null,"matsci":1,"mech":1,"noneng":null,"msphd":null,"fte":1,"coop":1,"intern":null,"description":"Established in 1858 in St. Louis, Missouri, as a manufacturer of machine sewn cotton bags for milled food and grain products, Bemis has played an influential role in the packaging industry ever since its founding. Now a global supplier of flexible packaging and pressure sensitive label materials headquartered in Neenah, Wisconsin, Bemis serves customers worldwide and produces packaging for products found in virtually every aisle of the grocery store. "},
-{"booth":51,"nameId":"epic","name":"Epic","am":1,"bme":1,"chem":1,"civil":1,"ce":1,"cs":1,"ee":1,"enve":1,"ie":1,"made":1,"matsci":1,"mech":1,"noneng":1,"msphd":null,"fte":1,"coop":null,"intern":null,"description":"Epic makes software for mid-size and large medical groups, hospitals and integrated healthcare organizations _ working with customers that include community hospitals, academic facilities, children's organizations, safety net providers and multi-hospital systems. Our integrated software spans clinical, access and revenue functions and extends into the home."},
-{"booth":5,"nameId":"boeing","name":"Boeing Company","am":null,"bme":null,"chem":1,"civil":1,"ce":1,"cs":1,"ee":1,"enve":null,"ie":1,"made":1,"matsci":1,"mech":1,"noneng":1,"msphd":null,"fte":1,"coop":null,"intern":1,"description":"Boeing is the world's leading aerospace company and the largest manufacturer of commercial jetliners and military aircraft combined. Additionally, Boeing designs and manufactures rotorcraft, electronic and defense systems, missiles, satellites, launch vehicles and advanced information and communication systems. As a major service provider to NASA, Boeing is the prime contractor for the International Space Station. The company also provides numerous military and commercial airline support services. Boeing provides products and support services to customers in 150 countries and is one of the largest U.S. exporters in terms of sales."},
-{"booth":24,"nameId":"kiewit","name":"Kiewit","am":null,"bme":null,"chem":null,"civil":1,"ce":null,"cs":null,"ee":null,"enve":null,"ie":null,"made":null,"matsci":null,"mech":null,"noneng":null,"msphd":1,"fte":1,"coop":1,"intern":1,"description":"Excellence. It is the foundation of everything we do. What began in 1884 with two hardworking brothers has grown into a Fortune 500 construction, mining and engineering powerhouse.\n Kiewits ethical, forward-thinking workforce continues to build upon the companys reputation of safe, high-quality engineering. As an employee-owned company, Kiewits assets are managed by the people who know our work best. For us, business is personal. As our own stakeholders, we are invested in every project we take on. We continuously strive to build high-quality work at the lowest cost."},
-{"booth":15,"nameId":"alcatel-lucent","name":"Alcatel-Lucent","am":null,"bme":null,"chem":null,"civil":null,"ce":1,"cs":1,"ee":1,"enve":null,"ie":null,"made":null,"matsci":null,"mech":null,"noneng":null,"msphd":1,"fte":1,"coop":1,"intern":1,"description":"Alcatel-Lucent is at the forefront of global communications. We provide products and innovations in IP and cloud networking, as well as ultra-broadband fixed and wireless access. We serve service providers and their customers, as well as enterprises and institutions throughout the world. Alcatel-Lucent's Bell Labs, one of the worlds foremost technology research institutes, is responsible for countless breakthroughs that have shaped the networking and communications industry. "},
-{"booth":48,"nameId":"imc","name":"IMC Financial Markets","am":1,"bme":null,"chem":null,"civil":null,"ce":1,"cs":1,"ee":1,"enve":null,"ie":null,"made":null,"matsci":null,"mech":null,"noneng":null,"msphd":null,"fte":1,"coop":null,"intern":1,"description":"IMC financial markets is one of the worlds leading proprietary trading firms and a key market maker in various products listed on exchanges throughout the world.\n In general, our main strategies can be grouped into: Market Making or liquidity providing,  Algorithmic arbitrage,  Statistical arbitrage \n \n All of our strategies are proprietary and within IMC financial markets we do not have any external clients. All of our strategies have a short-term focus and are considered as ´high frequency trading. "},
-{"booth":9,"nameId":"cme-group","name":"CME Group","am":null,"bme":null,"chem":null,"civil":null,"ce":1,"cs":1,"ee":null,"enve":null,"ie":null,"made":null,"matsci":null,"mech":null,"noneng":null,"msphd":null,"fte":1,"coop":null,"intern":null,"description":"As the world's leading and most diverse derivatives marketplace, CME Group is where the world comes to manage risk. We offer the widest range of global benchmark products across all major asset classes. Helping businesses everywhere mitigate the myriad risks they face in todays uncertain global economy allows them to operate more effectively, create more jobs, and pass benefits on to consumers."},
-];
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-  
-
-  return {
-    allCompanies: function() {
-      return companies;
-    },
-
-    allBooths: function() {
-
-      // assumes that each company has only 1 booth assigned
-      // and that 2 companies don't/cant share a booth
-      // because it will overwrite
-      // does not check for sufficient number of booths
-      // assumes length of booths is same as length of companies....
-      // ... i think
-      // starting with 1 becauase normal people use 1 indexing
-      // not zero indexing IRL
-      // no wait actually this is janky
-      // ill use indexes
-      // but keep in mind companies refer to the booth numer
-      // so will subtract 1 to get actual booth index
-
-      // Assign companies to booths
-      // loop assigns companies to booths for generating svg
-       for (var i = 0; i < companies.length; i++) {
-          var currentCompanyBoothIdx = companies[i].booth - 1;
-          // will create a property if it doesnt exist, i think
-          booths[currentCompanyBoothIdx].compId = companies[i].nameId;
-
-          // need some conditional about how to display it
-          // based on if it is still an active company?
-          // this should be done elsewhere
-          // ehre in factory assume all active
-          booths[currentCompanyBoothIdx].isActive = true;
-        }
-
-      return booths;
-    },
-
-    getBoothLayoutSVG: function() {
-
-
-      for (var i = 0; i < companies.length; i++) {
-        var currentCompanyBoothIdx = booths[i].booth - 1;
-          booths[currentCompanyBoothIdx].compId = companies[i].nameId;
-        }
-      // assume booths have already been assigned
-
-
-      for (var i = 0; i < booths.length; i++) {
-          var currentBoothId = "booth"+booths[i].booth;
-          console.log(currentBoothId);
-
-          // this is soooo inefficient just trying stuff
-          for (var j = 0; j < boothLayoutSVG.length; j++) {
-              if (boothLayoutSVG[j].id == currentBoothId) {
-
-                // will create a property if it doesnt exist, i think
-          boothLayoutSVG[j].compId = booths[i].compId;
-          boothLayoutSVG[j].room = booths[i].Room;
-          boothLayoutSVG[j].floor = booths[i].Floor;
-
-              }
-// need some conditional about how to display it
-          // based on if it is still an active company?
-          // this should be done elsewhere
-          // ehre in factory assume all active
-          boothLayoutSVG[j].isActive = true;
-          }
-
-          
-
-          
-        }
-
-      return boothLayoutSVG;
-    },
-
-
-    allMajors: function() {
-      return majors;
-    },
-
-    allPositions: function() {
-      return positions;
-    },
-   
-
-    // idx used to be for Simple index lookup - ie by original array index pos //return companies[companyIdx];
-    // now using the company name/url-safe id
-    // probably not very efficient but ohwell, small data set
-    get: function(companyIdx) {
-      // Get / look up company by its nameId
-      
-      // is this more efficient?
-      //for (var i = companies.length - 1; i >= 0; i--) {
-
-        for (var i = 0; i< companies.length; i++) {
-          if (companies[i].nameId == companyIdx) return companies[i];
-
-          // TODO: account for no valid return value
-      };
-    }
-
-  }
-});
-
-
-

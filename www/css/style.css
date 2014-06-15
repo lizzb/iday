@@ -20,3 +20,16 @@
     top: 3rem;
     left: 0;
   }
+
+
+  .locationLink {
+  display: inline-block;
+  padding: 22px;
+  width: 42px;
+  border-radius: 4px;
+  list-style: none;
+  text-align: center;
+  font-size: 32px;
+  cursor: pointer;
+  text-decoration: none;
+}

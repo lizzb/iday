@@ -7,10 +7,12 @@ angular.module('idayIonic.controllers', [])
 
   $rootScope.all_companies = RecruitingCompanies.allCompanies();
 
-  $rootScope.booth_floorplan = RecruitingCompanies.getBoothLayoutSVG();
-
   //$rootScope.company_map = RecruitingCompanies.assignBooths();
   $rootScope.all_booths = RecruitingCompanies.allBooths();
+
+  $rootScope.booth_floorplan = RecruitingCompanies.getBoothLayoutSVG();
+
+  
 
   $rootScope.MAJORS = RecruitingCompanies.allMajors();
   $rootScope.POSITIONS = RecruitingCompanies.allPositions();
