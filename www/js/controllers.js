@@ -119,7 +119,7 @@ angular.module('idayIonic.controllers', [])
         if(tempName == $stateParams.companyURLId)
         {
           $scope.company = $rootScope.all_companies[i];
-
+          
           // should break so as not to go through rest of the companies
           // i believe the url routing will make sure that it doesn't
           // go to an invalid company details page.....?
