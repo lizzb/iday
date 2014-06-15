@@ -1,4 +1,6 @@
-
+  // friendlyName = The name to display in the interface
+  // name = the csv/json-safe name for filtering etc
+  
     var majors = [ 
       { friendlyName: 'Applied Math', name: 'am'},
       { friendlyName: 'Biomedical', name: 'bme'},

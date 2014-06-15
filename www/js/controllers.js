@@ -40,17 +40,38 @@ angular.module('idayIonic.controllers', [])
         
         var includedPositions= $rootScope.positionsIncluded;
         var includedMajors = $rootScope.majorsIncluded;
+
+        // if no filters at all selected automatically return all companies
         
         if(includedMajors.length <= 0 && includedPositions.length <= 0)
             return company;
         
+        // if nothing selected, assume all included
+        // for both majors and positions
+
+
+        // friendlyName = The name to display in the interface
+        // name = the csv/json-safe name for filtering etc
+        // e.g. MS/PhD value is set to msphd
+
         if(includedPositions.length <= 0)
-          includedPositions = ["fte","intern","coop","msphd"];
+        {
+          // this is only specific to the data that i developed with
+          //includedPositions = ["fte","intern","coop","msphd"];
+          for (var i = 0; i < POSITIONS.length; i++)
+            includedPositions[i] = POSITIONS[i].name;
+        }
             
         if(includedMajors.length <= 0)
-          includedMajors = ["am","bme","chem","civil","ce","cs","ee","enve","ie","made","matsci","mech","noneng"];
+        {
+          // this is only specific to the data that i developed with
+          //includedMajors = ["am","bme","chem","civil","ce","cs","ee","enve","ie","made","matsci","mech","noneng"];
+          for (var i = 0; i < MAJORS.length; i++)
+            includedMajors[i] = MAJORS[i].name;
+        }
         
         
+        // only show companies matching the users filter requirements
         for (var i = 0; i < includedPositions.length; i++)
         {
             // check if a position is true
@@ -131,6 +152,10 @@ angular.module('idayIonic.controllers', [])
    $scope.floorplan = $rootScope.booth_floorplan;
 
 
+   // cool trick i found for working around the fact that an svg g element cant be a link
+   // or osmething
+   //whatever helps make it so clicking on a booth rect in svg goes to the company details page
+   // in current implementation
    $scope.go = function ( path ) {
   $location.path( path );
   };
