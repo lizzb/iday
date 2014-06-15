@@ -1261,6 +1261,43 @@ var companies =  [
             "y": 866.0000305175781
         }
     ];
+
+
+
+/*
+
+this was a test - using just this subset of data works for only listing these companies and properly linking from map to detail san d back
+howeover still renders all other booths so... should fix that i guess idk
+
+var companies =  [
+{"booth":26,"nameId":"fenwal","name":"Fenwal Inc, a Fresenius-Kabi Company","am":null,"bme":1,"chem":null,"civil":null,"ce":1,"cs":1,"ee":null,"enve":null,"ie":null,"made":null,"matsci":null,"mech":1,"noneng":null,"msphd":null,"fte":1,"coop":1,"intern":1,"description":"Fenwal is a pioneer and global leader in the development of products that improve the safety and availability of blood. Our products help shape the practice of transfusion medicine, making life-saving blood therapies available to the medical professionals and patients worldwide who rely on them."},
+{"booth":20,"nameId":"carsdotcom","name":"Cars.com","am":null,"bme":null,"chem":null,"civil":null,"ce":1,"cs":1,"ee":null,"enve":null,"ie":null,"made":null,"matsci":null,"mech":null,"noneng":null,"msphd":null,"fte":null,"coop":null,"intern":1,"description":"Visited by more than 11 million car shoppers each month, Cars.com is the leading destination for online car shoppers, offering credible and easy-to-understand information from consumers and experts to help buyers formulate opinions on what to buy, where to buy and how much to pay for a car.\n With comprehensive pricing information, dealer reviews, side-by-side comparison tools, photo galleries, videos, unbiased editorial content and a large selection of new- and used-car inventory, Cars.com puts car buyers in control of their shopping process with the information they need to make confident buying decisions."},
+{"booth":12,"nameId":"bemis","name":"Bemis Company","am":null,"bme":1,"chem":1,"civil":null,"ce":null,"cs":null,"ee":1,"enve":null,"ie":null,"made":null,"matsci":1,"mech":1,"noneng":null,"msphd":null,"fte":1,"coop":1,"intern":null,"description":"Established in 1858 in St. Louis, Missouri, as a manufacturer of machine sewn cotton bags for milled food and grain products, Bemis has played an influential role in the packaging industry ever since its founding. Now a global supplier of flexible packaging and pressure sensitive label materials headquartered in Neenah, Wisconsin, Bemis serves customers worldwide and produces packaging for products found in virtually every aisle of the grocery store. "},
+{"booth":51,"nameId":"epic","name":"Epic","am":1,"bme":1,"chem":1,"civil":1,"ce":1,"cs":1,"ee":1,"enve":1,"ie":1,"made":1,"matsci":1,"mech":1,"noneng":1,"msphd":null,"fte":1,"coop":null,"intern":null,"description":"Epic makes software for mid-size and large medical groups, hospitals and integrated healthcare organizations _ working with customers that include community hospitals, academic facilities, children's organizations, safety net providers and multi-hospital systems. Our integrated software spans clinical, access and revenue functions and extends into the home."},
+{"booth":5,"nameId":"boeing","name":"Boeing Company","am":null,"bme":null,"chem":1,"civil":1,"ce":1,"cs":1,"ee":1,"enve":null,"ie":1,"made":1,"matsci":1,"mech":1,"noneng":1,"msphd":null,"fte":1,"coop":null,"intern":1,"description":"Boeing is the world's leading aerospace company and the largest manufacturer of commercial jetliners and military aircraft combined. Additionally, Boeing designs and manufactures rotorcraft, electronic and defense systems, missiles, satellites, launch vehicles and advanced information and communication systems. As a major service provider to NASA, Boeing is the prime contractor for the International Space Station. The company also provides numerous military and commercial airline support services. Boeing provides products and support services to customers in 150 countries and is one of the largest U.S. exporters in terms of sales."},
+{"booth":24,"nameId":"kiewit","name":"Kiewit","am":null,"bme":null,"chem":null,"civil":1,"ce":null,"cs":null,"ee":null,"enve":null,"ie":null,"made":null,"matsci":null,"mech":null,"noneng":null,"msphd":1,"fte":1,"coop":1,"intern":1,"description":"Excellence. It is the foundation of everything we do. What began in 1884 with two hardworking brothers has grown into a Fortune 500 construction, mining and engineering powerhouse.\n Kiewits ethical, forward-thinking workforce continues to build upon the companys reputation of safe, high-quality engineering. As an employee-owned company, Kiewits assets are managed by the people who know our work best. For us, business is personal. As our own stakeholders, we are invested in every project we take on. We continuously strive to build high-quality work at the lowest cost."},
+{"booth":15,"nameId":"alcatel-lucent","name":"Alcatel-Lucent","am":null,"bme":null,"chem":null,"civil":null,"ce":1,"cs":1,"ee":1,"enve":null,"ie":null,"made":null,"matsci":null,"mech":null,"noneng":null,"msphd":1,"fte":1,"coop":1,"intern":1,"description":"Alcatel-Lucent is at the forefront of global communications. We provide products and innovations in IP and cloud networking, as well as ultra-broadband fixed and wireless access. We serve service providers and their customers, as well as enterprises and institutions throughout the world. Alcatel-Lucent's Bell Labs, one of the worlds foremost technology research institutes, is responsible for countless breakthroughs that have shaped the networking and communications industry. "},
+{"booth":48,"nameId":"imc","name":"IMC Financial Markets","am":1,"bme":null,"chem":null,"civil":null,"ce":1,"cs":1,"ee":1,"enve":null,"ie":null,"made":null,"matsci":null,"mech":null,"noneng":null,"msphd":null,"fte":1,"coop":null,"intern":1,"description":"IMC financial markets is one of the worlds leading proprietary trading firms and a key market maker in various products listed on exchanges throughout the world.\n In general, our main strategies can be grouped into: Market Making or liquidity providing,  Algorithmic arbitrage,  Statistical arbitrage \n \n All of our strategies are proprietary and within IMC financial markets we do not have any external clients. All of our strategies have a short-term focus and are considered as ´high frequency trading. "},
+{"booth":9,"nameId":"cme-group","name":"CME Group","am":null,"bme":null,"chem":null,"civil":null,"ce":1,"cs":1,"ee":null,"enve":null,"ie":null,"made":null,"matsci":null,"mech":null,"noneng":null,"msphd":null,"fte":1,"coop":null,"intern":null,"description":"As the world's leading and most diverse derivatives marketplace, CME Group is where the world comes to manage risk. We offer the widest range of global benchmark products across all major asset classes. Helping businesses everywhere mitigate the myriad risks they face in todays uncertain global economy allows them to operate more effectively, create more jobs, and pass benefits on to consumers."},
+];
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
   
 
