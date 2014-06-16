@@ -55,7 +55,7 @@ this should be done with a parser but spending my time on other things
 
       // Assign companies to booths
       // loop assigns companies to booths for generating svg
-       for (var i = 0; i < companies.length; i++) {
+      /* for (var i = 0; i < companies.length; i++) {
           var currentCompanyBoothIdx = companies[i].booth - 1;
           // will create a property if it doesnt exist, i think
           booths[currentCompanyBoothIdx].compId = companies[i].nameId;
@@ -67,17 +67,11 @@ this should be done with a parser but spending my time on other things
           booths[currentCompanyBoothIdx].isActive = true;
         }
 
-      return booths;
+      return booths;*/
     },
 
     getBoothLayoutSVG: function() {
 
-      // should only map booths for companies actually in the list!
-
-
-        // assume booths have already been assigned
-        // ... actually do it just in case
-      
         // cIdx index of company in companies
         // bIdx index of booth in booths (contains booth info)
 
@@ -85,79 +79,59 @@ this should be done with a parser but spending my time on other things
         // first go through matching company ids to booth numbers
         //
       for (var cIdx = 0; cIdx < companies.length; cIdx++) {
-          //var currentCompanyBoothIdx = booths[cIdx].booth - 1;
-          //  var b = booths[currentCompanyBoothIdx];
 
-          // this assumes every company has a booth
-          // and lists are matched up in number.. i think
-          // ened to break if invalid #
+            // booth number associated with this company
+            // is not 0 indexed, ie starts at 1 for normal people
+            // so dont rely on position in arrays
+            var cBooth = companies[cIdx].booth; 
 
-          //var bIdx = booths[cIdx].booth - 1;
-          //var b = booths[cIdx].booth - 1; //booths[bIdx];
+            for (var bIdx = 0; bIdx < booths.length; bIdx++) {
 
-          var b = booths[companies[cIdx].booth - 1];
+              var b = booths[bIdx];
 
-          // assign company url id to booth for routing
-          b.compId = companies[cIdx].nameId;
+              // booth index not necessarily equal to booth number
 
-          // also assign booth properties to the company object
-          // for filtering //... also just in case
-          companies[cIdx].Room =  b.Room;
-          companies[cIdx].Floor =  b.Floor;
-        
+              if(b.booth == cBooth)
+              {
 
-          // now drawing the map 
-          // should only draw booths for companies actulaly there, ya?
-          // so even if booth list has more in it
-          // wont draw it all
-          //... it hink
+                // assign company url id to booth for url routing/links
+                b.compId = companies[cIdx].nameId;
+
+                // also assign booth properties to the company object
+                // for filtering //... also just in case
+                companies[cIdx].Room =  b.Room;
+                companies[cIdx].Floor =  b.Floor;
 
 
-          var svgBoothId = "booth"+booths[i].booth;
-          //console.log(currentBoothId);
-
-          // this is soooo inefficient just trying stuff
-          for (var j = 0; j < boothLayoutSVG.length; j++) {
-              if (boothLayoutSVG[j].id == currentBoothId) {
-
-          // will create a property if it doesnt exist, i think
-          boothLayoutSVG[j].compId = booths[i].compId;
-          boothLayoutSVG[j].room = booths[i].Room;
-          boothLayoutSVG[j].floor = booths[i].Floor;
+                // now that weve linked company info to booth info
+                // and vice versa
+                // next ---> link booth + comp info to svg map
+                // i'm sure i'm overusing info here but whatevs
 
 
+                // id in html xml svg etc has to start with a letter not number
+                var svgBoothId = "booth"+cBooth;
 
 
-        }
-    
+          for (var svgIdx = 0; svgIdx < boothLayoutSVG.length; svgIdx++) {
+              if (boothLayoutSVG[svgIdx].id == svgBoothId) {
 
-
-      /*for (var i = 0; i < booths.length; i++) {
-          var currentBoothId = "booth"+booths[i].booth;
-          //console.log(currentBoothId);
-
-          // this is soooo inefficient just trying stuff
-          for (var j = 0; j < boothLayoutSVG.length; j++) {
-              if (boothLayoutSVG[j].id == currentBoothId) {
-
-          // will create a property if it doesnt exist, i think
-          boothLayoutSVG[j].compId = booths[i].compId;
-          boothLayoutSVG[j].room = booths[i].Room;
-          boothLayoutSVG[j].floor = booths[i].Floor;
-
-              }*/
-// need some conditional about how to display it
-          // based on if it is still an active company?
-          // this should be done elsewhere
-          // ehre in factory assume all active
-          boothLayoutSVG[j].isActive = true;
+                  // will create a property if it doesnt exist, i think
+                  boothLayoutSVG[svgIdx].compId = b.compId;
+                  boothLayoutSVG[svgIdx].room = b.Room;
+                  boothLayoutSVG[svgIdx].floor = b.Floor;
+                  boothLayoutSVG[svgIdx].isActive = true;
+              }
           }
 
-          
 
-          
-        }
 
+          }
+
+          } // for var bIdx
+          } // for var cIdx
+
+          // still draws empty things
       return boothLayoutSVG;
     },
 
