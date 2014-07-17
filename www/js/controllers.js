@@ -17,8 +17,8 @@ angular.module('idayIonic.controllers', [])
   $rootScope.MAJORS = RecruitingCompanies.allMajors();
   $rootScope.POSITIONS = RecruitingCompanies.allPositions();
  
-  $rootScope.majorsIncluded = [];
-  $rootScope.positionsIncluded = [];
+  $rootScope.majorsIncluded = []; // 'cs'
+  $rootScope.positionsIncluded = []; //coop
 
 
     $rootScope.includeMajor = function (m) {
@@ -99,6 +99,8 @@ angular.module('idayIonic.controllers', [])
   
   $scope.companies = $rootScope.all_companies;
 
+  //$rootScope.userFilter
+
 })
 
 
@@ -150,6 +152,47 @@ angular.module('idayIonic.controllers', [])
    $scope.companies = $rootScope.all_companies;
 
    $scope.floorplan = $rootScope.booth_floorplan;
+
+   // Find min and max coordinates to determine appropriate 
+   // map size and ....
+   // set these in loop
+   // dont set to 0! what if that is smaller than min or larger than max
+   var xMin = 0; // $scope.floorplan[0];
+   var xMax = 0; // $scope.floorplan[0];
+   var yMin = 0; // $scope.floorplan[0];
+   var yMax = 0; // $scope.floorplan[0];
+
+   // if floorplan list isnt intialized for some reason
+   // if (scope.floorplan.length <= 0)
+   // then dont loop through 
+   // deal with this properly.... TODO
+
+   // i could probaly make a variable in javascript thats not 
+   // in scope cuz these dont need to pass... i dotn think... actually idk
+   $scope.xMin = $scope.floorplan[0];
+   $scope.xMax = $scope.floorplan[0];
+   $scope.yMin = $scope.floorplan[0];
+   $scope.yMax = $scope.floorplan[0];
+
+
+   for (var i = 0; i < $scope.floorplan.length; i++)
+   {
+   	var boothPos = $scope.floorplan[i];
+   	if (boothPos.x < xMin) xMin = boothPos.x;
+   	if (boothPos.x > xMax) xMax = boothPos.x;
+   	if (boothPos.y < yMin) yMin = boothPos.y;
+   	if (boothPos.y > yMax) yMax = boothPos.y;
+  
+   }
+
+   $scope.mapWidth = xMax - xMin;
+   $scope.mapHeight = yMax - yMin;
+
+   // top left corner coordinates to start map and position viewport
+   $scope.startX = xMin;
+   $scope.startY = yMin;
+
+
 
 
    // cool trick i found for working around the fact that an svg g element cant be a link
