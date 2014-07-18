@@ -26,7 +26,7 @@
         <div ng-repeat="c in filteredList = (companies |  filter:searchText | orderBy:sortType:asc)">
 
           <a href="#/app/companies/{{c.nameId}}" class="item item-avatar">
-          <img ng-src="./img/logos/{{c.nameId}}/{{c.nameId}}-square.png" /> 
+          <img ng-src="./img/logos/{{c.nameId}}/square.png" /> 
         <h2>{{c.name}}</h2>
 
         <p>Back off, man. I'm a scientist.</p>
