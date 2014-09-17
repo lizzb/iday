@@ -145,8 +145,8 @@ angular.module('idayIonic.controllers', [])
    
    // $scope.companies = $rootScope.all_companies;
 
-   $scope.boothWidth = 80;
-   $scope.boothHeight = 40;
+   $scope.boothWidth = 60; //80;
+   $scope.boothHeight = 60; //40;
 
    $scope.booths = $rootScope.all_booths;
    $scope.companies = $rootScope.all_companies;
@@ -169,10 +169,15 @@ angular.module('idayIonic.controllers', [])
 
    // i could probaly make a variable in javascript thats not 
    // in scope cuz these dont need to pass... i dotn think... actually idk
-   $scope.xMin = $scope.floorplan[0];
-   $scope.xMax = $scope.floorplan[0];
-   $scope.yMin = $scope.floorplan[0];
-   $scope.yMax = $scope.floorplan[0];
+
+
+   if($scope.companies.length > 0)
+   {
+   $scope.xMin = $scope.floorplan[0].x;
+   $scope.xMax = $scope.floorplan[0].x;
+   $scope.yMin = $scope.floorplan[0].y;
+   $scope.yMax = $scope.floorplan[0].y;
+ }
 
 
    for (var i = 0; i < $scope.floorplan.length; i++)
@@ -184,14 +189,22 @@ angular.module('idayIonic.controllers', [])
    	if (boothPos.y > yMax) yMax = boothPos.y;
   
    }
-
+/*
    $scope.mapWidth = xMax - xMin;
    $scope.mapHeight = yMax - yMin;
 
    // top left corner coordinates to start map and position viewport
    $scope.startX = xMin;
    $scope.startY = yMin;
+*/
 
+$scope.mapWidth = xMax - xMin + $scope.boothWidth;
+   $scope.mapHeight = yMax - yMin + $scope.boothHeight;
+
+   $scope.startX = xMin;
+   $scope.startY = yMin;
+
+   // viewBox="{{startX}} {{startY}} {{mapWidth+100}} {{mapHeight+100}} "
 
 
 
