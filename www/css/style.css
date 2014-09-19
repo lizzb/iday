@@ -1,5 +1,99 @@
-/* Empty. Add your own CSS if you like */
 
+/* Styles go here */
+/*
+body {
+  cursor: url('http://ionicframework.com/img/finger.png'), auto;
+}*/
+
+.favorite {
+  color: dodgerblue;
+  font-size: x-large;
+  font-weight: strong;
+}
+
+.boothNumId, .boothCompId {
+   text-anchor: middle;
+  alignment-baseline: middle;
+}
+
+ /* room outline */  
+.roomOutline, .room {
+  fill: #efefef;
+  stroke-width: 2;
+  stroke: black;
+}
+
+
+img.list-logo {
+  width: 40px;
+  top: 5px;
+  position: absolute;
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+ .booth {
+    fill:#b8ecff;
+    stroke-width:2;
+    stroke:rgb(0,0,0);
+  }
+  .boothlabel {
+    text-anchor: "middle";
+    alignment-baseline: "middle";
+  }
+  
+  .boothId {font-size: 11px;}
+  .compId {font-size: 14px;}
+  
+  .bNum {
+    font-size: 14px;
+    text-anchor: middle;
+    alignment-baseline: middle;
+    
+  }
+        
+     
+
+.pillar {
+  fill: none;
+  stroke-width: 2;
+  stroke: black;
+}
+
+
+.roomTitle {
+  font-weight: bold;
+  font-family: Georgia;
+  font-size  : 52;
+ stroke     : #000000;
+ fill       : #000000;
+}
+
+/* http://jsbin.com/pulaw/4/edit*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Empty. Add your own CSS if you like 
+old css.....
 .svg-container {
       display: inline-block;
       position: relative;
@@ -33,3 +127,5 @@
   cursor: pointer;
   text-decoration: none;
 }
+
+*/
