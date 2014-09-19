@@ -64,9 +64,9 @@ img.list-logo {
 .roomTitle {
   font-weight: bold;
   font-family: Georgia;
-  font-size  : 52;
- stroke     : #000000;
- fill       : #000000;
+  font-size  : 40pt;
+  /*stroke : #000000;
+  fill: #000000;*/
 }
 
 /* http://jsbin.com/pulaw/4/edit*/

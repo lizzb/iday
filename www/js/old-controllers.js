@@ -1,6 +1,6 @@
-angular.module('idayIonic.controllers', [])
+//angular.module('idayIonic.controllers', [])
 
-.controller('AppCtrl', function($scope, $rootScope, RecruitingCompanies) {
+app.controller('AppCtrl', function($scope, $rootScope, RecruitingCompanies) {
   
   // hacky, using global variables/rootscope
   // one of these days need to really understand scope and such...
@@ -95,7 +95,7 @@ angular.module('idayIonic.controllers', [])
 //
 //
 //
-.controller('CompanyListCtrl', function($scope, $rootScope) {
+app.controller('CompanyListCtrl', function($scope, $rootScope) {
   
   $scope.companies = $rootScope.all_companies;
 
@@ -108,7 +108,7 @@ angular.module('idayIonic.controllers', [])
 //
 //
 //
-.controller('CompanyCtrl', function($scope, $stateParams, $rootScope) {
+app.controller('CompanyCtrl', function($scope, $stateParams, $rootScope) {
 
     $scope.company = "";
 
@@ -141,7 +141,7 @@ angular.module('idayIonic.controllers', [])
 //
 //
 //
-.controller('CompanyMapCtrl', function($scope, /*$stateParams,*/ $rootScope, $location) {
+app.controller('CompanyMapCtrl', function($scope, /*$stateParams,*/ $rootScope, $location) {
    
    // $scope.companies = $rootScope.all_companies;
 

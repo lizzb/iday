@@ -1,4 +1,4 @@
-angular.module('idayIonic.services', [])
+//angular.module('idayIonic.services', [])
 
 /**
  * A simple example service that returns some data.
@@ -17,7 +17,7 @@ ie. adding escapes for quotes, removing line breaks, etc.
 this should be done with a parser but spending my time on other things
 */
 
-.factory('RecruitingCompanies', function() {
+app.factory('RecruitingCompanies', function() {
 
   // friendlyName = The name to display in the interface
   // name = the csv/json-safe name for filtering etc

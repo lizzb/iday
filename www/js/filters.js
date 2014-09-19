@@ -1,4 +1,4 @@
-angular.module('idayIonic.filters', [])
+//angular.module('idayIonic.filters', [])
 
 
 
@@ -6,7 +6,7 @@ angular.module('idayIonic.filters', [])
 // is the data that is to be filtered, and the second is
 // an argument that may be passed with a colon
 // (searchFor:searchString)
-.filter('instantNameSearch', function(){
+app.filter('instantNameSearch', function(){
 
 	return function(list, searchString){
 
@@ -28,20 +28,20 @@ angular.module('idayIonic.filters', [])
 		return result;
 	};
 
-})//; //;
+});//; //;
 
 
 
-.filter('checkmark', function() {
+app.filter('checkmark', function() {
   return function(input) {
     // check symbol if true, x if false
     return input ? '\u2713' : '\u2718';
   };
-})//;
+});//;
 
 
 
-.directive('ngXlinkHref', function () {
+app.directive('ngXlinkHref', function () {
   return {
     priority: 99,
     restrict: 'A',

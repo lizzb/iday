@@ -1,10 +1,8 @@
 //angular.module('idayIonic', ['ionic', 'idayIonic.controllers', 'idayIonic.services', 'idayIonic.filters'])
 
-//var app = 
-angular.module('ionicApp', ['ionic'])
+var app = angular.module('ionicApp', ['ionic'])
 
-//app
-.config(function($stateProvider, $urlRouterProvider) {
+app.config(function($stateProvider, $urlRouterProvider) {
 
   $stateProvider
     .state('sidemenu', {
