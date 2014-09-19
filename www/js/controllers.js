@@ -14,18 +14,9 @@ app.controller('MainCtrl', function($scope, $ionicSideMenuDelegate, AttendeesSer
 
   //$scope.floorplan = CareerFairService.getBooths(); //getBoothLayout();
   
-  
-  $scope.majors = [
-    {name: "cs", friendlyName: "Computer Science"},
-    {name: "ee", friendlyName: "Electrical Engineering"},
-    {name: "am", friendlyName: "Applied Math"} 
-    ];
-    
-    $scope.positions = [
-    {name: "fte", friendlyName: "Full Time"},
-    {name: "int", friendlyName: "Intern"},
-    {name: "coop", friendlyName: "Co-op"} 
-    ];
+  // pull from data.js
+  $scope.majors = majors_list;
+  $scope.positions = positions_list;
  
  
  $scope.companies = CareerFairService.getCompanies();
