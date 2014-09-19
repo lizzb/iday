@@ -1,124 +1,103 @@
-<ion-view title="Booth Layout">
-  <ion-nav-buttons side="left">
-    <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
-  </ion-nav-buttons>
-  <ion-content> <!--class="has-header"-->
-    <!-- style="background-color: #eee" preserveAspectRatio="xMinYMin meet" viewBox="0 0 400 400" width="100%" height="100%" class="svg-content" transform="translate(200,200)"preserveAspectRatio="xMinYMin meet"-->
-
-<ion-scroll zooming="true" direction="xy" style="width: 100%; height: 1500px">
-
-
-<style>
-
-img.list-logo {
-  width: 40px;
-  top: 5px;
-  position: absolute;
-  display: inline-block;
-  vertical-align: baseline;
-}
-
- .booth {
-    fill:#b8ecff;
-    stroke-width:2;
-    stroke:rgb(0,0,0);
-  }
-  .boothlabel {
-    text-anchor: "middle";
-    alignment-baseline: "middle";
-  }
-  
-  .boothId {font-size: 11px;}
-  .compId {font-size: 14px;}
-  
-  .bNum {
-    font-size: 14px;
-    text-anchor: middle;
-    alignment-baseline: middle;
+<ion-view title="Company Booth Layout"> <!-- Floorplan-->
+  <ion-content>
     
-  }
-        
-        
-.room {
-  fill: none;
-  stroke-width: 2;
-  stroke: black;
-}
+    <ion-scroll zooming="true" direction="xy" style="width: 100%;">
 
-.pillar {
-  fill: none;
-  stroke-width: 2;
-  stroke: black;
-}
+<svg xmlns="http://www.w3.org/2000/svg" 
+xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" 
+preserveAspectRatio="xMinYMin meet" 
+viewBox="{{startX - 20}} {{startY - 200}} {{mapWidth + 200}} {{mapHeight + 20}}"
+>
 
-</style>
+<g id="ballroom">
+<title> Hilton Orrington Grand Ballroom </title>
+  <text x="535"  y="-100" class="roomTitle"> Grand Ballroom </text>
+  <g transform="translate(215, 850)" \>
+<g transform="rotate(30,0,0)">
+    <text class="bNum" x="30" y="30"> Entrance </text>
+  </g>
+</g>
+  <path class="roomOutline"  
+        d="
+        M 200,10
+        l 1040,0
+        l 0,900
+        l -855,0
+        l -72, -35
+        l -48, 100
+        l -135, -75
+        l 65, -105
+        l 0,-785
+        z" />
+  <!-- not exactly sure what this square is, on map from tech expo was a yellow box -->
+   <g transform="translate(460, 660)">
+    <rect class="pillar" x="0" y="0" width="60" height="60"></rect>
+    <text class="bNum" x="30" y="30"> Pillar </text>
+  </g>
+</g><!--/#ballroom -->
 
 
-<!--figure class="svg-container ng-scope" style="height="100%"-->
+<g id="heritage" transform="translate(250, 1200)">
+  <title> Hilton Orrington Heritage Room </title>
+  <text x="235"  y="-100" class="roomTitle"> Heritage Room </text>
+  <g transform="translate(635, 575)" \>
+    <text class="bNum" x="30" y="30"> Entrance </text>
+  </g>
+  <path class="roomOutline"
+        d="
+        M 0,0
+        l 865,0
+        l 0,595
+        l -140,0
+        l 0,25
+        l-120,0
+        l 0,-25
+        l -605, 0
+        z" />
+</g><!--/#heritage -->
 
-<svg xmlns="http://www.w3.org/2000/svg"
-xmlns:xlink="http://www.w3.org/1999/xlink"
-version="1.1" class="svg-content"
-preserveAspectRatio="xMinYMin meet"
-viewBox="-100 150 1500 1500" >
-<!--
-viewBox="{{startX - 20}} {{startY - 20}} {{mapWidth + 20}} {{mapHeight + 20}}"
 
-
-viewBox="-100 150 1500 1500" >
-script xlink:href="../js/SVGPan.js"/-->
-  <!--style>
-  .booth {
-    fill:#b8ecff;
-    stroke-width:2;
-    stroke:rgb(0,0,0);
-  }
-  .boothlabel {
-    text-anchor: "middle";
-    alignment-baseline: "middle";
-  }
-</style-->
-
-<g id="viewport">
-        
-    <g ng-repeat="b in floorplan">
-
-        <rect class="booth" 
-              ng-attr-id="{{b.compId}}"
-              ng-click="go('/app/companies/{{b.compId}}')"
-              ng-attr-x="{{b.x}}"
-              ng-attr-y="{{b.y}}"
-              ng-attr-width="{{boothWidth}}"
-              ng-attr-height="{{boothHeight}}"
-              />
-
-              <image class="compLogo" 
-             ng-attr-x="{{b.x + 2}}"
-             ng-attr-y="{{b.y + 2}}"
+<g>
+    <g ng-repeat="b in booths" ng-click="go('iday/companies/{{b.compId}}')">
+    <g transform="translate({{b.x}}, {{b.y}})">
+    <g transform="rotate({{b.rotate}},0,0)">
+        <rect class="booth" ng-attr-id="{{b.compId}}"
+              x="0" y="0"
+              width="{{bWidth}}" height="{{bHeight}}"/>
+              
+      <image class="compLogo" 
+             x="2" y="2"
              width="20" height="20"
              ng-xlink-href="http://lizzb.github.io/iday/www/img/logos/{{b.compId}}/square.png" 
              xlink:href="" />
 
-          <text class="boothlabel"
-            ng-attr-x="{{ b.x + boothWidth/2 }}"
-            ng-attr-y="{{ b.y + boothHeight/2 }}"
-            text-anchor="middle"
-            alignment-baseline="middle">
-          {{b.compId}}        
+          <text class="boothlabel boothId boothCompId"
+            x="{{ bWidth/2 }}"
+            y="{{ bHeight*3/4 }}">
+            {{b.compId}}        
           </text>
-          <!--text class="boothlabel compId"
-            ng-attr-x="{{ b.x + boothWidth/2 }}"
-            ng-attr-y="{{ b.y + boothHeight/2 }}   {{ b.y + boothHeight*3/4 }}""
-            text-anchor="middle"
-            alignment-baseline="middle">
-            {{b.id}}        
-          </text-->
-    </g>
+          <text class="boothlabel compId boothNumId"
+            ng-attr-x="{{bWidth/2 }}"
+            ng-attr-y="{{bHeight/2 }}">
+            {{b.bNum}}        
+          </text>
+          
+      </g><!--/ transform - rotate -->    
+          
+    </g><!--/ transform - x y coordinates -->
 
-
+</g> <!--/ b in booths -->
   </g>
+  
+
+  
+  
+  
+  
+  
 </svg>
-<!--/figure-->
-</ion-scroll>
-  <!--/ion-content-->
-</ion-view>
+<!--  ng-click="go('/companies/{{b.compId}}')" in rect doesnt work -->
+
+    </ion-scroll>
+    </ion-content>
+    </ion-view>
