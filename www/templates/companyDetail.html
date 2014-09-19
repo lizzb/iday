@@ -1,0 +1,76 @@
+<ion-view title="{{company.name}}" left-buttons="leftButtons">
+  <ion-content>
+  
+        <img class="full-image item" ng-src="http://lizzb.github.io/iday/www/img/logos/{{company.id}}/wide.png" />
+
+    {{ company | json }}
+
+
+    <!--Un-star this company (label 0 or exists)"
+instead of boolean 0 1 its 0 "label that exists to prompt un-starring" -->
+
+    <ion-toggle class="item item-icon-left" ng-model="company.starred" ng-true-value="Un-star" toggle-class="toggle-calm">
+      <i class="icon royal" ng-class="company.starred ? 'ion-ios7-star' : 'ion-ios7-star-outline'"></i>
+      <span>{{company.name}}</span>
+      <span class="item-note"> {{company.starred}}</span>
+    </ion-toggle>
+    <a class="item item-icon-right positive" href="#/iday/map/{{company.id}}">
+      <i class="icon ion-navigate"></i>
+      Booth # {{company.booth}}: {{company.room}} (Floor {{company.floor}})
+      <!-- {{company.room}} Room, (Floor {{company.floor}}), Booth # {{company.booth}} -->
+    </a>
+    
+    <!-- TODO: if none (majors or positions), then output to user (none) or soemthing -->
+
+    
+        <!--h3> Positions </h3-->
+        <span ng-repeat="p in positions">
+         {{company[p.name] | checkmark }} {{p.friendlyName}} &nbsp;&nbsp; </span>
+
+    <li ng-repeat="i in industries">{{i.name}} | {{i.friendlyName}}</li>
+    <li ng-repeat="m in majors">{{m.name}} | {{m.friendlyName}}</li>
+    <li ng-repeat="p in positions">{{p.name}} | {{p.friendlyName}}</li>
+  </ion-content>
+</ion-view>
+
+
+
+<!--ion-view title="{{company.name}}  | Details">
+  <ion-content>
+
+    <div class="list card">
+      <img class="full-image item" ng-src="http://lizzb.github.io/iday/www/img/logos/{{company.compId}}/wide.png" />
+
+
+      <div class="item item-body">
+        <!--script>console.log("p: ", p); {{company[p.name] | checkmark }} {{p.toString() | friendlyName}} &nbsp;&nbsp;</scrip->
+
+        <h3> Positions </h3>
+        <span ng-repeat="p in positions">
+         {{company[p.name] | checkmark }} {{p.friendlyName}} &nbsp;&nbsp;
+          <!-- also works?  {{company[p.name] | checkmark }} {{p.name | friendlyName}} &nbsp;&nbsp; -->
+          <!--{{company[p.name] | checkmark }} {{p.name | friendlyName}} &nbsp;&nbsp; -->
+          <!--script>alert(p.name);</script--
+          
+        </span>
+
+
+        <h3> Majors </h3>
+        <li ng-repeat="m in majors" ng-show="company[m.name]">{{m.friendlyName}}</li>
+        <br>
+
+        <h3> Description </h3>
+        <p>{{company.description}}</p>
+      </div>
+
+      <label class="item item-input">
+        <span class="input-label">Edit Name</span>
+        <input type="text" ng-model="company.name">
+      </label>
+
+
+    </div>
+
+  </ion-content>
+</ion-view>
+-->
