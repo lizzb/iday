@@ -1,3 +1,77 @@
+//angular.module('idayIonic', ['ionic', 'idayIonic.controllers', 'idayIonic.services', 'idayIonic.filters'])
+
+//var app = 
+angular.module('ionicApp', ['ionic'])
+
+//app
+.config(function($stateProvider, $urlRouterProvider) {
+
+  $stateProvider
+    .state('sidemenu', {
+      url: "/iday",
+      abstract: true,
+      templateUrl: "templates/sidemenu.html",
+    })
+    .state('sidemenu.home', {
+      url: "/home",
+      views: { 'menuContent' :{ templateUrl: "templates/home.html" } }
+    })
+    .state('sidemenu.checkin', {
+      url: "/check-in",
+      views: { 'menuContent' :{ templateUrl: "templates/check-in.html", controller: "CheckinCtrl" } }
+    })
+    .state('sidemenu.attendees', {
+      url: "/attendees",
+      views: { 'menuContent' :{ templateUrl: "templates/attendees.html", controller: "AttendeesCtrl" } },
+      resolve: {  attendees:function(AttendeesService) { return AttendeesService.getAttendees(); }  }
+    })
+    .state('sidemenu.activity', {
+      url: "/activity",
+      views: { 'menuContent' :{ templateUrl: "templates/attendee-activity.html", controller: "AttendeeActivityCtrl" }  }
+    })
+    
+    
+    
+
+    
+    .state('sidemenu.settings', {
+      url: "/settings",
+      views: { 'menuContent' :{ templateUrl: "templates/settings.html", controller: "FilterSettingsCtrl" } }
+    })
+    
+    .state('sidemenu.companies', {
+      url: "/companies",
+      views: { 'menuContent' :{ templateUrl: "templates/company-list.html", controller: "CompanyListCtrl" } }
+    })
+    
+    .state('sidemenu.company', {
+      url: "/companies/:companyId",
+      resolve: { company: function($stateParams, CareerFairService) { return CareerFairService.getCompany($stateParams.companyId); }  },
+      views: { 'menuContent' :{ templateUrl: "templates/company-detail.html", controller: "CompanyDetailCtrl" } }
+    })
+    
+    .state('sidemenu.map', {
+      url: "/map",
+      views: { 'menuContent' :{ templateUrl: "templates/map.html", controller: "CompanyMapCtrl" } }
+    })
+    
+    // sidemenu.map.company'
+    .state('sidemenu.booth', {
+      url: "/map/:companyId",
+      views: { 'menuContent' :{ templateUrl: "templates/map.html", controller: "CompanyMapCtrl" } }
+    })
+    
+    
+    
+  
+  // Fall back on this URL otherwise
+  $urlRouterProvider.otherwise("/iday/companies");
+});
+
+
+
+
+
 // Ionic Starter App - Side Menu
 
 // angular.module is a global place
@@ -6,7 +80,7 @@
 // (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-
+/*
 angular.module('idayIonic', ['ionic', 'idayIonic.controllers', 'idayIonic.services', 'idayIonic.filters'])
 
 .run(function($ionicPlatform) {
@@ -99,4 +173,5 @@ angular.module('idayIonic', ['ionic', 'idayIonic.controllers', 'idayIonic.servic
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/companies');
 });
+*/
 
