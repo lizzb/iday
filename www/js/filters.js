@@ -1,8 +1,69 @@
 angular.module('idayIonic.filters', [])
 
+
+
+// All filters must return a function. The first parameter
+// is the data that is to be filtered, and the second is
+// an argument that may be passed with a colon
+// (searchFor:searchString)
+.filter('instantNameSearch', function(){
+
+	return function(list, searchString){
+
+		if(!searchString){ return list; }
+		var result = [];
+		searchString = searchString.toLowerCase();
+
+		// Using the forEach helper method to loop through the array
+		angular.forEach(list, function(item){
+		
+    // only searches the name, not the description!!
+    // make sure to change the property of what you're searching here....
+    if(item.name.toLowerCase().indexOf(searchString) !== -1){
+				result.push(item);
+			}
+
+		});
+
+		return result;
+	};
+
+})//; //;
+
+
+
+.filter('checkmark', function() {
+  return function(input) {
+    // check symbol if true, x if false
+    return input ? '\u2713' : '\u2718';
+  };
+})//;
+
+
+
+.directive('ngXlinkHref', function () {
+  return {
+    priority: 99,
+    restrict: 'A',
+    link: function (scope, element, attr) {
+      var attrName = 'xlink:href';
+      attr.$observe('ngXlinkHref', function (value) {
+        if (!value)
+          return;
+
+        attr.$set(attrName, value);
+      });
+    }
+  };
+});
+
+
+
+
+
 //'use strict';
 
-/* Filters */
+/* Filters 
 
 // Define a new module for our app. 
 // The array holds the names of dependencies if any.
@@ -21,4 +82,4 @@ angular.module('idayIonic.filters', [])
   return function(input) {
     return input ? '\u2713' : '\u2718';
   };
-});
+});*/
