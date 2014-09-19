@@ -1,41 +1,54 @@
-<ion-view title="Recruiting Companies">
+<!--ion-view title="Recruiting Companies">
   <ion-nav-buttons side="left">
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
-  </ion-nav-buttons>
+  </ion-nav-buttons-->
 
-  <!-- hrm, header shrink isnt working... -->
-  <ion-content class="has-header" header-shrink scroll-event-interval="5">
+  <ion-view title="Recruiting Companies" left-buttons="leftButtons">
 
-          <label class="item item-input">
-            <i class="icon ion-search placeholder-icon"></i>
-            <input type="text" ng-model="searchText" />
-          </label>
+  <ion-header-bar class="bar-subheader item-input-inset">
+  
+  <!--button class="button button-clear filter-button"> Filter Cancel </button-->
 
-          Sort by: 
-          <button class="button button-small button-positive button-outline icon ion-arrow-swap" ng-click="sortType='name'; asc=!asc"> Name </button>
+<button class="button button-small button-positive button-outline icon"
+        ng-click="sortProp='name'; asc=!asc"> 
+  <i class="fa fa-lg" ng-class="(sortProp=='name' && asc) ? 'fa-sort-alpha-desc' : 'fa-sort-alpha-asc'"></i>
+  Name 
+</button>
 
-          <button class="button button-small button-calm button-outline icon ion-arrow-swap" ng-click="sortType='booth'; asc=!asc"> Booth </button>
+<button class="button button-small button-calm button-outline icon" ng-click="sortProp='booth'; asc=!asc">
+  <i class="fa fa-lg" ng-class="(sortProp=='booth' && asc) ? 'fa-sort-numeric-desc' : 'fa-sort-numeric-asc'"></i>
+  Booth
+</button>
+&nbsp;&nbsp;&nbsp; <!-- hacky padding -->
+    <label class="item-input-wrapper">
+      <i class="icon ion-ios7-search placeholder-icon"></i>
+      <input type="search" placeholder="Search names..." ng-model="searchString" ng-change="scrollTop()">
+    </label>
 
+    <button ng-if="searchString.length"
+            class="button button-small button-icon ion-android-close input-button"
+            ng-click="clearSearch()"> </button>
+  </ion-header-bar>
 
+        <ion-content>
+          <ion-list>
+            <div ng-repeat="c in companies | instantNameSearch:searchString | orderBy:sortProp:asc"> <!-- ui-sref="tabs.companies.detail({companyNameId: c.compId})" -->
+            <a href="#/iday/companies/{{c.id}}"  class="item item-avatar item-icon-right"><!-- item-icon-right -->
+            <img src="http://placehold.it/60x60" ng-src="http://lizzb.github.io/iday/www/img/logos/{{c.id}}/square.png" />
+              
+             {{ c.name }}  <!-- <h2> <i></i> {{ c.name }}</h2> h2 makes it harder to fit on one line-->
+             <i class="icon favorite" ng-class="c.starred ? 'ion-ios7-star' : 'ion-ios7-star-outline'"></i>
 
+             <p>{{ c.room }}</p> <!-- {{ c.id }} -->
+             <!--i class="icon ion-ios7-arrow-right royal"></i-->
+            </a>
+            </div>
 
+ 
+          </ion-list>
+        </ion-content>
+      </ion-view>
 
-        <div class="ionic list">
-
-        <!-- can i assign the filter here? -->
-        <div ng-repeat="c in filteredList = (companies |  filter:searchText | orderBy:sortType:asc)">
-
-          <a href="#/app/companies/{{c.nameId}}" class="item item-avatar">
-          <img ng-src="./img/logos/{{c.nameId}}/square.png" /> 
-        <h2>{{c.name}}</h2>
-
-        <p>Back off, man. I'm a scientist.</p>
-        </a>
-
-      </div>
-
-
-    </div>
 
     <!--
     <ion-list>
@@ -49,5 +62,18 @@
     </ion-list>
     -->
 
-  </ion-content>
-</ion-view>
+
+
+<!-- notes to return to:
+
+hrm, header shrink isnt working...
+header-shrink scroll-event-interval="5"
+
+
+<div class="ionic list">
+
+        !-- can i assign the filter here? --
+        <div ng-repeat="c in filteredList = (companies |  filter:searchText | orderBy:sortType:asc)">
+
+
+-->
