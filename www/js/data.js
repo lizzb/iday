@@ -24,6 +24,14 @@ var positions_list = [
   { friendlyName: 'MS/PhD', name: 'msphd'}
 ];
 
+
+var industries_list = [ 
+  { friendlyName: 'Full Time', name: 'fte'},
+  { friendlyName: 'Intern', name: 'intern' },
+  { friendlyName: 'Co-Op', name: 'coop' },
+  { friendlyName: 'MS/PhD', name: 'msphd'}
+];
+
 var company_grid = [
   {id: '3m', name: "3M", starred: false, booth: 3  },
   {id: 'epic', name: "Epic", starred: false,  booth: 6  },
@@ -133,7 +141,7 @@ var booth_info = [
 
 
 
-var companies =  [
+var company_list = [ //companies =  [
 {"booth":1,"id":"fenwal","name":"Fenwal Inc, a Fresenius-Kabi Company","am":null,"bme":1,"chem":null,"civil":null,"ce":1,"cs":1,"ee":null,"enve":null,"ie":null,"made":null,"matsci":null,"mech":1,"noneng":null,"msphd":null,"fte":1,"coop":1,"intern":1,"description":"Fenwal is a pioneer and global leader in the development of products that improve the safety and availability of blood. Our products help shape the practice of transfusion medicine, making life-saving blood therapies available to the medical professionals and patients worldwide who rely on them."},
 {"booth":2,"id":"carsdotcom","name":"Cars.com","am":null,"bme":null,"chem":null,"civil":null,"ce":1,"cs":1,"ee":null,"enve":null,"ie":null,"made":null,"matsci":null,"mech":null,"noneng":null,"msphd":null,"fte":null,"coop":null,"intern":1,"description":"Visited by more than 11 million car shoppers each month, Cars.com is the leading destination for online car shoppers, offering credible and easy-to-understand information from consumers and experts to help buyers formulate opinions on what to buy, where to buy and how much to pay for a car.\n With comprehensive pricing information, dealer reviews, side-by-side comparison tools, photo galleries, videos, unbiased editorial content and a large selection of new- and used-car inventory, Cars.com puts car buyers in control of their shopping process with the information they need to make confident buying decisions."},
 {"booth":3,"id":"fti","name":"FTI Consulting","am":null,"bme":null,"chem":null,"civil":null,"ce":null,"cs":null,"ee":null,"enve":null,"ie":null,"made":null,"matsci":null,"mech":null,"noneng":null,"msphd":null,"fte":1,"coop":null,"intern":1,"description":"Global organizations increasingly face complex challenges created by unpredictable financial markets, ever-changing governmental regulation and increasing global interdependencies. The enterprise value of each organization depends on how well these threats or opportunities are handled. But few have the capability or objective to manage them internally."},

@@ -30,6 +30,85 @@ app.controller('MainCtrl', function($scope, $ionicSideMenuDelegate, AttendeesSer
   //for (var i = 0; i < $scope.booths.length; i++) {
   //   booths[i].id = "booth"+bNum; // Assign element id's for svg/html
   //}
+
+
+
+
+
+  $scope.majorsIncluded = []; // 'cs'
+  $scope.positionsIncluded = []; //coop
+
+
+    $scope.includeMajor = function (m) {
+        var i = $scope.majorsIncluded.indexOf(m);
+        if (i > -1) { $scope.majorsIncluded.splice(i, 1); } 
+        else { $scope.majorsIncluded.push(m); }
+    }
+    
+     $scope.includePosition = function (p) {
+        var i = $scope.positionsIncluded.indexOf(p);
+        if (i > -1) { $scope.positionsIncluded.splice(i, 1); } 
+        else { $scope.positionsIncluded.push(p); }
+    }
+
+    //
+    //
+    //
+    $scope.userFilter = function (company) {
+        
+        var includedPositions= $scope.positionsIncluded;
+        var includedMajors = $scope.majorsIncluded;
+
+        // if no filters at all selected automatically return all companies
+        
+        if(includedMajors.length <= 0 && includedPositions.length <= 0)
+            return company;
+        
+        // if nothing selected, assume all included
+        // for both majors and positions
+
+
+        // friendlyName = The name to display in the interface
+        // name = the csv/json-safe name for filtering etc
+        // e.g. MS/PhD value is set to msphd
+
+        // this is only specific to the data that i developed with
+        //includedPositions = ["fte","intern","coop","msphd"];
+
+        // this is only specific to the data that i developed with
+        //includedMajors = ["am","bme","chem","civil","ce","cs","ee","enve","ie","made","matsci","mech","noneng"];
+          
+        var i = 0;
+
+        if(includedPositions.length <= 0)
+        {
+          for (i = 0; i < positions.length; i++)
+            includedPositions[i] = positions[i].name;
+        }
+            
+        if(includedMajors.length <= 0)
+        {
+          for (i = 0; i < positions.length; i++)
+            includedMajors[i] = positions[i].name;
+        }
+        
+        
+        // only show companies matching the users filter requirements
+        for (i = 0; i < includedPositions.length; i++)
+        {
+            // check if a position is true
+            if(company[includedPositions[i]])
+            {
+                // must have at least one of these true as well
+                for (var j = 0; j < includedMajors.length; j++)
+                {
+                    if(company[includedMajors[j]]) return company;
+                }
+            }
+        }
+        return;
+    }
+
   
   $scope.toggleLeft = function() { $ionicSideMenuDelegate.toggleLeft(); };
 })

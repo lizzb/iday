@@ -1,7 +1,7 @@
 <ion-view title="Company Booth Layout"> <!-- Floorplan-->
-  <ion-content>
+  <!--ion-content-->
     
-    <ion-scroll zooming="true" direction="xy" style="width: 100%;">
+    <ion-scroll zooming="true" direction="xy" style="width: 100%; height:100%; padding-top: 50px;">
 
 <svg xmlns="http://www.w3.org/2000/svg" 
 xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" 
@@ -12,11 +12,7 @@ viewBox="{{startX - 20}} {{startY - 200}} {{mapWidth + 200}} {{mapHeight + 20}}"
 <g id="ballroom">
 <title> Hilton Orrington Grand Ballroom </title>
   <text x="535"  y="-100" class="roomTitle"> Grand Ballroom </text>
-  <g transform="translate(215, 850)" \>
-<g transform="rotate(30,0,0)">
-    <text class="bNum" x="30" y="30"> Entrance </text>
-  </g>
-</g>
+  
   <path class="roomOutline"  
         d="
         M 200,10
@@ -29,6 +25,11 @@ viewBox="{{startX - 20}} {{startY - 200}} {{mapWidth + 200}} {{mapHeight + 20}}"
         l 65, -105
         l 0,-785
         z" />
+  <g transform="translate(215, 850)" \>
+  <g transform="rotate(30,0,0)">
+    <text class="bNum" x="30" y="30"> Entrance </text>
+  </g>
+  </g>
   <!-- not exactly sure what this square is, on map from tech expo was a yellow box -->
    <g transform="translate(460, 660)">
     <rect class="pillar" x="0" y="0" width="60" height="60"></rect>
@@ -40,9 +41,6 @@ viewBox="{{startX - 20}} {{startY - 200}} {{mapWidth + 200}} {{mapHeight + 20}}"
 <g id="heritage" transform="translate(250, 1200)">
   <title> Hilton Orrington Heritage Room </title>
   <text x="235"  y="-100" class="roomTitle"> Heritage Room </text>
-  <g transform="translate(635, 575)" \>
-    <text class="bNum" x="30" y="30"> Entrance </text>
-  </g>
   <path class="roomOutline"
         d="
         M 0,0
@@ -54,6 +52,9 @@ viewBox="{{startX - 20}} {{startY - 200}} {{mapWidth + 200}} {{mapHeight + 20}}"
         l 0,-25
         l -605, 0
         z" />
+    <g transform="translate(635, 575)" \>
+    <text class="bNum" x="30" y="30"> Entrance </text>
+  </g>
 </g><!--/#heritage -->
 
 
@@ -99,5 +100,5 @@ viewBox="{{startX - 20}} {{startY - 200}} {{mapWidth + 200}} {{mapHeight + 20}}"
 <!--  ng-click="go('/companies/{{b.compId}}')" in rect doesnt work -->
 
     </ion-scroll>
-    </ion-content>
+    <!--/ion-content-->
     </ion-view>

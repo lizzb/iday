@@ -11,7 +11,7 @@ app.service('CareerFairService', function($q) {
     // majors
     // positions
     // citizenship
-    companies: companies, //company_grid,
+    companies: company_list, //companies, //company_grid,
     
     
     // Booth information includes:
