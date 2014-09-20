@@ -82,14 +82,14 @@ app.controller('MainCtrl', function($scope, $ionicSideMenuDelegate, AttendeesSer
 
         if(includedPositions.length <= 0)
         {
-          for (i = 0; i < positions.length; i++)
-            includedPositions[i] = positions[i].name;
+          for (i = 0; i < $scope.positions.length; i++)
+            includedPositions[i] = $scope.positions[i].name;
         }
             
         if(includedMajors.length <= 0)
         {
-          for (i = 0; i < positions.length; i++)
-            includedMajors[i] = positions[i].name;
+          for (i = 0; i < $scope.majors.length; i++)
+            includedMajors[i] = $scope.majors[i].name;
         }
         
         
@@ -109,7 +109,11 @@ app.controller('MainCtrl', function($scope, $ionicSideMenuDelegate, AttendeesSer
         return;
     }
 
-  
+    //$scope.filteredList = (companies |filter:userFilter);
+//http://plnkr.co/edit/hXOeZvHjpHOulIhD7s2Y?p=preview
+  //http://jsfiddle.net/TahmidTanzim/N9Vqk/
+  // http://blog.tompawlak.org/use-filter-in-controller-angularjs
+  // http://stackoverflow.com/questions/14302267/how-to-use-a-filter-in-a-controller
   $scope.toggleLeft = function() { $ionicSideMenuDelegate.toggleLeft(); };
 })
 

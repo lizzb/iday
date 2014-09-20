@@ -1,13 +1,31 @@
-<ion-view title="Filter settings">
-  <ion-nav-buttons side="left">
+<ion-view title="Search/Filter Settings" left-buttons="leftButtons">
+  <!--ion-nav-buttons side="left">
     <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
-  </ion-nav-buttons>
-  <ion-content class="has-header">
+  </ion-nav-buttons-->
+  <ion-content>
 
-  
+
+
+
+  Showing {{filteredList.length}} of {{companies.length}} total. <br>
+
+
+
+  <!--Search: <input ng-model="query"> <i class="fa fa-search"> </i> <br>-->
+
+  <!--Filter by: <i class="fa fa-filter"> </i>
+<li ng-repeat="company in filteredList = (companies | filter:userFilter | filter:query | orderBy:sortType:asc)" class="thumbnail">
+ <i class="glyphicon glyphicon-star-empty listing-star"></i-->
+ 
+  Companies matching your filters: {{filteredCompanies = (companies | filter:userFilter).length}} (of {{companies.length}} total).
+
+
+  <!--
    Showing {{filteredList.length}} of {{all_companies.length}} total.
   Companies matching your filters: {{currentCompanies.length}}
   {{ (all_companies | filter:userFilter).length }}
+
+  -->
     
     <!--<h1> Filter Settings</h1>
   
@@ -15,25 +33,16 @@ Showing {{filteredList.length}} of {{all_companies.length}} total. <br>
         {{filteredList.length}} of {{all_companies.length}} total companies. <br
 
 <i class="fa fa-filter fa-lg"></i> Filter by:     
-
-
-
-<div class="list">
-
-
-using global POSITIONS and MAJORS cuz naughty
-
         -->
 
 <div class="list">
 
-        <div class="item item-divider"> 
-          Positions
-        </div>
+        <div class="item item-divider"> Positions </div>
         
-        <ion-checkbox ng-repeat="item in POSITIONS"
+        <ion-checkbox ng-repeat="item in positions"
                       ng-model="item.checked" 
-                      ng-checked="item.checked">
+                      ng-checked="item.checked"
+                      ng-change="includePosition(item.name)">
           {{ item.friendlyName }}
         </ion-checkbox>
 
@@ -41,22 +50,18 @@ using global POSITIONS and MAJORS cuz naughty
 easily changed but changing to checkbox
 -->
 
-        <div class="item item-divider"> 
-          Majors
-        </div>
+        <div class="item item-divider"> Majors </div>
         
-        <ion-radio ng-repeat="item in MAJORS"
+        <ion-radio ng-repeat="item in majors"
                       ng-model="item.checked" 
                       ng-checked="item.checked"
-                      ng-change="includeMajor()">
+                      ng-change="includeMajor(item.name)">
           {{ item.friendlyName }}
         </ion-radio>
         
 
-        
-        <div class="item item-divider"> 
-          Notifications
-        </div>
+        <!-- these are fake below -->
+        <!--div class="item item-divider"> Notifications </div>
         
         <ion-toggle ng-model="pushNotification.checked"
                       ng-change="pushNotificationChange()">
@@ -68,7 +73,7 @@ easily changed but changing to checkbox
                       ng-true-value="Subscribed"
                       ng-false-value="Unubscribed">
           Include companies seeking "All Majors"
-        </ion-toggle>
+        </ion-toggle-->
         
       </div>
 

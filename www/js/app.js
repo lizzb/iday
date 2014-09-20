@@ -34,7 +34,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     
     .state('sidemenu.settings', {
       url: "/settings",
-      views: { 'menuContent' :{ templateUrl: "templates/settings.html", controller: "FilterSettingsCtrl" } }
+      views: { 'menuContent' :{ templateUrl: "templates/settings.html", controller: "MainCtrl" } } /*FilterSettingsCtrl*/
     })
     
     .state('sidemenu.companies', {
