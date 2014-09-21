@@ -494,7 +494,7 @@ HORIZONTAL - adjust heritage
 {  bNum: 83, x: 1200+560, y: 200, room: "Heritage Room", floor: 1  },
 */
 
-
+/*
 company_list = [{booth:1,id:"3m",name:"3M",am:0,bme:0,chem:1,civ:0,ce:0,cs:0,ee:1,enve:0,ie:1,made:1,mech:1,matsci:1,industry:"Manufacturing",type:"Public",branch:"Film Manufacturing",website:"http://www.mmm.com"},
 {booth:2,id:"3red",name:"3Red",am:1,bme:0,chem:0,civ:0,ce:0,cs:1,ee:1,enve:0,ie:0,made:0,mech:1,matsci:0,industry:"Financial Services",type:"Private",branch:"",website:"http://3redgroup.com"},
 {booth:3,id:"adage-tech",name:"Adage Technologies",am:0,bme:0,chem:0,civ:0,ce:0,cs:1,ee:0,enve:0,ie:0,made:0,mech:0,matsci:0,industry:"Computers",type:"Private",branch:"",website:"http://www.adagetechnologies.com/"},
@@ -545,4 +545,4 @@ company_list = [{booth:1,id:"3m",name:"3M",am:0,bme:0,chem:1,civ:0,ce:0,cs:0,ee:
 {booth:48,id:"nw-mutual",name:"Northwestern Mutual",am:0,bme:0,chem:0,civ:0,ce:0,cs:1,ee:0,enve:0,ie:0,made:0,mech:0,matsci:0,industry:"Insurance",type:"Public",branch:"",website:"http://www.northwesternmutual.com/"},
 {booth:49,id:"oloroso",name:"Oloroso Engineering",am:0,bme:1,chem:1,civ:1,ce:1,cs:1,ee:1,enve:1,ie:1,made:1,mech:0,matsci:1,industry:"Engineering",type:"Private",branch:"Chicago Branch",website:"http://www.olorosoengineering.com"},
 {booth:50,id:"p-g",name:"P&G / Procter & Gamble Company",am:0,bme:1,chem:1,civ:0,ce:0,cs:0,ee:0,enve:0,ie:0,made:1,mech:1,matsci:1,industry:"Chemicals,Consumer Products",type:"Public",branch:"237",website:"http://www.experiencePG.com"}];
-
+*/
