@@ -18,7 +18,9 @@ app.controller('MainCtrl', function($scope, $ionicSideMenuDelegate, AttendeesSer
   $scope.majors = majors_list;
   $scope.positions = positions_list;
  
- 
+ $scope.allCompanies = CareerFairService.getCompanies();
+
+ // filter this one by user prefs... filtering makes a new array anyway but just testing shiz
  $scope.companies = CareerFairService.getCompanies();
  //$scope.booths = CareerFairService.getBooths();
  
@@ -31,7 +33,14 @@ app.controller('MainCtrl', function($scope, $ionicSideMenuDelegate, AttendeesSer
   //   booths[i].id = "booth"+bNum; // Assign element id's for svg/html
   //}
 
-
+// need to figure out a way so that 
+// if a user sorts the list, then navigates to a detail view,
+// then back to company list
+// their position is maintained
+// AND their sort type and direction is maintained
+// position is secondary actually
+//$scope.sortProp = 'name';  this just always sets it on return
+// same effect as initially sorting by booth int he html template
 
 
 

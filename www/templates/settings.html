@@ -7,7 +7,7 @@
 
 
 
-  Showing {{filteredList.length}} of {{companies.length}} total. <br>
+  <!--Showing {{filteredList.length}} of {{companies.length}} total. <br-->
 
 
 
@@ -17,7 +17,12 @@
 <li ng-repeat="company in filteredList = (companies | filter:userFilter | filter:query | orderBy:sortType:asc)" class="thumbnail">
  <i class="glyphicon glyphicon-star-empty listing-star"></i-->
  
+  <!--
   Companies matching your filters: {{filteredCompanies = (companies | filter:userFilter).length}} (of {{companies.length}} total).
+-->
+
+Companies matching your filters: {{companies = (allCompanies | filter:userFilter).length}} (of {{allCompanies.length}} total).
+
 
 
   <!--
@@ -48,16 +53,18 @@ Showing {{filteredList.length}} of {{all_companies.length}} total. <br>
 
 <!-- to show off the radio button we'll assume you only have one major, overachiever 
 easily changed but changing to checkbox
+
+... actually making a checkbox because filter as written uses checkboxes and i dont feel like hcanging it atm :)
 -->
 
         <div class="item item-divider"> Majors </div>
         
-        <ion-radio ng-repeat="item in majors"
+        <ion-checkbox ng-repeat="item in majors"
                       ng-model="item.checked" 
                       ng-checked="item.checked"
                       ng-change="includeMajor(item.name)">
           {{ item.friendlyName }}
-        </ion-radio>
+        </ion-checkbox>
         
 
         <!-- these are fake below -->

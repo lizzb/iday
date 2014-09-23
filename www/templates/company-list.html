@@ -31,6 +31,8 @@
   <i class="fa fa-lg" ng-class="(sortProp=='booth' && asc) ? 'fa-sort-numeric-desc' : 'fa-sort-numeric-asc'"></i>
   Booth
 </button>
+
+Showing {{companies.length}} of {{allCompanies.length}} total.
 &nbsp;&nbsp;&nbsp; <!-- hacky padding -->
     <label class="item-input-wrapper">
       <i class="icon ion-ios7-search placeholder-icon"></i>
@@ -44,7 +46,7 @@
 
         <ion-content>
           <ion-list>
-            <div ng-repeat="c in companies | instantNameSearch:searchString | orderBy:sortProp:asc"> <!-- ui-sref="tabs.companies.detail({companyNameId: c.compId})" -->
+            <div ng-repeat="c in companies | filter:userFilter | instantNameSearch:searchString | orderBy:sortProp:asc"> <!-- ui-sref="tabs.companies.detail({companyNameId: c.compId})" -->
 
             <!-- http://lizzb.github.io/img/logos/carsdotcom/wide.png -->
             <a href="#/iday/companies/{{c.id}}"  class="item item-avatar item-icon-right"><!-- item-icon-right -->
