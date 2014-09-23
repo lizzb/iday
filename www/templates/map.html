@@ -1,17 +1,18 @@
 <ion-view title="Company Booth Layout"> <!-- Floorplan Hilton Orrington-->
   <!--ion-content-->
     
-    <ion-scroll zooming="true" direction="xy" style="width: 100%; height:100%; padding-top: 50px;">
+    <ion-scroll zooming="true" direction="xy" style="width: 100%; height: 100%; padding-top: 50px;">
+
+    <!-- {{startX - 20}} {{startY - 200}} {{mapWidth + 200}} {{mapHeight + 20}}" -->
 
 <svg xmlns="http://www.w3.org/2000/svg" 
 xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" 
 preserveAspectRatio="xMinYMin meet" 
-viewBox="{{startX - 20}} {{startY - 200}} {{mapWidth + 200}} {{mapHeight + 20}}"
->
+viewBox="{{startX}} {{startY}} {{mapWidth}} {{mapHeight}}">
 
 <g id="ballroom">
 <title> Hilton Orrington Grand Ballroom </title>
-  <text x="535"  y="-100" class="roomTitle"> Grand Ballroom </text>
+  <text x="535"  y="-75" class="roomTitle"> Grand Ballroom </text>
   
   <path class="roomOutline"  
         d="
@@ -61,16 +62,22 @@ viewBox="{{startX - 20}} {{startY - 200}} {{mapWidth + 200}} {{mapHeight + 20}}"
 <g>
     <g ng-repeat="b in booths" ng-click="go('iday/companies/{{b.compId}}')">
     <g transform="translate({{b.x}}, {{b.y}})">
+    <!-- need to add an ng-if rotate property exists to avoid plethora of errors in console -->
     <g transform="rotate({{b.rotate}},0,0)">
         <rect class="booth" ng-attr-id="{{b.compId}}"
               x="0" y="0"
               width="{{bWidth}}" height="{{bHeight}}"/>
-              
+      
+      <!-- below format shows
+            itty bitty square logo in top left corner, 
+            booth number centered in middle,
+            and company id at bottom of booth, some of which are long and uggo -->
+      <!--
       <image class="compLogo" 
              x="2" y="2"
              width="20" height="20"
              ng-xlink-href="http://lizzb.github.io/iday/www/img/logos/{{b.compId}}/square.png" 
-             xlink:href="" />
+             xlink:href=""/>
 
           <text class="boothlabel boothId boothCompId"
             x="{{ bWidth/2 }}"
@@ -82,21 +89,37 @@ viewBox="{{startX - 20}} {{startY - 200}} {{mapWidth + 200}} {{mapHeight + 20}}"
             ng-attr-y="{{bHeight/2 }}">
             {{b.bNum}}        
           </text>
-          
-      </g><!--/ transform - rotate -->    
-          
+        -->
+
+        <!-- new format, larger logo image -->
+        <image class="compLogo" 
+             x="0" y="0"
+             width="59" height="59"
+             ng-xlink-href="http://lizzb.github.io/iday/www/img/logos/{{b.compId}}/square.png" 
+             xlink:href="http://placehold.it/60x60"/>
+
+          <!--text class="boothlabel boothId boothCompId"
+            x="{{ bWidth/2 }}"
+            y="{{ bHeight*3/4 }}">
+            {{b.compId}}        
+          </text-->
+          <text class="boothlabel compId boothNumId" 
+                ng-attr-x="{{bWidth + 15}}"
+                ng-attr-y="{{bHeight - 5}}">
+            {{b.bNum}}        
+          </text>
+          <style>
+.booth{fill: white;}
+          </style>
+
+<!-- for lower left width-12 and height-8 looked good -->
+
+      </g><!--/ transform - rotate --> 
     </g><!--/ transform - x y coordinates -->
-
 </g> <!--/ b in booths -->
-  </g>
-  
-
-  
-  
-  
-  
   
 </svg>
+
 <!--  ng-click="go('/companies/{{b.compId}}')" in rect doesnt work -->
 
     </ion-scroll>

@@ -177,10 +177,10 @@ app.controller('CompanyMapCtrl', function($scope, $location) {
   // {{startX - 20}} {{startY - 20}} {{mapWidth + 20}} {{mapHeight + 20}}"
   
   
-  $scope.startX = 0;
-  $scope.startY = 0;
-  $scope.mapWidth = 1200;
-  $scope.mapHeight = 2400;
+  $scope.startX = 80;
+  $scope.startY = -200;
+  $scope.mapWidth = 1250;
+  $scope.mapHeight = 2100;
   
   //var xMin = 0;
   //var xMax = 0;
