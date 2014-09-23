@@ -1,7 +1,7 @@
 <ion-view title="{{company.name}}" left-buttons="leftButtons">
   <ion-content>
   
-        <img class="full-image item" ng-src="./img/logos/{{company.id}}/wide.png" />
+        <img class="full-image item" style="max-height: 250px; max-width: 800px;"ng-src="./img/logos/{{company.id}}/wide.png" />
 
     <!--{{ company | json }}
 
@@ -28,7 +28,10 @@ instead of boolean 0 1 its 0 "label that exists to prompt un-starring" -->
       Booth # {{company.booth}}: {{company.room}} (Floor {{company.floor}})
       <!-- {{company.room}} Room, (Floor {{company.floor}}), Booth # {{company.booth}} -->
     </a>
-    
+
+
+
+
     <!-- TODO: if none (majors or positions), then output to user (none) or soemthing -->
 
       <h3> Majors </h3>
@@ -46,6 +49,32 @@ instead of boolean 0 1 its 0 "label that exists to prompt un-starring" -->
           <div class="item item-divider"> Description </div>
         <p class="padding">{{company.description}}</p>
 
+
+<div class="item item-icon-left"> <i class="icon ion-information-circled"></i>{{company.type}} </div>
+<div class="item item-icon-left"> <i class="icon ion-briefcase"></i>{{company.industry}} </div>
+    
+
+<div class="item item-divider">
+  <a href="{{company.website}}" target="_blank">{{company.website}} <i class="icon ion-share button-large"></i></a>
+</div>
+
+<div class="item item-divider">
+  <a class="clear" href="https://www.myinterfase.com/mccormick_northwestern/contactregistration.aspx?emp_id={{company.empId}}" target="_blank"> <strong>McCormick</strong><em>Connect</em> Employer Info </a>
+</div>
+
+<!-- formatting for mccormick connect seems to be overridden, particularly italic -->
+
+<div class="button-bar">
+  <!--a href="{{company.facebook}}" target="_blank">
+  <i class="icon ion-social-facebook-outline" style="font-size:32px;"></i>
+  </a-->
+  <a class="button button-positive icon ion-social-facebook" href="{{company.facebook}}" target="_blank">
+
+  <a class="button button-calm icon ion-social-twitter" href="{{company.twitter}}" target="_blank">
+
+  <a class="button button-dark icon ion-social-linkedin" href="{{company.linkedin}}" target="_blank">
+</a>
+</div>
     
   </ion-content>
 </ion-view>

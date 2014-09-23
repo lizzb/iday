@@ -3,7 +3,16 @@
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons-->
 
+  <!--div class="bar bar-header">
+  <button class="button button-icon icon ion-navicon"></button>
+  <div class="h1 title">Recruiting Companies</div>
+  <button class="button button-clear button-positive">Edit</button>
+</div-->
+
   <ion-view title="Recruiting Companies" left-buttons="leftButtons">
+
+
+
 
   <ion-header-bar class="bar-subheader item-input-inset">
   
@@ -14,6 +23,8 @@
   <i class="fa fa-lg" ng-class="(sortProp=='name' && asc) ? 'fa-sort-alpha-desc' : 'fa-sort-alpha-asc'"></i>
   Name 
 </button>
+
+
 
 <button class="button button-small button-calm button-outline icon" 
         ng-click="sortProp='booth'; asc=!asc">
@@ -37,14 +48,24 @@
 
             <!-- http://lizzb.github.io/img/logos/carsdotcom/wide.png -->
             <a href="#/iday/companies/{{c.id}}"  class="item item-avatar item-icon-right"><!-- item-icon-right -->
+
             <img src="http://placehold.it/60x60" ng-src="./img/logos/{{c.id}}/square.png" />
+
+
               
              {{ c.name }}  <!-- <h2> <i></i> {{ c.name }}</h2> h2 makes it harder to fit on one line-->
+             <span class="item-note">{{ c.room }}</span>
+
              <i class="icon favorite" ng-class="c.starred ? 'ion-ios7-star' : 'ion-ios7-star-outline'"></i>
 
-             <p>{{ c.room }}</p> <!-- {{ c.id }} -->
+             <p>{{ c.industry }}<!-- {{ c.room }}.... {{ c.id }} -->
+
+             
+             </p> 
+
              <!--i class="icon ion-ios7-arrow-right royal"></i-->
             </a>
+
             </div>
 
  
