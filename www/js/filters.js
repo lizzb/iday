@@ -1,6 +1,12 @@
 //angular.module('idayIonic.filters', [])
 
 
+//http://stackoverflow.com/questions/15266671/angular-ng-repeat-in-reverse
+app.filter('reverse', function() {
+  return function(items) {
+    return items.slice().reverse();
+  };
+});
 
 // All filters must return a function. The first parameter
 // is the data that is to be filtered, and the second is
