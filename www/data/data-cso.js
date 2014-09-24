@@ -1,40 +1,10 @@
-// friendlyName = The name to display in the interface
-// name = the csv/json-safe name for filtering etc
+//
+//twitter field copies funky - needed to add quotes around twitter for 3red, gaf, and adage technologies
+// http://shancarter.github.io/mr-data-converter/
+// extracted from McCormick Connect
+//
 
-var majors_list = [ 
-  { friendlyName: 'Applied Math', name: 'am'},
-  { friendlyName: 'Biomedical Engineering (BME)', name: 'bme'},
-  { friendlyName: 'Chemical Engineering', name: 'chem'},
-  { friendlyName: 'Civil Engineering', name: 'civil'},
-  { friendlyName: 'Computer Engineering (CE)', name: 'ce'},
-  { friendlyName: 'Computer Science (CS)', name: 'cs'},
-  { friendlyName: 'Electrical Engineering (EE)', name: 'ee'},
-  { friendlyName: 'Environmental Engineering (IE)', name: 'enve'},
-  { friendlyName: 'Industrial Engineering', name: 'ie'},
-  { friendlyName: 'MaDE', name: 'made'},
-  { friendlyName: 'Material Science', name:'matsci' },
-  { friendlyName: 'Mechanical Engineering', name: 'mech' },
-  { friendlyName: 'Non-engineering', name: 'noneng' }
-];
-
-var positions_list = [ 
-  { friendlyName: 'Full Time', name: 'fte'},
-  { friendlyName: 'Intern', name: 'intern' },
-  { friendlyName: 'Co-Op', name: 'coop' },
-  { friendlyName: 'MS/PhD', name: 'msphd'}
-];
-
-
-var industries_list = [ 
-  { friendlyName: 'Full Time', name: 'fte'},
-  { friendlyName: 'Intern', name: 'intern' },
-  { friendlyName: 'Co-Op', name: 'coop' },
-  { friendlyName: 'MS/PhD', name: 'msphd'}
-];
-
-
-//var companyInfoCSO = [
-var company_list = [
+var companyInfoCSO = [
 {empID:51,booth:1,id:"3m",name:"3M",branch:"Film Manufacturing",website:"http://www.mmm.com",facebook:"https://www.facebook.com/3MCareers",twitter:null,linkedin:"",industry:"Manufacturing",type:"Public",address1:"3M Film Manufacturing & Supply Chain Operations",address2:"3M Center, Building 0220-12N-05",city:"St. Paul",state:"MN",zip:55144-1000,Country:"USA",phone:"(651) 737-4259",fax:"651. 733.1570",profile:"Diversified Manufacturing",onlineApp:""},
 {empID:1551,booth:2,id:"3red",name:"3Red",branch:"",website:"http://3redgroup.com",facebook:"https://www.facebook.com/3RedTrading",twitter:"https://twitter.com/3RedTrading",linkedin:"",industry:"Financial Services",type:"Private",address1:"440 S LaSalle Suite 2200",address2:"",city:"Chicago",state:"IL",zip:60605,Country:"USA",phone:"3129818826",fax:"",profile:"3Red is a proprietary trading firm with offices in the Chicago Loop and New York City.",onlineApp:""},
 {empID:1240,booth:3,id:"adage-tech",name:"Adage Technologies",branch:"",website:"http://www.adagetechnologies.com/",facebook:"https://www.facebook.com/AdageJobSearch",twitter:"twitter.com/adage",linkedin:"twitter.com/adage",industry:"Computers",type:"Private",address1:"10 South Riverside Plaza #1500",address2:"",city:"Chicago",state:"IL",zip:60606,Country:"USA",phone:"312-884-5166",fax:"",profile:"Adage Technologies is an award-winning Chicago web development firm, specializing in creating engaging custom websites, custom software and mobile solutions since its inception in 2001. Specialties Custom Software, Content Management, Mobile, Association Management Systems, Web Development Awards Top 50 Gen Y Employer in Chicago-Brill Street One of The Best Places to Work in Illinois- The Daily Herald Business Ledger 500/5000 Fastest Growing Private Companies- INC.",onlineApp:"http://www.adagetechnologies.com/careers/"},
@@ -68,7 +38,7 @@ var company_list = [
 {empID:1729,booth:31,id:"here",name:"HERE",branch:"",website:"http://here.com/",facebook:"",twitter:null,linkedin:"",industry:"High Tech - Information Technology",type:"Private",address1:"425 W. Randolph St.",address2:"",city:"Chicago",state:"IL",zip:60606,Country:"USA",phone:"",fax:"",profile:"HERE, a Nokia company, is a global leader in the mapping and location intelligence business. Rooted in almost three decades of experience in cartography, our vision is simple: offer the world's best maps and location experiences across multiple screens and operating systems. We want to help people navigate their lives with ease and confidence every day and everywhere. We believe that giving people a better and deeper sense of location will be essential to live a modern urbanized life. Our maps can be found in four out of five in-car navigation systems in North America and Europe, including ten million new cars sold in 2013. We also power mobile, web and enterprise solutions. Our customers include BMW, Garmin, Toyota, Yahoo and many more. We are the largest and most highly trained team of mapmakers on the planet - with 6,000 people in more than 56 countries. We make maps for every country in the world, all 196 of them We keep our maps fresh, accurate and reliable by making 2.7 million changes to them each day We deliver voice-guided navigation in 96 countries We make indoor maps for over 75,600 buildings in 72 countries worldwide We deliver live traffic services in 41 countries We map public transit in 805 cities in 53 countries We support over 52 languages We create our maps by balancing on-staff map experts with 80,000 external sources At HERE, we build maps for how people live. They are relevant, reliable and delightful every day and everywhere. Today, we provide leadership and solutions to inspire a new generation of experiences. Everyday Mobility: Providing breakthrough ways to navigate, see and explore the world on mobile devices - whether you are connected or not Connected Driving: Powering the connected car revolution with solutions and auto-grade quality maps to make drivers aware, safe and more efficient in the car and beyond Enterprise: Transforming businesses through location intelligence Our business areas leverage offerings, also available to our customers. HERE Map Content: The freshest, richest and most reliable maps, uniting the physical and virtual worlds in 2D and 3D HERE Platform: The world’s most powerful and innovative platform services to enable new location products and services We are passionate about making maps. We love what we do. We are passionate about innovating to create a new generation of interactive and ever-more personal and contextually relevant maps and location services. We are passionate about our customers - they always come first. We are passionate about and value true partnership, not just with customers but with developers and mapmaking communities.",onlineApp:""},
 {empID:1580,booth:32,id:"hill-intl",name:"Hill International, Inc.",branch:"",website:"http://hillintl.com",facebook:"",twitter:null,linkedin:"",industry:"Construction",type:"Public",address1:"303 Lippincott Centre",address2:"",city:"Marlton",state:"NJ",zip:8053,Country:"USA",phone:"856-552-6715",fax:"",profile:"Hill provided Program Management, Project Management, Construction Management, Construction Claims Services.",onlineApp:""},
 {empID:1255,booth:33,id:"hrgreen",name:"HR Green, Inc",branch:"",website:"http://WWW.HRGREEN.COM",facebook:"",twitter:null,linkedin:"",industry:"Engineering",type:"Private",address1:"820 Davis Street, Suite 118",address2:"",city:"Evanston",state:"IL",zip:60202,Country:"USA",phone:"8478660610",fax:"",profile:"Consulting Engineering firm specializing in Planning, design and construction of water and wastewater treatment plants. Additionally, HR Green has expertise in Transportation planning and design.",onlineApp:""},
-{empID:311,booth:34,id:"hydra-force",name:"Hyrdra Force, Inc.",branch:"767",website:"http://www.hydraforce.com",facebook:"",twitter:null,linkedin:"",industry:"Engineering",type:"Private",address1:"500 Barclay Blvd.",address2:"",city:"Lincolnshire",state:"IL",zip:60069,Country:"USA",phone:"(847) 229-3169",fax:"(847) 229-3269",profile:"Since its founding, HydraForce continues to be a privately held company as it has grown to several manufacturing locations in North America, Europe and Asia, with a network of 120 stocking distributors who can offer local support across the globe. To maintain our core competency of speed to market, HydraForce has invested in application technical support tools including i-Design, our free hydraulic system design software, which integrates seamlessly with 3rd party simulation software, monthly webinars on new products and application tips, and an online product catalog. All HydraForce products carry a five-year limited warranty against defects in material and workmanship.",onlineApp:""},
+{empID:311,booth:34,id:"hydra-force",name:"Hyrdra Force, Inc.",branch:"767",website:"http://www.hydraforce.com",facebook:"",twitter:null,linkedin:"",industry:"Engineering",type:"Private",address1:"500 Barclay Blvd.",address2:"",city:"Lincolnshire",state:"IL",zip:60069-,Country:"USA",phone:"(847) 229-3169",fax:"(847) 229-3269",profile:"Since its founding, HydraForce continues to be a privately held company as it has grown to several manufacturing locations in North America, Europe and Asia, with a network of 120 stocking distributors who can offer local support across the globe. To maintain our core competency of speed to market, HydraForce has invested in application technical support tools including i-Design, our free hydraulic system design software, which integrates seamlessly with 3rd party simulation software, monthly webinars on new products and application tips, and an online product catalog. All HydraForce products carry a five-year limited warranty against defects in material and workmanship.",onlineApp:""},
 {empID:1076,booth:35,id:"idot",name:"Illinois Department of Transportation",branch:"DRO",website:"http://www.dot.il.gov/",facebook:"",twitter:null,linkedin:"",industry:"Government/Public Administration",type:"Government",address1:"2300 S. Dirksen Parway, Room 339A",address2:"",city:"Springfield",state:"IL",zip:62764,Country:"USA",phone:"217-557-2000",fax:"217-557-7277",profile:"IDOT MISSION The mission of IDOT is to provide safe, cost-effective transportation for Illinois in ways that enhance quality of life, promote economic prosperity, and demonstrate respect for our environment. GUIDING PRINCIPLES We will accomplish our mission while making the following principles the hallmark of all our work: Safety, Integrity, Diversity, Responsiveness, Quality, Innovation. IDOT VISION The vision of IDOT is to be recognized as the premier state department of transportation in the nation.",onlineApp:""},
 {empID:1814,booth:36,id:"ida",name:"Institute for Defense Analyses",branch:"",website:"https://www.ida.org",facebook:"",twitter:null,linkedin:"",industry:"Aerospace,Chemicals,Computers,Engineering,High Tech - Information Technology,Military & Defense,Research,Sciences",type:"Non-Profit/NGO",address1:"4850 Mark Center Drive",address2:"",city:"Alexandria",state:"VA",zip:22311,Country:"USA",phone:"703-845-2086",fax:"",profile:"The Institute for Defense Analyses (IDA) is a not-for-profit organization that operates three think tanks supporting federal decision making: two serving the Department of Defense and one serving the Office of Science and Technology Policy in the Executive Office of the President. The IDA Centers provide objective analyses of national security issues, particularly those requiring scientific and technical expertise, and conduct related research on other national challenges. IDA offers a competitive salary, an excellent benefits package and a superior professional working environment. To the right individual, IDA offers the opportunity to have a major impact on key national programs while working on fascinating technical issues. Individuals selected for employment at IDA are subject to a security investigation and must meet the requirements for access to classified information. U. S. citizenship is required. IDA is proud to be an equal opportunity employer.",onlineApp:"https://www.ida.org/en/CareersAtIDA.aspx"},
 {empID:717,booth:37,id:"itw",name:"ITW",branch:"",website:"http://www.itw.com",facebook:"",twitter:null,linkedin:"",industry:"Consumer Products",type:"Private",address1:"888 Forest Edge Drive",address2:"",city:"Vernon Hills",state:"IL",zip:60061,Country:"USA",phone:"847.634.1900",fax:"847.634.8316",profile:"Paslode, one of seven companies that make up ITW’s North American (NA) Residential Construction Businesses, is a leading manufacturer of cordless and pneumatic nailers, staplers, and fasteners for wood to wood construction. Since the company was formed in 1935, its main focus has been on providing professional trades people with high quality fasteners and fastening tools. This focus has meant many industry firsts and innovative solutions achieving better results faster and easier.",onlineApp:""},
@@ -86,156 +56,3 @@ var company_list = [
 {empID:1043,booth:49,id:"oloroso",name:"Oloroso Engineering",branch:"Chicago Branch",website:"http://www.olorosoengineering.com",facebook:"",twitter:null,linkedin:"",industry:"Engineering",type:"Private",address1:"1234 N. Engineering Way",address2:"",city:"Chicago",state:"IL",zip:60101,Country:"USA",phone:"123-456-7890",fax:"",profile:"xxxxxxx",onlineApp:""},
 {empID:117,booth:50,id:"p-g",name:"P&G / Procter & Gamble Company",branch:"237",website:"http://www.experiencePG.com",facebook:"",twitter:null,linkedin:"",industry:"Chemicals,Consumer Products",type:"Public",address1:"1 Procter & Gamble Plaza",address2:"",city:"Cincinnati",state:"OH",zip:45202,Country:"USA",phone:"(513) 410-2370 or 513.983.1100",fax:"",profile:"The simple, inspiring way to think about this opportunity is that P&G brands serve about 4.4 billion of the nearly seven billion people on the planet today. Before P&G can serve the world's remaining consumers profitably, we can reach them altruistically. We can improve their lives in ways that enable them to thrive, to increase their quality of living and, over time, to join the population of consumers we serve with P&G brands. Through our overall Live, Learn & Thrive™ cause program, initiatives such as Children’s Safe Drinking Water and Pampers 1 Pack = 1 Vaccine are examples of how we are improving the lives of millions of people every day. Our shared Purpose attracts and unites an extraordinary group of people, P&Gers, around the world—the most diverse workforce in P&G history. Together, we represent around 145 nationalities. Our recruiting and development philosophy to ",onlineApp:"www.experiencePG.com"},
 ];
-/*
-var company_list = [ 
-{booth:1,id:"3m",name:"3M",am:0,bme:0,chem:1,civ:0,ce:0,cs:0,ee:1,enve:0,ie:1,made:1,matsci:1,mech:1,industry:"Manufacturing",branch:"Film Manufacturing",type:"Public",website:"http://www.mmm.com",facebook:"https://www.facebook.com/3MCareers",twitter:null,linkedin:"",empId:51},
-{booth:2,id:"3red",name:"3Red",am:1,bme:0,chem:0,civ:0,ce:0,cs:1,ee:1,enve:0,ie:0,made:0,matsci:0,mech:1,industry:"Financial Services",branch:"",type:"Private",website:"http://3redgroup.com",facebook:"https://www.facebook.com/3RedTrading",twitter:"https://twitter.com/3RedTrading",linkedin:"",empId:1551},
-{booth:3,id:"adage-tech",name:"Adage Technologies",am:0,bme:0,chem:0,civ:0,ce:0,cs:1,ee:0,enve:0,ie:0,made:0,matsci:0,mech:0,industry:"Computers",branch:"",type:"Private",website:"http://www.adagetechnologies.com/",facebook:"https://www.facebook.com/AdageJobSearch",twitter:"twitter.com/adage",linkedin:"twitter.com/adage",empId:1240},
-{booth:4,id:"alcatel-lucent",name:"Alcatel-Lucent",am:0,bme:0,chem:0,civ:0,ce:1,cs:1,ee:1,enve:0,ie:0,made:0,matsci:0,mech:0,industry:"Telecommunications",branch:"",type:"Public",website:"http://www.alcatel-lucent.com",facebook:"http://www.facebook.com/AlcatelLucent.University.Recruiting",twitter:null,linkedin:"",empId:373},
-{booth:5,id:"allstate",name:"Allstate Insurance Company",am:1,bme:0,chem:0,civ:0,ce:0,cs:0,ee:0,enve:0,ie:1,made:0,matsci:0,mech:0,industry:"Insurance",branch:"",type:"Private",website:"http://www.allstate.com",facebook:"",twitter:null,linkedin:"",empId:396},
-{booth:6,id:"at-t",name:"AT&T",am:0,bme:0,chem:0,civ:0,ce:0,cs:0,ee:0,enve:0,ie:0,made:0,matsci:0,mech:0,industry:"Retail/Wholesale",branch:"",type:"Public",website:"http://connect.att.jobs/",facebook:"",twitter:null,linkedin:"",empId:1530},
-{booth:7,id:"atomatic",name:"Atomatic Mechanical Services",am:0,bme:0,chem:0,civ:0,ce:0,cs:0,ee:0,enve:0,ie:0,made:0,matsci:0,mech:1,industry:"Engineering",branch:"",type:"Private",website:"http://www.atomatic.com",facebook:"",twitter:null,linkedin:"",empId:1586},
-{booth:8,id:"baxter",name:"Baxter Healthcare ",am:0,bme:1,chem:1,civ:0,ce:0,cs:0,ee:1,enve:0,ie:1,made:1,matsci:1,mech:0,industry:"Healthcare",branch:"80",type:"Private",website:"http://www.baxter.com",facebook:"",twitter:null,linkedin:"",empId:7},
-{booth:9,id:"belcan",name:"Belcan Engineering Group",am:0,bme:0,chem:0,civ:0,ce:0,cs:1,ee:1,enve:0,ie:0,made:0,matsci:0,mech:1,industry:"Aerospace",branch:"United States",type:"Private",website:"http://www.belcan.com",facebook:"",twitter:null,linkedin:"",empId:1796},
-{booth:10,id:"belvedere-trading",name:"Belvedere Trading",am:1,bme:0,chem:0,civ:0,ce:1,cs:1,ee:0,enve:0,ie:0,made:0,matsci:0,mech:0,industry:"Financial Services",branch:"",type:"Private",website:"http://www.belvederetrading.com",facebook:"",twitter:null,linkedin:"",empId:1069},
-{booth:11,id:"bemis",name:"Bemis Company",am:0,bme:0,chem:1,civ:0,ce:0,cs:0,ee:1,enve:0,ie:0,made:0,matsci:1,mech:1,industry:"Engineering,Manufacturing",branch:"1520",type:"Public",website:"http://www.bemis.com",facebook:"",twitter:null,linkedin:"",empId:960},
-{booth:12,id:"cia",name:"Central Intelligence Agency (CIA)",am:1,bme:1,chem:1,civ:0,ce:1,cs:1,ee:1,enve:0,ie:1,made:0,matsci:1,mech:1,industry:"Government/Public Administration",branch:"",type:"Government",website:"http://www.cia.gov",facebook:"",twitter:null,linkedin:"",empId:160},
-{booth:13,id:"cbi",name:"Chicago Bridge & Iron (CB&I)",am:1,bme:1,chem:1,civ:1,ce:1,cs:1,ee:1,enve:1,ie:1,made:1,matsci:1,mech:1,industry:"Engineering",branch:"",type:"Public",website:"http://www.cbi.com",facebook:"",twitter:null,linkedin:"",empId:1160},
-{booth:14,id:"chopper-trading",name:"Chopper Trading, LLC",am:0,bme:0,chem:1,civ:1,ce:1,cs:1,ee:1,enve:0,ie:1,made:0,matsci:0,mech:1,industry:"Entrepreneurial/Start-Ups,Financial Services",branch:"1461",type:"Private",website:"http://www.choppertrading.com",facebook:"",twitter:null,linkedin:"",empId:904},
-{booth:15,id:"clarity",name:"Clarity Solution Group",am:1,bme:0,chem:0,civ:0,ce:1,cs:1,ee:1,enve:0,ie:1,made:0,matsci:0,mech:1,industry:"Consulting,High Tech - Information Technology",branch:"",type:"Private",website:"http://www.clarity-us.com/",facebook:"",twitter:null,linkedin:"",empId:1285},
-{booth:16,id:"cme",name:"CME Group",am:0,bme:0,chem:0,civ:0,ce:1,cs:1,ee:0,enve:0,ie:0,made:0,matsci:0,mech:0,industry:"Financial Services",branch:"1589",type:"Public",website:"http://www.cmegroup.com/",facebook:"",twitter:null,linkedin:"",empId:1026},
-{booth:17,id:"discover",name:"Discover Financial Services",am:0,bme:0,chem:0,civ:0,ce:0,cs:1,ee:0,enve:0,ie:1,made:0,matsci:0,mech:0,industry:"Banking,Financial Services",branch:"1162",type:"",website:"http://www.discoverfinancial.com",facebook:"",twitter:null,linkedin:"",empId:622},
-{booth:18,id:"elanco",name:"Elanco Animal Health",am:0,bme:1,chem:1,civ:0,ce:0,cs:0,ee:0,enve:0,ie:0,made:0,matsci:0,mech:0,industry:"Agriculture,Biotech & Pharmaceuticals,Chemicals,Engineering,Food Science,Sciences",branch:"Clinton Labs",type:"Private",website:"https://www.elanco.com/",facebook:"",twitter:null,linkedin:"http://www.linkedin.com/company/324604?trk=vsrp_companies_res_name&trkInfo=VSRPsearchId%3A765174861380909849696%2CVSRPtargetId%3A324604%2CVSRPcmpt%3Aprimary",empId:1508},
-{booth:19,id:"enova",name:"Enova￼",am:1,bme:1,chem:0,civ:0,ce:1,cs:1,ee:0,enve:0,ie:1,made:1,matsci:0,mech:0,industry:"Financial Services",branch:"",type:"Private",website:"http://www.enova.com/",facebook:"",twitter:null,linkedin:"",empId:1227},
-{booth:20,id:"epic",name:"Epic",am:0,bme:0,chem:0,civ:0,ce:0,cs:1,ee:0,enve:0,ie:0,made:0,matsci:0,mech:0,industry:"Computers,Engineering,High Tech - Information Technology,Other",branch:"1407",type:"Private",website:"http://www.epic.com",facebook:"",twitter:null,linkedin:"",empId:852},
-{booth:21,id:"ford",name:"Ford Motor Company",am:0,bme:0,chem:0,civ:0,ce:1,cs:1,ee:1,enve:0,ie:0,made:1,matsci:0,mech:1,industry:"Automotive",branch:"239",type:"Public",website:"http://www.ford.com",facebook:"www.facebook.com/ford",twitter:null,linkedin:"www.linkedin.com/companies/1483",empId:118},
-{booth:22,id:"fenwal",name:"Fresenius Kabi",am:0,bme:1,chem:1,civ:0,ce:0,cs:0,ee:1,enve:0,ie:0,made:0,matsci:0,mech:1,industry:"Engineering,Healthcare,Manufacturing,Sciences",branch:"1172",type:"Private",website:"http://www.fresenius-kabi.us/",facebook:"",twitter:null,linkedin:"",empId:632},
-{booth:23,id:"gaf",name:"GAF",am:0,bme:0,chem:1,civ:0,ce:0,cs:0,ee:0,enve:0,ie:0,made:0,matsci:1,mech:1,industry:"Manufacturing",branch:"",type:"Private",website:"http://www.gaf.com",facebook:"http://www.facebook.com/GAFRoofing",twitter:"http://twitter.com/gafroofing",linkedin:"",empId:1074},
-{booth:24,id:"ge",name:"General Electric (GE)",am:0,bme:0,chem:0,civ:0,ce:1,cs:1,ee:1,enve:0,ie:1,made:1,matsci:1,mech:1,industry:"Manufacturing",branch:"797",type:"Public",website:"http://www.ge.com",facebook:"",twitter:null,linkedin:"",empId:721},
-{booth:25,id:"gdeb",name:"General Dynamics Electric Boat",am:0,bme:0,chem:0,civ:1,ce:1,cs:1,ee:1,enve:1,ie:0,made:0,matsci:0,mech:1,industry:"Engineering",branch:"",type:"Private",website:"http://www.gdeb.com",facebook:"",twitter:null,linkedin:"",empId:336},
-{booth:26,id:"goodyear",name:"Goodyear Tire & Rubber Company",am:0,bme:0,chem:1,civ:0,ce:0,cs:1,ee:1,enve:0,ie:1,made:0,matsci:1,mech:1,industry:"Automotive,Manufacturing,Rubbers & Plastics",branch:"",type:"Public",website:"http://www.goodyear.com/careers",facebook:"",twitter:null,linkedin:"",empId:6},
-{booth:27,id:"google",name:"Google",am:0,bme:0,chem:0,civ:0,ce:1,cs:1,ee:1,enve:0,ie:0,made:0,matsci:0,mech:0,industry:"High Tech - Information Technology,Internet",branch:"1482",type:"Public",website:"http://www.google.com/about",facebook:"",twitter:null,linkedin:"",empId:922},
-{booth:28,id:"groupon",name:"Groupon, Inc.",am:0,bme:0,chem:0,civ:0,ce:1,cs:1,ee:0,enve:0,ie:0,made:0,matsci:0,mech:0,industry:"Computers,Engineering,High Tech - Information Technology",branch:"",type:"Public",website:"http://www.groupon.com/jobs",facebook:"",twitter:null,linkedin:"",empId:1143},
-{booth:29,id:"hfz",name:"Hanley, Flight & Zimmerman LLC",am:0,bme:0,chem:0,civ:0,ce:1,cs:1,ee:1,enve:0,ie:0,made:0,matsci:0,mech:1,industry:"Law",branch:"",type:"Public",website:"http://www.hfzlaw.com",facebook:"",twitter:null,linkedin:"",empId:1305},
-{booth:30,id:"harley-davidson",name:"Harley-Davidson Motor Company",am:0,bme:0,chem:0,civ:0,ce:0,cs:0,ee:0,enve:0,ie:0,made:0,matsci:0,mech:1,industry:"Automotive",branch:"1353",type:"Public",website:"http://www.harley-davidson.com",facebook:"",twitter:null,linkedin:"",empId:800},
-{booth:31,id:"here",name:"HERE",am:0,bme:0,chem:0,civ:0,ce:0,cs:1,ee:0,enve:0,ie:0,made:0,matsci:0,mech:0,industry:"High Tech - Information Technology",branch:"",type:"Private",website:"http://here.com/",facebook:"",twitter:null,linkedin:"",empId:1729},
-{booth:32,id:"hill-intl",name:"Hill International, Inc.",am:0,bme:0,chem:0,civ:1,ce:0,cs:0,ee:0,enve:0,ie:0,made:0,matsci:0,mech:1,industry:"Construction",branch:"",type:"Public",website:"http://hillintl.com",facebook:"",twitter:null,linkedin:"",empId:1580},
-{booth:33,id:"hrgreen",name:"HR Green, Inc",am:0,bme:0,chem:0,civ:1,ce:0,cs:0,ee:1,enve:1,ie:1,made:0,matsci:0,mech:0,industry:"Engineering",branch:"",type:"Private",website:"http://WWW.HRGREEN.COM",facebook:"",twitter:null,linkedin:"",empId:1255},
-{booth:34,id:"hydra-force",name:"Hyrdra Force, Inc.",am:0,bme:0,chem:0,civ:0,ce:0,cs:0,ee:0,enve:0,ie:0,made:1,matsci:0,mech:1,industry:"Engineering",branch:"767",type:"Private",website:"http://www.hydraforce.com",facebook:"",twitter:null,linkedin:"",empId:311},
-{booth:35,id:"idot",name:"Illinois Department of Transportation",am:0,bme:0,chem:0,civ:1,ce:0,cs:0,ee:0,enve:0,ie:0,made:0,matsci:0,mech:0,industry:"Government/Public Administration",branch:"DRO",type:"Government",website:"http://www.dot.il.gov/",facebook:"",twitter:null,linkedin:"",empId:1076},
-{booth:36,id:"ida",name:"Institute for Defense Analyses",am:1,bme:0,chem:1,civ:0,ce:1,cs:1,ee:1,enve:0,ie:1,made:0,matsci:1,mech:0,industry:"Aerospace,Chemicals,Computers,Engineering,High Tech - Information Technology,Military & Defense,Research,Sciences",branch:"",type:"Non-Profit/NGO",website:"https://www.ida.org",facebook:"",twitter:null,linkedin:"",empId:1814},
-{booth:37,id:"itw",name:"ITW",am:0,bme:0,chem:0,civ:0,ce:0,cs:0,ee:0,enve:0,ie:0,made:0,matsci:1,mech:1,industry:"Consumer Products",branch:"",type:"Private",website:"http://www.itw.com",facebook:"",twitter:null,linkedin:"",empId:717},
-{booth:38,id:"johnson-controls",name:"Johnson Controls",am:0,bme:0,chem:1,civ:0,ce:0,cs:1,ee:1,enve:1,ie:1,made:1,matsci:1,mech:1,industry:"Automotive,Business Services,Consumer Products,Energy,Engineering,Environment,High Tech - Information Technology,Manufacturing",branch:"",type:"Public",website:"http://www.JohnsonControls.com",facebook:"",twitter:null,linkedin:"http://www.linkedin.com/company/johnson-controls?trk=hb_tab_compy_id_2247",empId:1229},
-{booth:39,id:"gmcr",name:"Keurig Green Mountain / Keurig Green Mountain Coffee Roasters",am:0,bme:0,chem:0,civ:0,ce:0,cs:0,ee:0,enve:0,ie:0,made:0,matsci:0,mech:0,industry:"Consumer Products",branch:"Engineering",type:"Public",website:"http://www.gmcr.com",facebook:"",twitter:null,linkedin:"",empId:1628},
-{booth:40,id:"mathworks",name:"MathWorks",am:0,bme:1,chem:0,civ:0,ce:1,cs:1,ee:1,enve:0,ie:0,made:0,matsci:0,mech:1,industry:"Computers",branch:"",type:"Private",website:"http://www.mathworks.com",facebook:"",twitter:null,linkedin:"",empId:1274},
-{booth:41,id:"mbx",name:"MBX Systems",am:0,bme:0,chem:0,civ:0,ce:0,cs:0,ee:1,enve:0,ie:0,made:0,matsci:0,mech:0,industry:"Computers",branch:"1527",type:"Private",website:"http://www.mbx.com",facebook:"",twitter:null,linkedin:"",empId:967},
-{booth:42,id:"mbhb",name:"McDonnell Boehnen Hulbert & Berghoff, LLP",am:0,bme:0,chem:0,civ:0,ce:1,cs:1,ee:1,enve:0,ie:0,made:0,matsci:0,mech:1,industry:"Law",branch:"1561",type:"Private",website:"http://www.mbhb.com",facebook:"",twitter:null,linkedin:"",empId:999},
-{booth:43,id:"mwrdgc",name:"Metropolitan Water Reclamation District of Greater Chicago",am:0,bme:0,chem:0,civ:1,ce:0,cs:0,ee:0,enve:1,ie:0,made:0,matsci:0,mech:0,industry:"Environment",branch:"993",type:"Public",website:"http://www.mwrd.org",facebook:"",twitter:null,linkedin:"",empId:475},
-{booth:44,id:"microsoft",name:"Microsoft",am:0,bme:0,chem:0,civ:0,ce:0,cs:0,ee:0,enve:0,ie:0,made:0,matsci:0,mech:0,industry:"Computers",branch:"University Recruiting",type:"Public",website:"http://www.microsoft.com/university",facebook:"",twitter:null,linkedin:"",empId:46},
-{booth:45,id:"motorola-solutions",name:"Motorola Solutions, Inc",am:0,bme:0,chem:0,civ:0,ce:1,cs:1,ee:1,enve:0,ie:0,made:0,matsci:0,mech:1,industry:"Telecommunications",branch:"",type:"Public",website:"http://www.motorolasolutions.com",facebook:"",twitter:null,linkedin:"",empId:17},
-{booth:46,id:"mpc",name:"MPC",am:0,bme:0,chem:0,civ:0,ce:0,cs:0,ee:0,enve:0,ie:1,made:0,matsci:0,mech:1,industry:"Automotive,Engineering,Manufacturing,Rubbers & Plastics",branch:"",type:"Private",website:"http://www.mpc-inc.com",facebook:"",twitter:null,linkedin:"",empId:1084},
-{booth:47,id:"northrop-grumman",name:"Northrop Grumman Corporation",am:0,bme:0,chem:1,civ:0,ce:1,cs:1,ee:1,enve:1,ie:1,made:1,matsci:1,mech:1,industry:"Aerospace,Engineering,High Tech - Information Technology,Manufacturing,Military & Defense",branch:"",type:"Public",website:"http://www.northropgrumman.com",facebook:"www.facebook.com/NorthropGrummanCareers",twitter:null,linkedin:"www.linkedin.com/companies/Northrop-Grumman-Corporation",empId:78},
-{booth:48,id:"nw-mutual",name:"Northwestern Mutual",am:0,bme:0,chem:0,civ:0,ce:0,cs:1,ee:0,enve:0,ie:0,made:0,matsci:0,mech:0,industry:"Insurance",branch:"",type:"Public",website:"http://www.northwesternmutual.com/",facebook:"",twitter:null,linkedin:"",empId:1575},
-{booth:49,id:"oloroso",name:"Oloroso Engineering",am:0,bme:1,chem:1,civ:1,ce:1,cs:1,ee:1,enve:1,ie:1,made:1,matsci:1,mech:0,industry:"Engineering",branch:"Chicago Branch",type:"Private",website:"http://www.olorosoengineering.com",facebook:"",twitter:null,linkedin:"",empId:1043},
-{booth:50,id:"p-g",name:"P&G / Procter & Gamble Company",am:0,bme:1,chem:1,civ:0,ce:0,cs:0,ee:0,enve:0,ie:0,made:1,matsci:1,mech:1,industry:"Chemicals,Consumer Products",branch:"237",type:"Public",website:"http://www.experiencePG.com",facebook:"",twitter:null,linkedin:"",empId:117},
-];
-*/
-
-
- // {  bNum:  1, x: 240, y: 680, room: "Grand Ballroom", floor: 1  },
-    
-    // bNum is the raw number id - used for label?
-    // id is the booth+bNum for use in svg element id's
-    // eg bNum: 3, id: "booth3"
-
-var booth_info = [
-{  bNum:  1, x: 240, y: 680, room: "Grand Ballroom", floor: 1  }, //  compId: will be assigned in a loop
-{  bNum:  2, x: 240, y: 520, room: "Grand Ballroom", floor: 1  },
-{  bNum:  3, x: 240, y: 360, room: "Grand Ballroom", floor: 1  },
-{  bNum:  4, x: 240, y: 200, room: "Grand Ballroom", floor: 1  },
-{  bNum:  5, x: 225, y: 110, rotate: -45, room: "Grand Ballroom", floor: 1  },
-{  bNum:  6, x: 345, y:  30, room: "Grand Ballroom", floor: 1  },
-{  bNum:  7, x: 460, y:  30, room: "Grand Ballroom", floor: 1  },
-{  bNum:  8, x: 575, y:  30, room: "Grand Ballroom", floor: 1  },
-{  bNum:  9, x: 690, y:  30, room: "Grand Ballroom", floor: 1  },
-{  bNum: 10, x: 805, y:  30, room: "Grand Ballroom", floor: 1  },
-{  bNum: 11, x: 920, y:  30, room: "Grand Ballroom", floor: 1  },
-{  bNum: 12, x: 1035, y: 30, room: "Grand Ballroom", floor: 1  },
-{  bNum: 13, x: 1175, y: 35, rotate: 45, room: "Grand Ballroom", floor: 1  },
-{  bNum: 14, x: 1150, y: 145, room: "Grand Ballroom", floor: 1  },
-{  bNum: 15, x: 1150, y: 240, room: "Grand Ballroom", floor: 1  },
-{  bNum: 16, x: 1150, y: 375, room: "Grand Ballroom", floor: 1  },
-{  bNum: 17, x: 1150, y: 470, room: "Grand Ballroom", floor: 1  },
-{  bNum: 18, x: 1150, y: 565, room: "Grand Ballroom", floor: 1  },
-{  bNum: 19, x: 1150, y: 670, room: "Grand Ballroom", floor: 1  },
-{  bNum: 20, x: 1150, y: 785, room: "Grand Ballroom", floor: 1  },
-{  bNum: 21, x: 1040, y: 785, room: "Grand Ballroom", floor: 1  },
-{  bNum: 22, x: 930, y: 785, room: "Grand Ballroom", floor: 1  },
-{  bNum: 23, x: 820, y: 785, room: "Grand Ballroom", floor: 1  },
-{  bNum: 24, x: 710, y: 785, room: "Grand Ballroom", floor: 1  },
-{  bNum: 25, x: 600, y: 785, room: "Grand Ballroom", floor: 1  },
-{  bNum: 26, x: 575, y: 660, room: "Grand Ballroom", floor: 1  },
-{  bNum: 27, x: 690, y: 660, room: "Grand Ballroom", floor: 1 },
-{  bNum: 28, x: 805, y: 660, room: "Grand Ballroom", floor: 1 },
-{  bNum: 29, x: 920, y: 660, room: "Grand Ballroom", floor: 1 },
-{  bNum: 30, x: 1035, y: 660, room: "Grand Ballroom", floor: 1 }, 
-{  bNum: 31, x: 1035, y: 585, room: "Grand Ballroom", floor: 1 },
-{  bNum: 32, x: 920, y: 585, room: "Grand Ballroom", floor: 1 },
-{  bNum: 33, x: 805, y: 585, room: "Grand Ballroom", floor: 1 },
-{  bNum: 34, x: 690, y: 585, room: "Grand Ballroom", floor: 1 },
-{  bNum: 35, x: 575, y: 585, room: "Grand Ballroom", floor: 1 },
-{  bNum: 36, x: 575, y: 460, room: "Grand Ballroom", floor: 1 },
-{  bNum: 37, x: 690, y: 460, room: "Grand Ballroom", floor: 1 },
-{  bNum: 38, x: 805, y: 460, room: "Grand Ballroom", floor: 1 },
-{  bNum: 39, x: 920, y: 460, room: "Grand Ballroom", floor: 1 },
-{  bNum: 40, x: 1035, y: 460, room: "Grand Ballroom", floor: 1 },
-{  bNum: 41, x: 1035, y: 385, room: "Grand Ballroom", floor: 1 },
-{  bNum: 42, x: 920, y: 385, room: "Grand Ballroom", floor: 1 },
-{  bNum: 43, x: 805, y: 385, room: "Grand Ballroom", floor: 1 },
-{  bNum: 44, x: 690, y: 385, room: "Grand Ballroom", floor: 1 },
-{  bNum: 45, x: 575, y: 385, room: "Grand Ballroom", floor: 1 },
-{  bNum: 46, x: 460, y: 385, room: "Grand Ballroom", floor: 1 },
-{  bNum: 47, x: 460, y: 260, room: "Grand Ballroom", floor: 1 },
-{  bNum: 48, x: 575, y: 260, room: "Grand Ballroom", floor: 1 },
-{  bNum: 49, x: 690, y: 260, room: "Grand Ballroom", floor: 1 },
-{  bNum: 50, x: 805, y: 260, room: "Grand Ballroom", floor: 1 },
-{  bNum: 51, x: 920, y: 260, room: "Grand Ballroom", floor: 1 },
-{  bNum: 52, x: 1035, y: 260, room: "Grand Ballroom", floor: 1 },
-{  bNum: 53, x: 1035, y: 185, room: "Grand Ballroom", floor: 1 },
-{  bNum: 54, x: 920, y: 185, room: "Grand Ballroom", floor: 1 },
-{  bNum: 55, x: 805, y: 185, room: "Grand Ballroom", floor: 1 },
-{  bNum: 56, x: 690, y: 185, room: "Grand Ballroom", floor: 1 },
-{  bNum: 57, x: 575, y: 185, room: "Grand Ballroom", floor: 1 },
-{  bNum: 58, x: 460, y: 185, room: "Grand Ballroom", floor: 1 },
-
-//----------------------------------------------------------------------
-//VERTICAL - adjust heritage room y coordinates
-//----------------------------------------------------------------------
-
-{  bNum: 59, x: 250+520, y: 490+1200, room: "Heritage Room", floor: 1 },
-{  bNum: 60, x: 250+405, y: 490+1200, room: "Heritage Room", floor: 1 },
-{  bNum: 61, x: 250+295, y: 490+1200, room: "Heritage Room", floor: 1 },
-{  bNum: 62, x: 250+180, y: 490+1200, room: "Heritage Room", floor: 1 },
-{  bNum: 63, x:  250+30, y: 490+1200, room: "Heritage Room", floor: 1 },
-{  bNum: 64, x:  250+30, y: 370+1200, room: "Heritage Room", floor: 1 },
-{  bNum: 65, x:  250+30, y: 270+1200, room: "Heritage Room", floor: 1 },
-{  bNum: 66, x:  250+30, y: 155+1200, room: "Heritage Room", floor: 1 },
-{  bNum: 67, x:  250+30, y:  30+1200, room: "Heritage Room", floor: 1 },
-{  bNum: 68, x: 250+160, y:  30+1200, room: "Heritage Room", floor: 1 },
-{  bNum: 69, x: 250+290, y:  30+1200, room: "Heritage Room", floor: 1 },
-{  bNum: 70, x: 250+500, y:  30+1200, room: "Heritage Room", floor: 1 },
-{  bNum: 71, x: 250+670, y:  30+1200, room: "Heritage Room", floor: 1 },  
-{  bNum: 72, x: 250+760, y:  70+1200, room: "Heritage Room", floor: 1 },
-{  bNum: 73, x: 250+760, y: 210+1200, room: "Heritage Room", floor: 1 },
-{  bNum: 74, x: 250+760, y: 310+1200, room: "Heritage Room", floor: 1 },
-{  bNum: 75, x: 250+760, y: 405+1200, room: "Heritage Room", floor: 1 },
-{  bNum: 76, x: 250+560, y: 285+1200, room: "Heritage Room", floor: 1 },
-{  bNum: 77, x: 250+455, y: 285+1200, room: "Heritage Room", floor: 1 },
-{  bNum: 78, x: 250+350, y: 285+1200, room: "Heritage Room", floor: 1 },
-{  bNum: 79, x: 250+245, y: 285+1200, room: "Heritage Room", floor: 1 },
-{  bNum: 80, x: 250+245, y: 200+1200, room: "Heritage Room", floor: 1 },
-{  bNum: 81, x: 250+350, y: 200+1200, room: "Heritage Room", floor: 1 },
-{  bNum: 82, x: 250+455, y: 200+1200, room: "Heritage Room", floor: 1 },
-{  bNum: 83, x: 250+560, y: 200+1200, room: "Heritage Room", floor: 1 },
-
-];  

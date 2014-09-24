@@ -177,6 +177,7 @@ app.controller('CompanyMapCtrl', function($scope, $location) {
   // {{startX - 20}} {{startY - 20}} {{mapWidth + 20}} {{mapHeight + 20}}"
   
   
+  // values specific to hilton orrington
   $scope.startX = 80;
   $scope.startY = -200;
   $scope.mapWidth = 1250;
