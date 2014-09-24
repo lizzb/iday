@@ -75,6 +75,7 @@ viewBox="{{startX}} {{startY}} {{mapWidth}} {{mapHeight}}">
 
 
 <g id="tooltip" class="st18 tooltip" ng-show="tooltipIsVisible" ng-click="go('iday/companies/{{b.compId}}')">
+<!-- possibly apply ng class to display favorites diff color? -->
         <path id="background"
               class="tooltip-bg" fill="#dff"
               d="
@@ -85,7 +86,13 @@ viewBox="{{startX}} {{startY}} {{mapWidth}} {{mapHeight}}">
               L  30,-3 
               L  22,-10 
               L -35,-10 Z"></path>       
-        <text x="-20" y="-40" class="tooltip-label"> Click for details </text>
+        <text x="-20" y="-30" class="tooltip-label"> Click for details </text>
+        <image class="compLogo" 
+             x="-30" y="-70"
+             width="120" height="30"
+             ng-xlink-href="http://lizzb.github.io/iday/www/img/logos/{{b.compId}}/wide.png" 
+             xlink:href=""/>
+
       </g>
 
 
