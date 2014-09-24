@@ -5,6 +5,7 @@
 
     <!-- {{startX - 20}} {{startY - 200}} {{mapWidth + 200}} {{mapHeight + 20}}" -->
 
+
 <svg xmlns="http://www.w3.org/2000/svg" 
 xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" 
 preserveAspectRatio="xMinYMin meet" 
@@ -58,15 +59,20 @@ viewBox="{{startX}} {{startY}} {{mapWidth}} {{mapHeight}}">
   </g>
 </g><!--/#heritage -->
 
-
 <g>
     <g ng-repeat="b in booths" ng-click="go('iday/companies/{{b.compId}}')">
-    <g transform="translate({{b.x}}, {{b.y}})">
+    <g ng-attr-transform="translate({{b.x}}, {{b.y}})">
     <!-- need to add an ng-if rotate property exists to avoid plethora of errors in console -->
-    <g transform="rotate({{b.rotate}},0,0)">
+    <!-- apparently using ng if or ng switch inside ng repeat INSIDE svg is more complicated than i realized.... going to do easy/lame route of just assigning a rotate value to every booth 
+ng-attr-transform="rotateBooth({{b.rotate}});"> also tried rotate(rroratebooth(b.rotate), 0, 0)
+didn't try casting i guess
+    --><!-- ({{b.rotate}},0,0)-->
+
+    <!-- this still throws errors in console, but it does exactly what i want so... shrug -->
+    <g ng-attr-transform="rotate({{b.rotate}},0,0)">
         <rect class="booth" ng-attr-id="{{b.compId}}"
               x="0" y="0"
-              width="{{bWidth}}" height="{{bHeight}}"/>
+              ng-attr-width="{{bWidth}}" ng-attr-height="{{bHeight}}"/>
       
       <!-- below format shows
             itty bitty square logo in top left corner, 

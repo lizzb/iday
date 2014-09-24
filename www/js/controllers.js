@@ -170,7 +170,17 @@ app.controller('CompanyDetailCtrl', function($scope, company) {
 app.controller('CompanyMapCtrl', function($scope, $location) {
   
   $scope.go = function ( path ) { $location.path( path ); };
+
+  /*$scope.hasRotation = function(booth) {
+        return booth.hasOwnProperty('rotate');
+    }*/
+  $scope.rotateBooth = function (boothRotation) {
+    var degrees = 0;
+      if(boothRotation != null) degrees = boothRotation;
+      return "rotate("+degrees+", 0, 0);";
+  };
   
+
   $scope.bWidth = 60; // boothWidth
   $scope.bHeight = 60; // boothHeight
   
