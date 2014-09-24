@@ -29,6 +29,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
     })
     
     
+    .state('sidemenu.credits', {
+      url: "/credits",
+      views: { 'menuContent' :{ templateUrl: "templates/credits.html", controller: "MainCtrl" } } /*FilterSettingsCtrl*/
+    })
     
 
     
