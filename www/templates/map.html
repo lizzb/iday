@@ -125,8 +125,8 @@ st0{fill:#FFFFFF;}
 
 
 
- <label><input type="checkbox" ng-model="tooltipIsVisible"> tooltip is visible</label><br/>
-    <label><input type="checkbox" ng-model="dialogIsVisible"> dialog is visible</label><br/>
+<label><input type="checkbox" ng-model="tooltipIsVisible"> tooltip is visible</label><br/>
+<label><input type="checkbox" ng-model="dialogIsVisible"> dialog is visible</label><br/>
 
 <svg version="1.1" id="mainview" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="587.5px" height="410px" viewBox="0 -17.5 587.5 410" style="enable-background:new 0 -17.5 587.5 410;" xml:space="preserve">
 
@@ -145,44 +145,69 @@ st0{fill:#FFFFFF;}
             <rect x="339" y="170.5" class="st16" width="54" height="6"></rect>
             
             <text x="395" y="165" class="st0" style="fill: white;">9</text>
-           
-            
-          </g>
+      
           
-          </g>
+  </g>
         <g id="borders" ng-hide="true">
           <line class="st17" x1="48" y1="131" x2="536" y2="131"></line>
           <line class="st17" x1="197" y1="203" x2="536" y2="203"></line>
           <line class="st17" x1="197" y1="275" x2="536" y2="275"></line>
         </g>
-      </g>
+      </g> 
+      <!--479 to 492 = width = 13
+      height 311 to 316 = 5
+
+370 is midpoint? yes 67+303
+    303 to 437 = 134 
+    134/2 = 67
+    6 on either side of 67...
+    134-13 /2 = 60.5
+    437 - 60.5 = 376.5
+    303+ 60.5 == 363.5
+    77 + 5 = 82, 77-5 = 72
+d="M 303,135 L 437,135 L 437,77 L 376.5,77 L 370,82  L 363.5,77 L 303,77 Z" updsideown
+      -->
+      <!--path class="" fill="lightblue"  d="M 303,135 L 437,135 L 437,77 L 303,77 Z"></path-->
+
       
       
       <g id="tooltip" class="st18 tooltip" ng-show="tooltipIsVisible">
-        <g id="background" class="tooltip-bg">
-          <rect x="303" y="77.527" width="134" height="58"></rect>
+        <!--g id="background" class="tooltip-bg"-->
+<!-- fill="lightblue" -->
+        <path id="background" class="tooltip-bg"  d="
+      M 303, 77
+      L 437, 77
+      L 437,135 
+      L 376.5,135 
+      L 370,143  
+      L 363.5,135 
+      L 303,135 Z"></path>
+
+          <!--rect x="303" y="77.527" width="134" height="58"></rect>
           <rect x="357.665" y="112.191" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 543.5754 474.2041)" width="24.667" height="24.667"></rect>
-        </g>
+        </g-->
         <text x="318" y="110" style="font-family: arial; fill: hotpink; text-anchor: start;"> Click for details </text>
       </g>
           
       <g id="dialog" class="dialog st18" ng-show="dialogIsVisible">
 
-              <path class="st22" d="M468.5,298.5c0,2.209-1.791,4-4,4h-343c-2.209,0-4-1.791-4-4v-207c0-2.209,1.791-4,4-4h343
+            <!-- this might be shadow? idk 
+              <path class="st22" fill="hotpink" d="M468.5,298.5c0,2.209-1.791,4-4,4h-343c-2.209,0-4-1.791-4-4v-207c0-2.209,1.791-4,4-4h343
           c2.209,0,4,1.791,4,4V298.5z"></path>
             
-              <path class="st0" d="M468.5,295c0,1.933-1.567,3.5-3.5,3.5H122c-1.933,0-3.5-1.567-3.5-3.5V88c0-1.933,1.567-3.5,3.5-3.5h343
-          c1.933,0,3.5,1.567,3.5,3.5V295z"></path>
+              <path class="st0" stroke="hotpink" d="M468.5,295c0,1.933-1.567,3.5-3.5,3.5H122c-1.933,0-3.5-1.567-3.5-3.5V88c0-1.933,1.567-3.5,3.5-3.5h343
+          c1.933,0,3.5,1.567,3.5,3.5V295z"></path-->
               
-                <path class="st23" d="M465.167,85.5c1.654,0,3.333,0.951,3.333,2.606v206.997c0,1.654-1.679,3.397-3.333,3.397H121.883
+              <rect class="notst23" x="118" y="85" height="213" width="350" fill="white" stroke="lime" rx="5" ry="5"/>
+                <!--path class="st23" d="M465.167,85.5c1.654,0,3.333,0.951,3.333,2.606v206.997c0,1.654-1.679,3.397-3.333,3.397H121.883
             c-1.654,0-3.383-1.743-3.383-3.397V88.106c0-1.654,1.728-2.606,3.383-2.606H465.5 M465.167,84.5H121.883
             c-2.2,0-4.383,1.406-4.383,3.606v206.997c0,2.2,2.183,4.397,4.383,4.397h343.284c2.2,0,4.333-2.197,4.333-4.397V88.106
-            C469.5,85.906,467.367,84.5,465.167,84.5L465.167,84.5z"></path>
+            C469.5,85.906,467.367,84.5,465.167,84.5L465.167,84.5z"></path-->
               
 
         
         <line class="st24" x1="118.883" y1="140.512" x2="467.833" y2="140.512"></line>
-        
+
         <g id="closebutton" class="st21" ng-click="dialogIsVisible = false">
               
           <!-- close button fill... removed enclosing g -->
@@ -196,7 +221,7 @@ st0{fill:#FFFFFF;}
         <text x="138" y="117" class="st25" style="font-family: Verdana;font-weight: bold;">Maracuja details</text>
         
         
-         <g id="_x33_Gkzyi.tif" class="st26">
+         <!--g id="_x33_Gkzyi.tif" class="st26"-->
 </svg>
 
 <!--Interactive Illustrator SVG using AngularJS:(tooltips)
