@@ -2,6 +2,23 @@
 // name = the csv/json-safe name for filtering etc
 
 var majors_list = [ 
+  { friendlyName: 'AM - Applied Math', name: 'am'},
+  { friendlyName: 'BME - Biomedical Eng.', name: 'bme'},
+  { friendlyName: 'Chemical Engineering', name: 'chem'},
+  { friendlyName: 'Civil Engineering', name: 'civil'},
+  { friendlyName: 'Computer Engineering (CE)', name: 'ce'},
+  { friendlyName: 'CS - Computer Science (BS/McCormick)', name: 'cs'},
+  //{ friendlyName: 'CS - Computer Science (BA/Weinberg)', name: 'csa'},
+  { friendlyName: 'EE - Electrical Eng.', name: 'ee'},
+  { friendlyName: 'EnvE - Environmental Eng.', name: 'enve'},
+  { friendlyName: 'IE - Industrial Eng.', name: 'ie'},
+  { friendlyName: 'MaDE', name: 'made'},
+  { friendlyName: 'MatSci - Material Science', name:'matsci' },
+  { friendlyName: 'Mechanical Engineering', name: 'mech' },
+  //{ friendlyName: 'Non-engineering', name: 'noneng' }
+];
+/*
+var majors_list = [ 
   { friendlyName: 'Applied Math', name: 'am'},
   { friendlyName: 'Biomedical Engineering (BME)', name: 'bme'},
   { friendlyName: 'Chemical Engineering', name: 'chem'},
@@ -16,6 +33,7 @@ var majors_list = [
   { friendlyName: 'Mechanical Engineering', name: 'mech' },
   //{ friendlyName: 'Non-engineering', name: 'noneng' }
 ];
+*/
 
 var positions_list = [ 
   { friendlyName: 'Full Time', name: 'fte'},
@@ -24,13 +42,184 @@ var positions_list = [
   { friendlyName: 'MS/PhD', name: 'msphd'}
 ];
 
-
+/*
 var industries_list = [ 
   { friendlyName: 'Full Time', name: 'fte'},
   { friendlyName: 'Intern', name: 'intern' },
   { friendlyName: 'Co-Op', name: 'coop' },
   { friendlyName: 'MS/PhD', name: 'msphd'}
 ];
+*/
+
+var industries_list = [  //var industry_categories_list = [
+"Accounting",
+"Advertising/Marketing",
+"Aerospace",
+"Agriculture",
+"Architecture / Urban Planning",
+"Arts",
+"Automotive",
+"Banking",
+"Biotech & Pharmaceuticals",
+"Business Services",
+"Chemicals",
+"Communications / Media",
+"Computers",
+"Construction",
+"Consulting",
+"Consumer Products",
+"Distribution",
+"Education",
+"Electronics",
+"Energy",
+"Engineering",
+"Entertainment",
+"Entrepreneurial / Start-Ups",
+"Environment",
+"Fashion",
+"Financial Services",
+"Food Science",
+"Food Services",
+"Forestry",
+"Government / Public Administration",
+"Healthcare",
+"High Tech - Information Technology",
+"Hotel, Restaurant, Hospitality",
+"Housing & Urban Development",
+"Insurance",
+"International Affairs & Development",
+"Internet",
+"Investment Banking",
+"Law",
+"Law Enforcement & Security",
+"Logistics",
+"Manufacturing",
+"Maritime",
+"Military & Defense",
+"Mining",
+"Museums & Libraries",
+"Libraries",
+"Natural Resources",
+"Non-Profit / Philanthropy",
+"Other",
+"Parks and Camps",
+"Print & Publishing",
+"Publishing",
+"Real Estate",
+"Religion",
+"Research",
+"Retail / Wholesale",
+"Rubbers & Plastics",
+"Plastics",
+"Sciences",
+"Sports & Recreation",
+"Recreation",
+"Staffing & Executive Search",
+"Telecommunications",
+"Tobacco",
+"Trade",
+"Transportation",
+"Travel & Tourism",
+"Unspecified",
+"Utilities",
+"Venture Capital / Principal Investing",
+"Veterinary",
+"Waste Management",
+];
+
+
+
+/*
+
+< select name = "lblCategoriesEdit"
+id = "lblCategoriesEdit"
+class = "smalleditList"
+multiple = ""
+size = "4" > < option value = "Accounting" > Accounting < /option><option value="Advertising/Marketing
+">Advertising/Marketing</option><option value="
+Aerospace ">Aerospace</option><option value="
+Agriculture ">Agriculture</option><option value="
+Architecture / Urban Planning ">Architecture/Urban Planning</option><option value="
+Arts ">Arts</option><option value="
+Automotive ">Automotive</option><option value="
+Banking ">Banking</option><option value="
+Biotech & amp;
+Pharmaceuticals ">Biotech &amp; Pharmaceuticals</option><option value="
+Business Services ">Business Services</option><option value="
+Chemicals ">Chemicals</option><option value="
+Communications / Media ">Communications/Media</option><option value="
+Computers ">Computers</option><option value="
+Construction ">Construction</option><option value="
+Consulting ">Consulting</option><option value="
+Consumer Products ">Consumer Products</option><option value="
+Distribution ">Distribution</option><option value="
+Education ">Education</option><option value="
+Electronics ">Electronics</option><option value="
+Energy ">Energy</option><option value="
+Engineering ">Engineering</option><option value="
+Entertainment ">Entertainment</option><option value="
+Entrepreneurial / Start - Ups ">Entrepreneurial/Start-Ups</option><option value="
+Environment ">Environment</option><option value="
+Fashion ">Fashion</option><option value="
+Financial Services ">Financial Services</option><option value="
+Food Science ">Food Science</option><option value="
+Food Services ">Food Services</option><option value="
+Forestry ">Forestry</option><option value="
+Government / Public Administration ">Government/Public Administration</option><option value="
+Healthcare ">Healthcare</option><option value="
+High Tech - Information Technology ">High Tech - Information Technology</option><option value="
+Hotel, Restaurant, Hospitality ">Hotel, Restaurant, Hospitality</option><option value="
+Housing & amp;
+Urban Development ">Housing &amp; Urban Development</option><option value="
+Insurance ">Insurance</option><option value="
+International Affairs & amp;
+Development ">International Affairs &amp; Development</option><option value="
+Internet ">Internet</option><option value="
+Investment Banking ">Investment Banking</option><option value="
+Law ">Law</option><option value="
+Law Enforcement & amp;
+Security ">Law Enforcement &amp; Security</option><option value="
+Logistics ">Logistics</option><option value="
+Manufacturing ">Manufacturing</option><option value="
+Maritime ">Maritime</option><option value="
+Military & amp;
+Defense ">Military &amp; Defense</option><option value="
+Mining ">Mining</option><option value="
+Museums & amp;
+Libraries ">Museums &amp; Libraries</option><option value="
+Natural Resources ">Natural Resources</option><option value="
+Non - Profit / Philanthropy ">Non-Profit/Philanthropy</option><option value="
+Other ">Other</option><option value="
+Parks and Camps ">Parks and Camps</option><option value="
+Print & amp;
+Publishing ">Print &amp; Publishing</option><option value="
+Real Estate ">Real Estate</option><option value="
+Religion ">Religion</option><option value="
+Research ">Research</option><option value="
+Retail / Wholesale ">Retail/Wholesale</option><option value="
+Rubbers & amp;
+Plastics ">Rubbers &amp; Plastics</option><option value="
+Sciences ">Sciences</option><option value="
+Sports & amp;
+Recreation ">Sports &amp; Recreation</option><option value="
+Staffing & amp;
+Executive Search ">Staffing &amp; Executive Search</option><option value="
+Telecommunications ">Telecommunications</option><option value="
+Tobacco ">Tobacco</option><option value="
+Trade ">Trade</option><option value="
+Transportation ">Transportation</option><option value="
+Travel & amp;
+Tourism ">Travel &amp; Tourism</option><option value="
+Unspecified ">Unspecified</option><option value="
+Utilities ">Utilities</option><option value="
+Venture Capital / Principal Investing ">Venture Capital/Principal Investing</option><option value="
+Veterinary ">Veterinary</option><option value="
+Waste Management ">Waste Management</option></select>
+*/
+
+
+
+
 
 /*
 var company_list = [
@@ -40,7 +229,7 @@ var company_list = [
 ];*/
 
 var company_list = [
-{booth:1,id:"3m",name:"3M","am":0,"bme":0,"chem":1,"civ":0,"ce":0,"cs":0,"ee":1,"enve":0,"ie":1,"made":1,"matsci":1,"mech":1,empId:51,industry:"Manufacturing",branch:"Film Manufacturing",type:"Public",website:"http://www.mmm.com",facebook:"https://www.facebook.com/3MCareers",twitter:null,linkedin:"",city:"St. Paul",state:"MN",zip:55144-1000,description:"Diversified Manufacturing"},
+{booth:1,id:"3m",name:"3M",am:0,bme:0,chem:1,civ:0,ce:0,cs:0,ee:1,enve:0,ie:1,made:1,matsci:1,mech:1,empId:51,industry:"Manufacturing",branch:"Film Manufacturing",type:"Public",website:"http://www.mmm.com",facebook:"https://www.facebook.com/3MCareers",twitter:null,linkedin:"",city:"St. Paul",state:"MN",zip:55144-1000,description:"Diversified Manufacturing"},
 {booth:2,id:"3red",name:"3Red",am:1,bme:0,chem:0,civ:0,ce:0,cs:1,ee:1,enve:0,ie:0,made:0,matsci:0,mech:1,empId:1551,industry:"Financial Services",branch:"",type:"Private",website:"http://3redgroup.com",facebook:"https://www.facebook.com/3RedTrading",twitter:"https://twitter.com/3RedTrading",linkedin:"",city:"Chicago",state:"IL",zip:60605,description:"3Red is a proprietary trading firm with offices in the Chicago Loop and New York City."},
 {booth:3,id:"adage-tech",name:"Adage Technologies",am:0,bme:0,chem:0,civ:0,ce:0,cs:1,ee:0,enve:0,ie:0,made:0,matsci:0,mech:0,empId:1240,industry:"Computers",branch:"",type:"Private",website:"http://www.adagetechnologies.com/",facebook:"https://www.facebook.com/AdageJobSearch",twitter:"twitter.com/adage",linkedin:"twitter.com/adage",city:"Chicago",state:"IL",zip:60606,description:"Adage Technologies is an award-winning Chicago web development firm, specializing in creating engaging custom websites, custom software and mobile solutions since its inception in 2001. Specialties Custom Software, Content Management, Mobile, Association Management Systems, Web Development Awards Top 50 Gen Y Employer in Chicago-Brill Street One of The Best Places to Work in Illinois- The Daily Herald Business Ledger 500\/5000 Fastest Growing Private Companies- INC."},
 {booth:4,id:"alcatel-lucent",name:"Alcatel-Lucent",am:0,bme:0,chem:0,civ:0,ce:1,cs:1,ee:1,enve:0,ie:0,made:0,matsci:0,mech:0,empId:373,industry:"Telecommunications",branch:"",type:"Public",website:"http://www.alcatel-lucent.com",facebook:"http://www.facebook.com/AlcatelLucent.University.Recruiting",twitter:null,linkedin:"",city:"Naperville",state:"IL",zip:60563,description:"Telecoms today is an environment of radical adaptation to new realities, new demands, new business models. The long-trusted transformation partner of service providers, enterprises, strategic industries and governments around the world, Alcatel-Lucent delivers the innovation our customers need to stay ahead. To compete. To create. To move at the speed of ideas, both in the lab and in the marketplace. A leader in mobile, fixed, IP and optics technologies, and a pioneer in applications and services, Alcatel-Lucent includes Bell Labs, one of the world\u2019s foremost centers of research and innovation in communication technology. We bring an unmatched heritage of ideas and execution to the challenge of realizing the potential of a connected world. Our customers turn to us for our ability to deliver on their future. With operations in more than 130 countries and the most experienced global services organization in the industry, Alcatel-Lucent is a local partner with a global reach. Alcatel-Lucent achieved revenues of Euro 16 billion in 2010 and is incorporated in France and headquartered in Paris. Alcatel-Lucent is the trusted partner of service providers, enterprises and governments worldwide, providing solutions to deliver voice, data and video communication services to end-users. A leader in fixed, mobile and converged broadband networking, IP technologies, applications and services, Alcatel-Lucent leverages the unrivalled technical and scientific expertise of Bell Labs, one of the largest innovation powerhouses in the communications industry. With operations in more than 130 countries and the most experienced global services organization in the industry, Alcatel-Lucent is a local partner with a global reach. For more information, visit Alcatel-Lucent on the Internet: http:\/\/www.alcatel-lucent.com"},
