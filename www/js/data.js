@@ -228,6 +228,11 @@ var company_list = [
 {booth:3,id:"adage-tech",name:"Adage Technologies","am":0,"bme":0,"chem":0,"civ":0,"ce":0,"cs":1,"ee":0,"enve":0,"ie":0,"made":0,"matsci":0,"mech":0},
 ];*/
 
+
+
+
+
+
 var company_list = [
 {booth:1,id:"3m",name:"3M",am:0,bme:0,chem:1,civ:0,ce:0,cs:0,ee:1,enve:0,ie:1,made:1,matsci:1,mech:1,empId:51,industry:"Manufacturing",branch:"Film Manufacturing",type:"Public",website:"http://www.mmm.com",facebook:"https://www.facebook.com/3MCareers",twitter:null,linkedin:"",city:"St. Paul",state:"MN",zip:55144-1000,description:"Diversified Manufacturing"},
 {booth:2,id:"3red",name:"3Red",am:1,bme:0,chem:0,civ:0,ce:0,cs:1,ee:1,enve:0,ie:0,made:0,matsci:0,mech:1,empId:1551,industry:"Financial Services",branch:"",type:"Private",website:"http://3redgroup.com",facebook:"https://www.facebook.com/3RedTrading",twitter:"https://twitter.com/3RedTrading",linkedin:"",city:"Chicago",state:"IL",zip:60605,description:"3Red is a proprietary trading firm with offices in the Chicago Loop and New York City."},
