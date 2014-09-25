@@ -14,7 +14,7 @@ var majors_list = [
   { friendlyName: 'MaDE', name: 'made'},
   { friendlyName: 'Material Science', name:'matsci' },
   { friendlyName: 'Mechanical Engineering', name: 'mech' },
-  { friendlyName: 'Non-engineering', name: 'noneng' }
+  //{ friendlyName: 'Non-engineering', name: 'noneng' }
 ];
 
 var positions_list = [ 
@@ -32,10 +32,15 @@ var industries_list = [
   { friendlyName: 'MS/PhD', name: 'msphd'}
 ];
 
-
+/*
+var company_list = [
+{booth:1,id:"3m",name:"3M","am":0,"bme":0,"chem":1,"civ":0,"ce":0,"cs":0,"ee":1,"enve":0,"ie":1,"made":1,"matsci":1,"mech":1},
+//{booth:2,id:"3red",name:"3Red",am:1,bme:0,chem:0,civ:0,ce:0,cs:1,ee:1,enve:0,ie:0,made:0,matsci:0,mech:1,empId:1551,industry:"Financial Services",branch:"",type:"Private",website:"http://3redgroup.com",facebook:"https://www.facebook.com/3RedTrading",twitter:"https://twitter.com/3RedTrading",linkedin:"",city:"Chicago",state:"IL",zip:60605,description:"3Red is a proprietary trading firm with offices in the Chicago Loop and New York City."},
+{booth:3,id:"adage-tech",name:"Adage Technologies","am":0,"bme":0,"chem":0,"civ":0,"ce":0,"cs":1,"ee":0,"enve":0,"ie":0,"made":0,"matsci":0,"mech":0},
+];*/
 
 var company_list = [
-{booth:1,id:"3m",name:"3M",am:0,bme:0,chem:1,civ:0,ce:0,cs:0,ee:1,enve:0,ie:1,made:1,matsci:1,mech:1,empId:51,industry:"Manufacturing",branch:"Film Manufacturing",type:"Public",website:"http://www.mmm.com",facebook:"https://www.facebook.com/3MCareers",twitter:null,linkedin:"",city:"St. Paul",state:"MN",zip:55144-1000,description:"Diversified Manufacturing"},
+{booth:1,id:"3m",name:"3M","am":0,"bme":0,"chem":1,"civ":0,"ce":0,"cs":0,"ee":1,"enve":0,"ie":1,"made":1,"matsci":1,"mech":1,empId:51,industry:"Manufacturing",branch:"Film Manufacturing",type:"Public",website:"http://www.mmm.com",facebook:"https://www.facebook.com/3MCareers",twitter:null,linkedin:"",city:"St. Paul",state:"MN",zip:55144-1000,description:"Diversified Manufacturing"},
 {booth:2,id:"3red",name:"3Red",am:1,bme:0,chem:0,civ:0,ce:0,cs:1,ee:1,enve:0,ie:0,made:0,matsci:0,mech:1,empId:1551,industry:"Financial Services",branch:"",type:"Private",website:"http://3redgroup.com",facebook:"https://www.facebook.com/3RedTrading",twitter:"https://twitter.com/3RedTrading",linkedin:"",city:"Chicago",state:"IL",zip:60605,description:"3Red is a proprietary trading firm with offices in the Chicago Loop and New York City."},
 {booth:3,id:"adage-tech",name:"Adage Technologies",am:0,bme:0,chem:0,civ:0,ce:0,cs:1,ee:0,enve:0,ie:0,made:0,matsci:0,mech:0,empId:1240,industry:"Computers",branch:"",type:"Private",website:"http://www.adagetechnologies.com/",facebook:"https://www.facebook.com/AdageJobSearch",twitter:"twitter.com/adage",linkedin:"twitter.com/adage",city:"Chicago",state:"IL",zip:60606,description:"Adage Technologies is an award-winning Chicago web development firm, specializing in creating engaging custom websites, custom software and mobile solutions since its inception in 2001. Specialties Custom Software, Content Management, Mobile, Association Management Systems, Web Development Awards Top 50 Gen Y Employer in Chicago-Brill Street One of The Best Places to Work in Illinois- The Daily Herald Business Ledger 500\/5000 Fastest Growing Private Companies- INC."},
 {booth:4,id:"alcatel-lucent",name:"Alcatel-Lucent",am:0,bme:0,chem:0,civ:0,ce:1,cs:1,ee:1,enve:0,ie:0,made:0,matsci:0,mech:0,empId:373,industry:"Telecommunications",branch:"",type:"Public",website:"http://www.alcatel-lucent.com",facebook:"http://www.facebook.com/AlcatelLucent.University.Recruiting",twitter:null,linkedin:"",city:"Naperville",state:"IL",zip:60563,description:"Telecoms today is an environment of radical adaptation to new realities, new demands, new business models. The long-trusted transformation partner of service providers, enterprises, strategic industries and governments around the world, Alcatel-Lucent delivers the innovation our customers need to stay ahead. To compete. To create. To move at the speed of ideas, both in the lab and in the marketplace. A leader in mobile, fixed, IP and optics technologies, and a pioneer in applications and services, Alcatel-Lucent includes Bell Labs, one of the world\u2019s foremost centers of research and innovation in communication technology. We bring an unmatched heritage of ideas and execution to the challenge of realizing the potential of a connected world. Our customers turn to us for our ability to deliver on their future. With operations in more than 130 countries and the most experienced global services organization in the industry, Alcatel-Lucent is a local partner with a global reach. Alcatel-Lucent achieved revenues of Euro 16 billion in 2010 and is incorporated in France and headquartered in Paris. Alcatel-Lucent is the trusted partner of service providers, enterprises and governments worldwide, providing solutions to deliver voice, data and video communication services to end-users. A leader in fixed, mobile and converged broadband networking, IP technologies, applications and services, Alcatel-Lucent leverages the unrivalled technical and scientific expertise of Bell Labs, one of the largest innovation powerhouses in the communications industry. With operations in more than 130 countries and the most experienced global services organization in the industry, Alcatel-Lucent is a local partner with a global reach. For more information, visit Alcatel-Lucent on the Internet: http:\/\/www.alcatel-lucent.com"},
@@ -210,32 +215,32 @@ var company_list = [
     // eg bNum: 3, id: "booth3"
 
 var booth_info = [
-{  bNum:  1, x: 240, y: 680, room: "Grand Ballroom", floor: 1  }, //  compId: will be assigned in a loop
-{  bNum:  2, x: 240, y: 520, room: "Grand Ballroom", floor: 1  },
-{  bNum:  3, x: 240, y: 360, room: "Grand Ballroom", floor: 1  },
-{  bNum:  4, x: 240, y: 200, room: "Grand Ballroom", floor: 1  },
+{  bNum:  1, x: 240, y: 680, room: "Grand Ballroom", floor: 1 }, //  compId: will be assigned in a loop
+{  bNum:  2, x: 240, y: 520, room: "Grand Ballroom", floor: 1 },
+{  bNum:  3, x: 240, y: 360, room: "Grand Ballroom", floor: 1 },
+{  bNum:  4, x: 240, y: 200, room: "Grand Ballroom", floor: 1 },
 {  bNum:  5, x: 225, y: 110, rotate: -45, room: "Grand Ballroom", floor: 1  },
-{  bNum:  6, x: 345, y:  30, room: "Grand Ballroom", floor: 1  },
-{  bNum:  7, x: 460, y:  30, room: "Grand Ballroom", floor: 1  },
-{  bNum:  8, x: 575, y:  30, room: "Grand Ballroom", floor: 1  },
-{  bNum:  9, x: 690, y:  30, room: "Grand Ballroom", floor: 1  },
-{  bNum: 10, x: 805, y:  30, room: "Grand Ballroom", floor: 1  },
-{  bNum: 11, x: 920, y:  30, room: "Grand Ballroom", floor: 1  },
-{  bNum: 12, x: 1035, y: 30, room: "Grand Ballroom", floor: 1  },
+{  bNum:  6, x: 345, y:  30, room: "Grand Ballroom", floor: 1 },
+{  bNum:  7, x: 460, y:  30, room: "Grand Ballroom", floor: 1 },
+{  bNum:  8, x: 575, y:  30, room: "Grand Ballroom", floor: 1 },
+{  bNum:  9, x: 690, y:  30, room: "Grand Ballroom", floor: 1 },
+{  bNum: 10, x: 805, y:  30, room: "Grand Ballroom", floor: 1 },
+{  bNum: 11, x: 920, y:  30, room: "Grand Ballroom", floor: 1 },
+{  bNum: 12, x: 1035, y: 30, room: "Grand Ballroom", floor: 1 },
 {  bNum: 13, x: 1175, y: 35, rotate: 45, room: "Grand Ballroom", floor: 1  },
-{  bNum: 14, x: 1150, y: 145, room: "Grand Ballroom", floor: 1  },
-{  bNum: 15, x: 1150, y: 240, room: "Grand Ballroom", floor: 1  },
-{  bNum: 16, x: 1150, y: 375, room: "Grand Ballroom", floor: 1  },
-{  bNum: 17, x: 1150, y: 470, room: "Grand Ballroom", floor: 1  },
-{  bNum: 18, x: 1150, y: 565, room: "Grand Ballroom", floor: 1  },
-{  bNum: 19, x: 1150, y: 670, room: "Grand Ballroom", floor: 1  },
-{  bNum: 20, x: 1150, y: 785, room: "Grand Ballroom", floor: 1  },
-{  bNum: 21, x: 1040, y: 785, room: "Grand Ballroom", floor: 1  },
-{  bNum: 22, x: 930, y: 785, room: "Grand Ballroom", floor: 1  },
-{  bNum: 23, x: 820, y: 785, room: "Grand Ballroom", floor: 1  },
-{  bNum: 24, x: 710, y: 785, room: "Grand Ballroom", floor: 1  },
-{  bNum: 25, x: 600, y: 785, room: "Grand Ballroom", floor: 1  },
-{  bNum: 26, x: 575, y: 660, room: "Grand Ballroom", floor: 1  },
+{  bNum: 14, x: 1150, y: 145, room: "Grand Ballroom", floor: 1 },
+{  bNum: 15, x: 1150, y: 240, room: "Grand Ballroom", floor: 1 },
+{  bNum: 16, x: 1150, y: 375, room: "Grand Ballroom", floor: 1 },
+{  bNum: 17, x: 1150, y: 470, room: "Grand Ballroom", floor: 1 },
+{  bNum: 18, x: 1150, y: 565, room: "Grand Ballroom", floor: 1 },
+{  bNum: 19, x: 1150, y: 670, room: "Grand Ballroom", floor: 1 },
+{  bNum: 20, x: 1150, y: 785, room: "Grand Ballroom", floor: 1 },
+{  bNum: 21, x: 1040, y: 785, room: "Grand Ballroom", floor: 1 },
+{  bNum: 22, x: 930, y: 785, room: "Grand Ballroom", floor: 1 },
+{  bNum: 23, x: 820, y: 785, room: "Grand Ballroom", floor: 1 },
+{  bNum: 24, x: 710, y: 785, room: "Grand Ballroom", floor: 1 },
+{  bNum: 25, x: 600, y: 785, room: "Grand Ballroom", floor: 1 },
+{  bNum: 26, x: 575, y: 660, room: "Grand Ballroom", floor: 1 },
 {  bNum: 27, x: 690, y: 660, room: "Grand Ballroom", floor: 1 },
 {  bNum: 28, x: 805, y: 660, room: "Grand Ballroom", floor: 1 },
 {  bNum: 29, x: 920, y: 660, room: "Grand Ballroom", floor: 1 },

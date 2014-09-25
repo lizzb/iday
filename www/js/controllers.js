@@ -68,6 +68,8 @@ app.controller('MainCtrl', function($scope, $ionicSideMenuDelegate, AttendeesSer
         var includedPositions= $scope.positionsIncluded;
         var includedMajors = $scope.majorsIncluded;
 
+
+
         // if no filters at all selected automatically return all companies
         
         if(includedMajors.length <= 0 && includedPositions.length <= 0)
@@ -87,24 +89,31 @@ app.controller('MainCtrl', function($scope, $ionicSideMenuDelegate, AttendeesSer
         // this is only specific to the data that i developed with
         //includedMajors = ["am","bme","chem","civil","ce","cs","ee","enve","ie","made","matsci","mech","noneng"];
           
+        var p = 0;
+        var m = 0;
         var i = 0;
 
         if(includedPositions.length <= 0)
         {
-          for (i = 0; i < $scope.positions.length; i++)
-            includedPositions[i] = $scope.positions[i].name;
+          for (p = 0; p < $scope.positions.length; p++)
+            includedPositions[p] = $scope.positions[p].name;
         }
             
         if(includedMajors.length <= 0)
         {
-          for (i = 0; i < $scope.majors.length; i++)
-            includedMajors[i] = $scope.majors[i].name;
+          for (m = 0; m < $scope.majors.length; m++)
+            includedMajors[m] = $scope.majors[m].name;
         }
+        console.log("comp:", company.name, " ", company["ee"]);
         
-        
+        console.log("does company match filters?");
+        console.log(includedPositions);
+        console.log(includedMajors);
         // only show companies matching the users filter requirements
         for (i = 0; i < includedPositions.length; i++)
         {
+
+         // console.log(company[includedPositions[i].toString()]); undefined
             // check if a position is true
             if(company[includedPositions[i]])
             {
