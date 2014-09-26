@@ -1,6 +1,14 @@
 // friendlyName = The name to display in the interface
 // name = the csv/json-safe name for filtering etc
 
+var positions_list = [ 
+  { friendlyName: 'Full Time', name: 'fte'},
+  { friendlyName: 'Intern', name: 'intern' },
+  { friendlyName: 'Co-Op', name: 'coop' },
+  { friendlyName: 'MS/PhD', name: 'msphd'}
+];
+
+
 var majors_list = [ 
   { friendlyName: 'AM - Applied Math', name: 'am'},
   { friendlyName: 'BME - Biomedical Eng.', name: 'bme'},
@@ -35,12 +43,7 @@ var majors_list = [
 ];
 */
 
-var positions_list = [ 
-  { friendlyName: 'Full Time', name: 'fte'},
-  { friendlyName: 'Intern', name: 'intern' },
-  { friendlyName: 'Co-Op', name: 'coop' },
-  { friendlyName: 'MS/PhD', name: 'msphd'}
-];
+
 
 /*
 var industries_list = [ 

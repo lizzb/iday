@@ -48,7 +48,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
     
     .state('sidemenu.company', {
       url: "/companies/:companyId",
-      resolve: { company: function($stateParams, CareerFairService) { return CareerFairService.getCompany($stateParams.companyId); }  },
+      resolve: { company: function($stateParams, CareerFairService) { return CareerFairService.getCompany($stateParams.companyId); },
+      /*nextCompany: function($stateParams, CareerFairService) {return CareerFairService.getNextCompany($stateParams.companyId);}*/ },
       views: { 'menuContent' :{ templateUrl: "templates/company-detail.html", controller: "CompanyDetailCtrl" } }
     })
     
