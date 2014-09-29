@@ -5,7 +5,10 @@ var positions_list = [
   { friendlyName: 'Full Time', name: 'fte'},
   { friendlyName: 'Intern', name: 'intern' },
   { friendlyName: 'Co-Op', name: 'coop' },
-  { friendlyName: 'MS/PhD', name: 'msphd'}
+  //{ friendlyName: 'MS/PhD', name: 'msphd'}
+  { friendlyName: 'MS', name: 'ms'},
+  { friendlyName: 'PhD', name: 'phd'},
+  { friendlyName: 'International', name: 'intl'}
 ];
 
 
@@ -13,9 +16,10 @@ var majors_list = [
   { friendlyName: 'AM - Applied Math', name: 'am'},
   { friendlyName: 'BME - Biomedical Eng.', name: 'bme'},
   { friendlyName: 'Chemical Engineering', name: 'chem'},
-  { friendlyName: 'Civil Engineering', name: 'civil'},
+  { friendlyName: 'Civil Engineering', name: 'civ'},
   { friendlyName: 'Computer Engineering (CE)', name: 'ce'},
-  { friendlyName: 'CS - Computer Science (BS/McCormick)', name: 'cs'},
+  { friendlyName: 'CS - Computer Science', name: 'cs'},
+  //{ friendlyName: 'CS - Computer Science (BS/McCormick)', name: 'cs'},
   //{ friendlyName: 'CS - Computer Science (BA/Weinberg)', name: 'csa'},
   { friendlyName: 'EE - Electrical Eng.', name: 'ee'},
   { friendlyName: 'EnvE - Environmental Eng.', name: 'enve'},
@@ -23,11 +27,12 @@ var majors_list = [
   { friendlyName: 'MaDE', name: 'made'},
   { friendlyName: 'MatSci - Material Science', name:'matsci' },
   { friendlyName: 'Mechanical Engineering', name: 'mech' },
+  { friendlyName: 'Non-engineering', name: 'non' }
   //{ friendlyName: 'Non-engineering', name: 'noneng' }
 ];
 
 
-
+/*
 var company_list = [
 {"empId":51,"booth":1,"id":"3m","name":"3M","am":0,"bme":0,"chem":1,"civ":0,"ce":0,"cs":0,"ee":1,"enve":0,"ie":1,"made":1,"matsci":1,"mech":1,"non":null,"fte":null,"intern":null,"coop":null,"msphd":null},
 {"empId":1551,"booth":2,"id":"3red","name":"3Red","am":1,"bme":0,"chem":0,"civ":0,"ce":0,"cs":1,"ee":1,"enve":0,"ie":0,"made":0,"matsci":0,"mech":1,"non":null,"fte":null,"intern":null,"coop":null,"msphd":null},
@@ -80,6 +85,73 @@ var company_list = [
 {"empId":1043,"booth":49,"id":"oloroso","name":"Oloroso Engineering","am":0,"bme":1,"chem":1,"civ":1,"ce":1,"cs":1,"ee":1,"enve":1,"ie":1,"made":1,"matsci":1,"mech":0,"non":null,"fte":null,"intern":null,"coop":null,"msphd":null},
 {"empId":117,"booth":50,"id":"p-g","name":"P&G / Procter & Gamble Company","am":0,"bme":1,"chem":1,"civ":0,"ce":0,"cs":0,"ee":0,"enve":0,"ie":0,"made":1,"matsci":1,"mech":1,"non":null,"fte":null,"intern":null,"coop":null,"msphd":null}
 ];
+
+*/
+var company_list = [
+{"booth":null,"empId":51,"id":"3m","name":"3M Company","am":null,"bme":null,"chem":1,"civ":null,"ce":1,"cs":1,"ee":1,"enve":null,"ie":1,"made":1,"matsci":1,"mech":1,"non":null,"ms":1,"phd":1,"fte":1,"coop":null,"intern":1,"intl":null,"csoID":51,"linkedinID":1864},
+{"booth":null,"empId":1551,"id":"3red","name":"3Red","am":1,"bme":null,"chem":null,"civ":null,"ce":1,"cs":1,"ee":1,"enve":null,"ie":null,"made":null,"matsci":null,"mech":null,"non":null,"ms":1,"phd":1,"fte":1,"coop":1,"intern":1,"intl":1,"csoID":1551,"linkedinID":3601307},
+{"booth":null,"empId":1240,"id":"adage-tech","name":"Adage Technologies","am":null,"bme":null,"chem":null,"civ":null,"ce":1,"cs":1,"ee":1,"enve":null,"ie":null,"made":null,"matsci":null,"mech":null,"non":null,"ms":1,"phd":1,"fte":1,"coop":1,"intern":null,"intl":1,"csoID":1240,"linkedinID":211674},
+{"booth":null,"empId":373,"id":"alcatel-lucent","name":"Alcatel-Lucent","am":null,"bme":null,"chem":null,"civ":null,"ce":1,"cs":1,"ee":1,"enve":null,"ie":null,"made":null,"matsci":null,"mech":null,"non":null,"ms":1,"phd":1,"fte":1,"coop":1,"intern":1,"intl":1,"csoID":373,"linkedinID":1058},
+{"booth":null,"empId":396,"id":"allstate","name":"Allstate Insurance","am":null,"bme":null,"chem":null,"civ":null,"ce":1,"cs":1,"ee":null,"enve":null,"ie":null,"made":null,"matsci":null,"mech":null,"non":null,"ms":null,"phd":null,"fte":1,"coop":null,"intern":1,"intl":null,"csoID":396,"linkedinID":1835},
+{"booth":null,"empId":1530,"id":"at-t","name":"AT&T","am":null,"bme":null,"chem":null,"civ":null,"ce":1,"cs":1,"ee":1,"enve":null,"ie":1,"made":null,"matsci":null,"mech":1,"non":null,"ms":1,"phd":null,"fte":1,"coop":null,"intern":1,"intl":null,"csoID":1530,"linkedinID":1052},
+{"booth":null,"empId":1586,"id":"atomatic","name":"Atomatic Mechanical Services","am":null,"bme":null,"chem":null,"civ":null,"ce":1,"cs":null,"ee":null,"enve":null,"ie":null,"made":null,"matsci":null,"mech":1,"non":null,"ms":null,"phd":null,"fte":1,"coop":1,"intern":1,"intl":null,"csoID":1586,"linkedinID":null},
+{"booth":null,"empId":7,"id":"baxter","name":"Baxter Healthcare Corporation","am":null,"bme":1,"chem":1,"civ":null,"ce":1,"cs":1,"ee":null,"enve":null,"ie":1,"made":1,"matsci":1,"mech":1,"non":null,"ms":1,"phd":1,"fte":1,"coop":1,"intern":1,"intl":null,"csoID":7,"linkedinID":2371},
+{"booth":null,"empId":1796,"id":"belcan","name":"Belcan Engineering Group","am":null,"bme":null,"chem":null,"civ":null,"ce":1,"cs":1,"ee":1,"enve":null,"ie":null,"made":null,"matsci":null,"mech":1,"non":null,"ms":1,"phd":null,"fte":1,"coop":null,"intern":null,"intl":null,"csoID":1796,"linkedinID":10028},
+{"booth":null,"empId":1069,"id":"belvedere-trading","name":"Belvedere Trading","am":1,"bme":null,"chem":null,"civ":null,"ce":1,"cs":1,"ee":1,"enve":null,"ie":null,"made":null,"matsci":null,"mech":null,"non":1,"ms":null,"phd":null,"fte":1,"coop":null,"intern":1,"intl":null,"csoID":1069,"linkedinID":1266312},
+{"booth":null,"empId":960,"id":"bemis","name":"Bemis Company","am":null,"bme":null,"chem":1,"civ":null,"ce":null,"cs":null,"ee":1,"enve":null,"ie":1,"made":null,"matsci":null,"mech":1,"non":null,"ms":null,"phd":1,"fte":1,"coop":1,"intern":1,"intl":null,"csoID":960,"linkedinID":17427},
+{"booth":null,"empId":160,"id":"cia","name":"Central Intelligence Agency","am":1,"bme":1,"chem":1,"civ":1,"ce":1,"cs":1,"ee":1,"enve":1,"ie":1,"made":1,"matsci":1,"mech":1,"non":1,"ms":1,"phd":1,"fte":1,"coop":1,"intern":1,"intl":null,"csoID":160,"linkedinID":14068},
+{"booth":null,"empId":1160,"id":"cbi","name":"Chicago Bridge & Iron","am":null,"bme":null,"chem":1,"civ":1,"ce":null,"cs":null,"ee":1,"enve":null,"ie":1,"made":null,"matsci":1,"mech":1,"non":null,"ms":1,"phd":null,"fte":1,"coop":null,"intern":null,"intl":null,"csoID":1160,"linkedinID":null},
+{"booth":null,"empId":904,"id":"chopper-trading","name":"Chopper Trading","am":1,"bme":null,"chem":1,"civ":null,"ce":1,"cs":1,"ee":1,"enve":null,"ie":null,"made":null,"matsci":null,"mech":1,"non":null,"ms":1,"phd":1,"fte":1,"coop":null,"intern":null,"intl":null,"csoID":904,"linkedinID":80562},
+{"booth":null,"empId":930,"id":"chrysler-group","name":"Chrysler Group LLC","am":null,"bme":null,"chem":1,"civ":null,"ce":null,"cs":null,"ee":1,"enve":null,"ie":1,"made":null,"matsci":1,"mech":1,"non":null,"ms":1,"phd":null,"fte":1,"coop":null,"intern":1,"intl":null,"csoID":930,"linkedinID":1616},
+{"booth":null,"empId":1285,"id":"clarity","name":"Clarity Solution Group","am":1,"bme":1,"chem":1,"civ":1,"ce":1,"cs":1,"ee":1,"enve":1,"ie":1,"made":1,"matsci":1,"mech":1,"non":1,"ms":null,"phd":null,"fte":1,"coop":null,"intern":null,"intl":null,"csoID":1285,"linkedinID":48775},
+{"booth":null,"empId":1026,"id":"cme","name":"CME Group","am":null,"bme":null,"chem":null,"civ":null,"ce":1,"cs":1,"ee":null,"enve":null,"ie":null,"made":null,"matsci":null,"mech":null,"non":null,"ms":null,"phd":null,"fte":1,"coop":null,"intern":null,"intl":null,"csoID":1026,"linkedinID":5499},
+{"booth":null,"empId":622,"id":"discover","name":"Discover Financial Services","am":1,"bme":1,"chem":1,"civ":1,"ce":1,"cs":1,"ee":1,"enve":1,"ie":1,"made":1,"matsci":1,"mech":1,"non":1,"ms":null,"phd":null,"fte":1,"coop":null,"intern":null,"intl":null,"csoID":622,"linkedinID":3762},
+{"booth":null,"empId":1227,"id":"enova","name":"Enova","am":1,"bme":null,"chem":null,"civ":null,"ce":1,"cs":1,"ee":null,"enve":null,"ie":1,"made":null,"matsci":null,"mech":null,"non":null,"ms":1,"phd":1,"fte":1,"coop":null,"intern":1,"intl":null,"csoID":1227,"linkedinID":670584},
+{"booth":null,"empId":852,"id":"epic","name":"Epic","am":1,"bme":1,"chem":1,"civ":1,"ce":1,"cs":1,"ee":1,"enve":1,"ie":1,"made":1,"matsci":1,"mech":1,"non":1,"ms":1,"phd":1,"fte":1,"coop":null,"intern":1,"intl":1,"csoID":852,"linkedinID":163658},
+{"booth":null,"empId":437,"id":"exxon-mobil","name":"ExxonMobil","am":null,"bme":null,"chem":null,"civ":null,"ce":null,"cs":null,"ee":null,"enve":null,"ie":null,"made":null,"matsci":null,"mech":null,"non":null,"ms":null,"phd":null,"fte":null,"coop":null,"intern":null,"intl":null,"csoID":437,"linkedinID":1689},
+{"booth":null,"empId":118,"id":"ford","name":"Ford Motor Company","am":null,"bme":null,"chem":null,"civ":null,"ce":1,"cs":1,"ee":1,"enve":null,"ie":null,"made":1,"matsci":null,"mech":1,"non":null,"ms":1,"phd":null,"fte":1,"coop":null,"intern":1,"intl":null,"csoID":118,"linkedinID":1483},
+{"booth":null,"empId":632,"id":"fresenius-kabi","name":"Fresenius Kabi","am":null,"bme":1,"chem":null,"civ":null,"ce":1,"cs":1,"ee":1,"enve":null,"ie":1,"made":null,"matsci":1,"mech":1,"non":null,"ms":null,"phd":null,"fte":null,"coop":1,"intern":null,"intl":null,"csoID":632,"linkedinID":10809},
+{"booth":null,"empId":1074,"id":"gaf","name":"GAF","am":null,"bme":null,"chem":1,"civ":null,"ce":null,"cs":null,"ee":1,"enve":null,"ie":null,"made":null,"matsci":1,"mech":1,"non":null,"ms":null,"phd":null,"fte":null,"coop":1,"intern":null,"intl":null,"csoID":1074,"linkedinID":9170},
+{"booth":null,"empId":336,"id":"gdeb","name":"General Dynamics Electric Boat","am":1,"bme":1,"chem":1,"civ":1,"ce":1,"cs":1,"ee":1,"enve":1,"ie":1,"made":1,"matsci":1,"mech":1,"non":1,"ms":1,"phd":1,"fte":1,"coop":null,"intern":null,"intl":null,"csoID":336,"linkedinID":null},
+{"booth":null,"empId":721,"id":"ge","name":"General Electric ","am":null,"bme":null,"chem":null,"civ":null,"ce":null,"cs":null,"ee":null,"enve":null,"ie":null,"made":null,"matsci":null,"mech":null,"non":null,"ms":null,"phd":null,"fte":null,"coop":null,"intern":null,"intl":null,"csoID":721,"linkedinID":1015},
+{"booth":null,"empId":6,"id":"goodyear","name":"Goodyear Tire & Rubber Company","am":null,"bme":null,"chem":1,"civ":null,"ce":null,"cs":null,"ee":1,"enve":null,"ie":null,"made":null,"matsci":1,"mech":1,"non":null,"ms":1,"phd":null,"fte":null,"coop":1,"intern":1,"intl":null,"csoID":6,"linkedinID":3915},
+{"booth":null,"empId":922,"id":"google","name":"Google","am":null,"bme":null,"chem":null,"civ":null,"ce":1,"cs":1,"ee":1,"enve":null,"ie":null,"made":null,"matsci":null,"mech":null,"non":null,"ms":1,"phd":1,"fte":1,"coop":null,"intern":1,"intl":1,"csoID":922,"linkedinID":1441},
+{"booth":null,"empId":1143,"id":"groupon","name":"Groupon, Inc.","am":null,"bme":null,"chem":null,"civ":null,"ce":null,"cs":1,"ee":null,"enve":null,"ie":null,"made":null,"matsci":null,"mech":null,"non":null,"ms":1,"phd":1,"fte":1,"coop":null,"intern":1,"intl":1,"csoID":1143,"linkedinID":355611},
+{"booth":null,"empId":1305,"id":"hfz","name":"Hanley, Flight & Zimmerman LLC","am":null,"bme":null,"chem":null,"civ":null,"ce":1,"cs":1,"ee":1,"enve":null,"ie":null,"made":null,"matsci":null,"mech":1,"non":null,"ms":1,"phd":1,"fte":1,"coop":null,"intern":1,"intl":null,"csoID":1305,"linkedinID":91563},
+{"booth":null,"empId":800,"id":"harley-davidson","name":"Harley-Davidson Motor Company","am":null,"bme":null,"chem":null,"civ":null,"ce":null,"cs":null,"ee":1,"enve":null,"ie":null,"made":null,"matsci":null,"mech":1,"non":null,"ms":1,"phd":null,"fte":1,"coop":null,"intern":null,"intl":null,"csoID":800,"linkedinID":164123},
+{"booth":null,"empId":1729,"id":"here","name":"HERE","am":null,"bme":null,"chem":null,"civ":null,"ce":1,"cs":1,"ee":null,"enve":null,"ie":null,"made":null,"matsci":null,"mech":null,"non":null,"ms":1,"phd":1,"fte":1,"coop":1,"intern":1,"intl":null,"csoID":1729,"linkedinID":3237134},
+{"booth":null,"empId":1580,"id":"hill-intl","name":"Hill International, Inc.","am":null,"bme":null,"chem":null,"civ":1,"ce":null,"cs":null,"ee":null,"enve":null,"ie":null,"made":null,"matsci":null,"mech":1,"non":null,"ms":1,"phd":null,"fte":1,"coop":null,"intern":1,"intl":null,"csoID":1580,"linkedinID":11204},
+{"booth":null,"empId":1255,"id":"hrgreen","name":"HR Green, Inc.","am":null,"bme":null,"chem":null,"civ":1,"ce":null,"cs":null,"ee":null,"enve":1,"ie":null,"made":null,"matsci":null,"mech":null,"non":null,"ms":1,"phd":null,"fte":1,"coop":null,"intern":1,"intl":null,"csoID":1255,"linkedinID":40620},
+{"booth":null,"empId":311,"id":"hydra-force","name":"HYDRA FORCE, Inc.","am":null,"bme":null,"chem":null,"civ":null,"ce":null,"cs":null,"ee":1,"enve":null,"ie":1,"made":1,"matsci":null,"mech":1,"non":null,"ms":1,"phd":null,"fte":1,"coop":null,"intern":null,"intl":null,"csoID":311,"linkedinID":90985},
+{"booth":null,"empId":1076,"id":"idot","name":"Illinois Dept. of Transportation","am":null,"bme":null,"chem":null,"civ":1,"ce":null,"cs":null,"ee":null,"enve":null,"ie":null,"made":null,"matsci":null,"mech":null,"non":null,"ms":null,"phd":null,"fte":1,"coop":null,"intern":null,"intl":null,"csoID":1076,"linkedinID":2670814},
+{"booth":null,"empId":1814,"id":"ida","name":"Institute for Defense Analysis","am":1,"bme":null,"chem":1,"civ":null,"ce":1,"cs":1,"ee":1,"enve":null,"ie":null,"made":null,"matsci":1,"mech":1,"non":1,"ms":1,"phd":1,"fte":1,"coop":null,"intern":null,"intl":null,"csoID":1814,"linkedinID":11670},
+{"booth":null,"empId":717,"id":"itw","name":"ITW","am":null,"bme":null,"chem":1,"civ":1,"ce":1,"cs":null,"ee":1,"enve":null,"ie":1,"made":null,"matsci":null,"mech":1,"non":null,"ms":1,"phd":null,"fte":1,"coop":1,"intern":1,"intl":null,"csoID":717,"linkedinID":9652},
+{"booth":null,"empId":1229,"id":"johnson-controls","name":"Johnson Controls","am":null,"bme":null,"chem":null,"civ":null,"ce":1,"cs":1,"ee":null,"enve":null,"ie":1,"made":1,"matsci":null,"mech":1,"non":null,"ms":null,"phd":null,"fte":1,"coop":null,"intern":1,"intl":null,"csoID":1229,"linkedinID":2247},
+{"booth":null,"empId":1628,"id":"kgm","name":"Keurig Green Mountain","am":null,"bme":1,"chem":1,"civ":null,"ce":1,"cs":null,"ee":1,"enve":1,"ie":null,"made":1,"matsci":null,"mech":1,"non":null,"ms":null,"phd":null,"fte":null,"coop":null,"intern":1,"intl":1,"csoID":1628,"linkedinID":75160},
+{"booth":null,"empId":1274,"id":"mathworks","name":"MathWorks","am":null,"bme":null,"chem":null,"civ":null,"ce":null,"cs":1,"ee":1,"enve":null,"ie":null,"made":null,"matsci":null,"mech":1,"non":null,"ms":1,"phd":1,"fte":1,"coop":1,"intern":1,"intl":1,"csoID":1274,"linkedinID":1194036},
+{"booth":null,"empId":999,"id":"mbhb","name":"McDonnell Boehnen Hulbert & Berghoff LLP","am":null,"bme":null,"chem":null,"civ":null,"ce":1,"cs":1,"ee":1,"enve":null,"ie":null,"made":null,"matsci":null,"mech":1,"non":null,"ms":1,"phd":1,"fte":1,"coop":null,"intern":null,"intl":null,"csoID":999,"linkedinID":47117},
+{"booth":null,"empId":475,"id":"mwrdgc","name":"Metropolitan Water Reclamation District of Greater Chicago","am":null,"bme":null,"chem":1,"civ":1,"ce":null,"cs":null,"ee":1,"enve":1,"ie":null,"made":null,"matsci":null,"mech":null,"non":null,"ms":1,"phd":1,"fte":1,"coop":null,"intern":null,"intl":null,"csoID":475,"linkedinID":403579},
+{"booth":null,"empId":46,"id":"microsoft","name":"Microsoft","am":null,"bme":null,"chem":null,"civ":null,"ce":1,"cs":1,"ee":1,"enve":null,"ie":null,"made":null,"matsci":null,"mech":null,"non":null,"ms":1,"phd":1,"fte":1,"coop":null,"intern":1,"intl":1,"csoID":46,"linkedinID":1035},
+{"booth":null,"empId":17,"id":"motorola-solutions","name":"Motorola Solutions, Inc","am":null,"bme":null,"chem":null,"civ":null,"ce":1,"cs":1,"ee":1,"enve":null,"ie":null,"made":null,"matsci":null,"mech":1,"non":null,"ms":1,"phd":null,"fte":1,"coop":null,"intern":1,"intl":null,"csoID":17,"linkedinID":1771432},
+{"booth":null,"empId":1084,"id":"mpc","name":"MPC","am":null,"bme":null,"chem":null,"civ":null,"ce":null,"cs":null,"ee":null,"enve":null,"ie":1,"made":null,"matsci":null,"mech":1,"non":null,"ms":null,"phd":null,"fte":1,"coop":1,"intern":1,"intl":null,"csoID":1084,"linkedinID":870904},
+{"booth":null,"empId":1575,"id":"nw-mutual","name":"Northwestern Mutual","am":null,"bme":null,"chem":null,"civ":null,"ce":1,"cs":1,"ee":null,"enve":null,"ie":null,"made":null,"matsci":null,"mech":null,"non":null,"ms":1,"phd":null,"fte":null,"coop":null,"intern":1,"intl":null,"csoID":1575,"linkedinID":2445},
+{"booth":null,"empId":1798,"id":"orbitz","name":"Orbitz Worldwide","am":null,"bme":null,"chem":null,"civ":null,"ce":1,"cs":1,"ee":1,"enve":null,"ie":null,"made":null,"matsci":null,"mech":null,"non":null,"ms":1,"phd":null,"fte":1,"coop":null,"intern":null,"intl":1,"csoID":1798,"linkedinID":5169},
+{"booth":null,"empId":1000,"id":"pariveda","name":"Pariveda Solutions","am":null,"bme":null,"chem":null,"civ":null,"ce":null,"cs":null,"ee":null,"enve":null,"ie":null,"made":null,"matsci":null,"mech":null,"non":null,"ms":null,"phd":null,"fte":null,"coop":null,"intern":null,"intl":null,"csoID":1000,"linkedinID":18355},
+{"booth":null,"empId":572,"id":"pepsico","name":"PepsiCo","am":1,"bme":null,"chem":null,"civ":null,"ce":1,"cs":1,"ee":null,"enve":null,"ie":1,"made":null,"matsci":null,"mech":null,"non":null,"ms":1,"phd":null,"fte":null,"coop":null,"intern":1,"intl":null,"csoID":572,"linkedinID":1431},
+{"booth":null,"empId":117,"id":"p-g","name":"Procter & Gamble","am":null,"bme":null,"chem":1,"civ":null,"ce":null,"cs":null,"ee":null,"enve":null,"ie":null,"made":1,"matsci":1,"mech":1,"non":null,"ms":1,"phd":1,"fte":1,"coop":1,"intern":1,"intl":null,"csoID":117,"linkedinID":1116},
+{"booth":null,"empId":1826,"id":"quantcast","name":"Quantcast","am":null,"bme":null,"chem":null,"civ":null,"ce":1,"cs":1,"ee":1,"enve":null,"ie":null,"made":null,"matsci":null,"mech":null,"non":null,"ms":1,"phd":1,"fte":1,"coop":null,"intern":1,"intl":1,"csoID":1826,"linkedinID":60540},
+{"booth":null,"empId":485,"id":"smed","name":"Siemens Medical Solutions Inc","am":null,"bme":null,"chem":null,"civ":null,"ce":1,"cs":1,"ee":1,"enve":null,"ie":null,"made":1,"matsci":null,"mech":1,"non":null,"ms":1,"phd":null,"fte":null,"coop":1,"intern":1,"intl":null,"csoID":485,"linkedinID":null},
+{"booth":null,"empId":1272,"id":"teklink","name":"TekLink International, Inc","am":1,"bme":1,"chem":1,"civ":null,"ce":1,"cs":1,"ee":1,"enve":null,"ie":1,"made":1,"matsci":null,"mech":1,"non":null,"ms":1,"phd":null,"fte":1,"coop":null,"intern":null,"intl":null,"csoID":1272,"linkedinID":155480},
+{"booth":null,"empId":480,"id":"boeing","name":"The Boeing Company","am":null,"bme":null,"chem":null,"civ":1,"ce":1,"cs":null,"ee":1,"enve":1,"ie":1,"made":1,"matsci":1,"mech":1,"non":null,"ms":null,"phd":null,"fte":1,"coop":null,"intern":1,"intl":null,"csoID":480,"linkedinID":1384},
+{"booth":null,"empId":972,"id":"nielsen","name":"The Nielsen Company","am":1,"bme":1,"chem":1,"civ":1,"ce":1,"cs":1,"ee":1,"enve":1,"ie":1,"made":1,"matsci":1,"mech":1,"non":1,"ms":null,"phd":null,"fte":1,"coop":null,"intern":1,"intl":null,"csoID":972,"linkedinID":1714},
+{"booth":null,"empId":1070,"id":"thoughtworks","name":"ThoughtWorks","am":null,"bme":null,"chem":null,"civ":null,"ce":1,"cs":1,"ee":null,"enve":null,"ie":null,"made":null,"matsci":null,"mech":null,"non":null,"ms":null,"phd":null,"fte":1,"coop":null,"intern":null,"intl":null,"csoID":1070,"linkedinID":157356},
+{"booth":null,"empId":1325,"id":"us-navy","name":"U.S. Navy","am":1,"bme":1,"chem":1,"civ":1,"ce":1,"cs":1,"ee":1,"enve":null,"ie":1,"made":1,"matsci":1,"mech":1,"non":null,"ms":1,"phd":null,"fte":1,"coop":null,"intern":1,"intl":null,"csoID":1325,"linkedinID":1335},
+{"booth":null,"empId":786,"id":"wolve","name":"Wolverine Trading , LLC","am":null,"bme":null,"chem":null,"civ":null,"ce":null,"cs":1,"ee":null,"enve":null,"ie":null,"made":null,"matsci":null,"mech":null,"non":null,"ms":1,"phd":null,"fte":null,"coop":null,"intern":1,"intl":null,"csoID":786,"linkedinID":32454},
+{"booth":null,"empId":753,"id":"zebra-tech","name":"Zebra Technologies Corporation","am":1,"bme":1,"chem":1,"civ":1,"ce":1,"cs":1,"ee":1,"enve":1,"ie":1,"made":1,"matsci":1,"mech":1,"non":1,"ms":null,"phd":null,"fte":null,"coop":1,"intern":1,"intl":null,"csoID":753,"linkedinID":167024}
+];
+
+
+
 
 
 
