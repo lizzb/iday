@@ -5,35 +5,6 @@
 </ion-nav-buttons>  
 
 
-<ion-header-bar class="bar-subheader item-input-inset">
-<button class="button button-small button-positive button-outline icon"
-        ng-click="sortProp='name'; asc=!asc"> 
-  <i class="fa fa-lg" ng-class="(sortProp=='name' && asc) ? 'fa-sort-alpha-desc' : 'fa-sort-alpha-asc'"></i>
-  Name 
-</button>
-
-
-
-<button class="button button-small button-calm button-outline icon" 
-        ng-click="sortProp='booth'; asc=!asc">
-  <i class="fa fa-lg" ng-class="(sortProp=='booth' && asc) ? 'fa-sort-numeric-desc' : 'fa-sort-numeric-asc'"></i>
-  Booth
-</button>
-<!--
-Showing {{(allCompanies | filter:userFilter | instantNameSearch:searchString ).length}} of {{allCompanies.length}} total.--> 
-&nbsp;&nbsp;&nbsp;<!-- hacky padding -->
-    <label class="item-input-wrapper">
-      <i class="icon ion-ios7-search placeholder-icon"></i>
-      <input type="search" placeholder="Search names..." ng-model="searchString" ng-change="scrollTop()">
-    </label>
-
-    <button ng-if="searchString.length"
-            class="button button-small button-icon ion-android-close input-button"
-            ng-click="clearSearch()"> </button>
-  </ion-header-bar>
-
-
-
   <ion-header-bar class="bar-subheader item-input-inset">
 <button class="button button-small button-positive button-outline icon"
         ng-click="sortProp='name'; asc=!asc"> 
@@ -47,27 +18,122 @@ Showing {{(allCompanies | filter:userFilter | instantNameSearch:searchString ).l
 </button>
   </ion-header-bar>
 
-        <ion-content>
+
+<ion-header-bar class="bar-subheader item-input-inset">
+    <label class="item-input-wrapper">
+      <i class="icon ion-ios7-search placeholder-icon"></i>
+      <input type="search" placeholder="Search names..." ng-model="searchString" ng-change="scrollTop()">
+    </label>
+
+    <button ng-if="searchString.length"
+            class="button button-small button-icon ion-android-close input-button"
+            ng-click="clearSearch()"> </button>
+  </ion-header-bar>
+
+
+
+
+        <ion-content style="margin-top: 42px;">
           <ion-list>
             <div ng-repeat="c in companies | filter:userFilter | instantNameSearch:searchString | orderBy:sortProp:asc">
-            <!-- ui-sref="tabs.companies.detail({companyNameId: c.compId})" -->
-
-            <!-- http://lizzb.github.io/img/logos/carsdotcom/wide.png -->
+           
             <a href="#/iday/companies/{{c.id}}"  class="item item-avatar item-icon-right">
 
             <img src="http://placehold.it/60x60" ng-src="./img/logos/{{c.id}}/square.png" />
-
-
               
-             {{ c.name }}  <!-- <h2> <i></i> {{ c.name }}</h2> h2 makes it harder to fit on one line-->
-             <span class="item-note">{{ c.room }}</span>
+             {{ c.name }}
+             <span class="item-note" style="margin-top: 10px; font-size: 11.5px;">{{ c.room }}</span>
 
              <i class="icon favorite" ng-class="c.starred ? 'ion-ios7-star' : 'ion-ios7-star-outline'"></i>
 
-             <p>{{ c.industry }}<!-- {{ c.room }}.... {{ c.id }} -->
+             <p>{{ c.industry }}</p> 
+<hr>
+      
 
-             
-             </p> 
+
+<style>
+.short {
+  height: 10px;
+  font-size: 12px;
+  line-height: 12px;
+}
+</style>
+
+<!--div class="item item-divider assertive short"> About {{c.name}} </div-->
+<a class="item item-divider item-icon-left short">
+ <i class="icon ion-compass"></i>Booth # {{c.booth}}: {{c.room}} (Floor {{c.floor}})</a>
+
+<a class="item positive item-divider item-icon-left short">
+<i class="icon ion-social-linkedin"></i>Linkedin {{c.linkedinID}}
+</a>
+<p class="padding">{{c.description2}}</p>
+
+<a class="item item-divider item-icon-left short">
+<i class="icon positive ion-briefcase"></i>{{c.linkedinIndustry}}
+</a>
+
+<a class="item item-divider item-icon-left short">
+<i class="icon positive ion-trophy"></i>{{c.specialties}}
+</a>
+
+<a class="item item-divider item-icon-left short">
+<i class="icon positive ion-person-stalker"></i>{{c.size}}
+</a>
+
+<a class="item item-divider item-icon-left short">
+<i class="icon positive ion-information-circled"></i>{{c.companyType}}
+</a>
+
+<a class="item item-divider item-icon-left short">
+<i class="icon positive ion-pin"></i>HQ: {{c.hqCity}} {{c.hqState}}&nbsp; {{c.hqZip}}
+</a>
+
+<a class="item item-divider item-icon-left short">
+<i class="icon positive ion-link"></i>{{c.companyWebsite}}
+</a>
+
+<div class="item"></div>
+
+<a class="item royal item-divider item-icon-left short">
+<i class="icon ion-social">N</i>CSO {{c.empId}}
+</a>
+          
+<p class="padding">{{c.description}}</p>
+
+<a class="item item-divider item-icon-left short">
+<i class="icon royal ion-briefcase"></i>{{c.industry}}
+</a>
+
+<a class="item item-divider item-icon-left short">
+<i class="icon royal ion-information-circled"></i>{{c.type}}
+</a>
+
+<a class="item item-divider item-icon-left short">
+<i class="icon royal ion-location"></i>{{c.city}}, {{c.state}}&nbsp; {{c.zip}}
+</a>
+
+
+<!--div class="item item-icon-left short"> <i class="icon ion-briefcase"></i>{{c.industry}}</div-->
+
+    
+
+<a class="item item-divider item-icon-left short">
+<i class="icon royal ion-link"></i>{{c.website}}
+</a>
+
+<a class="item calm item-divider item-icon-left short">
+<i class="icon ion-social-facebook"></i>{{c.facebook}}
+</a>
+
+<a class="item calm item-divider item-icon-left short">
+<i class="icon ion-social-twitter"></i>{{c.twitter}}
+</a>
+<!--div class="item item-divider">
+  <a class="clear" href="https://www.myinterfase.com/mccormick_northwestern/contactregistration.aspx?emp_id={{company.empId}}" target="_blank"> <strong>McCormick</strong><em>Connect</em> Employer Info </a>
+</div-->
+<hr>
+
+
 
              <!--i class="icon ion-ios7-arrow-right royal"></i-->
             </a>
@@ -78,13 +144,12 @@ Showing {{(allCompanies | filter:userFilter | instantNameSearch:searchString ).l
 
 
 
+
+
           </ion-list>
         </ion-content>
 
 
-        <!--div class="bar bar-footer bar-balanced">
-  <div class="title">Showing {{(allCompanies | filter:userFilter | instantNameSearch:searchString ).length}} of {{allCompanies.length}} total.</div>
-</div-->
         <ion-footer-bar class="bar-stable">Showing {{(allCompanies | filter:userFilter | instantNameSearch:searchString ).length}} of {{allCompanies.length}} total.
 </ion-footer-bar>
 
@@ -137,55 +202,3 @@ Showing {{(allCompanies | filter:userFilter | instantNameSearch:searchString ).l
   </script>
 
 
-
-
-<script type="text/ng-template" id="catmodal.html">
-    <div class="modal">
-      <ion-header-bar>
-        <h1 class="title">{{user.firstName}} {{user.lastName}}</h1>
-        <div class="buttons">
-          <button class="button button-clear icon ion-close" ng-click="closeModal()"></button>
-        </div>
-      </ion-header-bar>
-      <ion-content>
-        <div class="list card">
-          <div class="item item-avatar">
-            <img src="http://placekitten.com/30/30">
-            <h2>{{user.firstName}} {{user.lastName}}</h2>
-            <p>{{user.email}}</p>
-          </div>
-          <div class="item item-image">
-            <img src="http://placekitten.com/200/150">
-          </div>
-          <div class="item item-divider">Close the modal to change your info</div>
-        </div>
-      </ion-content>
-    </div>l
-  </script>
-
-
-    <!--
-    <ion-list>
-
-      <ion-item ng-repeat="c in filteredList = (companies |  filter:searchText | orderBy:sortType:asc)" class="item-thumbnail-left" href="#/app/companies/{{c.nameId}}">
-
-      <img ng-src="./img/logos/{{c.nameId}}/{{c.nameId}}-square.png" /> 
-        <h2>{{c.name}}</h2>
-      </ion-item>
-
-    </ion-list>
-    -->
-
-
-
-<!-- notes to return to:
-
-hrm, header shrink isnt working...
-header-shrink scroll-event-interval="5"
-
-
-<div class="ionic list">
-
-        !-- can i assign the filter here? --
-        <div ng-repeat="c in filteredList = (companies |  filter:searchText | orderBy:sortType:asc)">
--->

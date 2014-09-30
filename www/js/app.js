@@ -14,6 +14,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url: "/home",
       views: { 'menuContent' :{ templateUrl: "templates/home.html" } }
     })
+    /*
     .state('sidemenu.checkin', {
       url: "/check-in",
       views: { 'menuContent' :{ templateUrl: "templates/check-in.html", controller: "CheckinCtrl" } }
@@ -27,7 +28,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url: "/activity",
       views: { 'menuContent' :{ templateUrl: "templates/attendee-activity.html", controller: "AttendeeActivityCtrl" }  }
     })
-    
+    */
     
     .state('sidemenu.credits', {
       url: "/credits",
@@ -66,6 +67,18 @@ app.config(function($stateProvider, $urlRouterProvider) {
     
     
     
+    .state('sidemenu.companies-grid', {
+      url: "/companies-grid",
+      views: { 'menuContent' :{ templateUrl: "templates/company-list-gridinfo.html", controller: "CompanyListCtrl" } }
+    })
+
+    .state('sidemenu.companies-verbose', {
+      url: "/companies-verbose",
+      views: { 'menuContent' :{ templateUrl: "templates/company-list-all-details.html", controller: "CompanyListCtrl" } }
+    })
+
+
+
   
   // Fall back on this URL otherwise
   $urlRouterProvider.otherwise("/iday/companies");
