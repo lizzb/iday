@@ -145,7 +145,7 @@ app.controller('MainCtrl', function($scope, $ionicSideMenuDelegate, AttendeesSer
 //
 // Company List
 //
-app.controller('CompanyListCtrl', function($scope, $ionicModal) {
+app.controller('CompanyListCtrl', function($scope, $ionicScrollDelegate, $ionicModal) {
   //$scope.companies = companies;
   
   

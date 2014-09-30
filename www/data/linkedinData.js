@@ -51,3 +51,5 @@ var company_list_linkedinData = [
 {"empId":1043,"linkedinID":null,"Source Page URL":"","companyName":"","industry":"","specialties":"","companySize":"","type":"","founded":null,"hqAddress":"","hqCity":"","hqState":"","hqZip":null,"hqCountry":"","blurb":"","website":""},
 {"empId":117,"linkedinID":1116,"Source Page URL":"https://www.linkedin.com/company/procter-&-gamble","companyName":"Procter & Gamble","industry":"Consumer Goods","specialties":"Consumer Goods, Marketing, Advertising","companySize":"10,001+ employees","type":"Public Company","founded":1837,"hqAddress":"2 P&G Plaza","hqCity":"Cincinnati,","hqState":"Ohio","hqZip":45202,"hqCountry":"United States","blurb":"As the world's largest multinational consumer goods company, Procter & Gamble Co. (P&G, NYSE: PG) is the 4th largest corporation in the world by market capitalization and is Fortune's 6th Most Admired Company. ","website":"http://www.pg.com"}
 ];
+
+// 60540 quantcast
