@@ -194,6 +194,8 @@ app.controller('CompanyDetailCtrl', function($scope, company) {
 //
 app.controller('CompanyMapCtrl', function($scope, $location) {
   
+// need to use a factory or something, loading this takes sooo sloowwlyy
+
   $scope.go = function ( path ) { $location.path( path ); };
 
   /*$scope.hasRotation = function(booth) {

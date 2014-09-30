@@ -28,6 +28,9 @@ ion-nav-buttons side="left">
         <button ng-click="openModal()" class="button button-royal icon ion-funnel icon-large"></button>
         </ion-nav-buttons>  
 
+
+<!-- http://learn.ionicframework.com/formulas/making-modals/-->
+
   <ion-header-bar class="bar-subheader item-input-inset">
   
   <!--button class="button button-clear filter-button"> Filter Cancel </button-->
@@ -45,9 +48,9 @@ ion-nav-buttons side="left">
   <i class="fa fa-lg" ng-class="(sortProp=='booth' && asc) ? 'fa-sort-numeric-desc' : 'fa-sort-numeric-asc'"></i>
   Booth
 </button>
-<!--
-Showing {{(allCompanies | filter:userFilter | instantNameSearch:searchString ).length}} of {{allCompanies.length}} total.--> 
-&nbsp;&nbsp;&nbsp;<!-- hacky padding -->
+
+Showing {{(allCompanies | filter:userFilter).length}} of {{allCompanies.length}} total.
+&nbsp;&nbsp;&nbsp; <!-- hacky padding -->
     <label class="item-input-wrapper">
       <i class="icon ion-ios7-search placeholder-icon"></i>
       <input type="search" placeholder="Search names..." ng-model="searchString" ng-change="scrollTop()">
@@ -57,21 +60,6 @@ Showing {{(allCompanies | filter:userFilter | instantNameSearch:searchString ).l
             class="button button-small button-icon ion-android-close input-button"
             ng-click="clearSearch()"> </button>
   </ion-header-bar>
-
-
-
-  <!--ion-header-bar class="bar-subheader item-input-inset">
-<button class="button button-small button-positive button-outline icon"
-        ng-click="sortProp='name'; asc=!asc"> 
-  <i class="fa fa-lg" ng-class="(sortProp=='name' && asc) ? 'fa-sort-alpha-desc' : 'fa-sort-alpha-asc'"></i>
-  Name 
-</button>
-<button class="button button-small button-calm button-outline icon" 
-        ng-click="sortProp='booth'; asc=!asc">
-  <i class="fa fa-lg" ng-class="(sortProp=='booth' && asc) ? 'fa-sort-numeric-desc' : 'fa-sort-numeric-asc'"></i>
-  Booth
-</button>
-  </ion-header-bar-->
 
         <ion-content>
           <ion-list>
@@ -101,19 +89,8 @@ Showing {{(allCompanies | filter:userFilter | instantNameSearch:searchString ).l
             </div>
 
  
-
-
-
           </ion-list>
         </ion-content>
-
-
-        <!--div class="bar bar-footer bar-balanced">
-  <div class="title">Showing {{(allCompanies | filter:userFilter | instantNameSearch:searchString ).length}} of {{allCompanies.length}} total.</div>
-</div-->
-        <ion-footer-bar class="bar-stable">Showing {{(allCompanies | filter:userFilter | instantNameSearch:searchString ).length}} of {{allCompanies.length}} total.
-</ion-footer-bar>
-
       </ion-view>
 
 
