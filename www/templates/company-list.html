@@ -49,7 +49,7 @@ ion-nav-buttons side="left">
   Booth
 </button>
 
-Showing {{companies.length}} of {{allCompanies.length}} total.
+Showing {{(allCompanies | filter:userFilter).length}} of {{allCompanies.length}} total.
 &nbsp;&nbsp;&nbsp; <!-- hacky padding -->
     <label class="item-input-wrapper">
       <i class="icon ion-ios7-search placeholder-icon"></i>
@@ -94,8 +94,55 @@ Showing {{companies.length}} of {{allCompanies.length}} total.
       </ion-view>
 
 
-
 <script type="text/ng-template" id="modal.html">
+    <div class="modal">
+      <ion-header-bar>
+        <h1 class="title">Filter Company List</h1>
+        <div class="buttons">
+          <button class="button button-clear icon ion-close" ng-click="closeModal()"></button>
+        </div>
+      </ion-header-bar>
+      <ion-content>
+
+      Companies matching your filters: {{companies = (allCompanies | filter:userFilter).length}} (of {{allCompanies.length}} total).
+
+      <div class="item item-divider"> Positions </div>
+        
+        <ion-checkbox ng-repeat="item in positions"
+                      ng-model="item.checked" 
+                      ng-checked="item.checked"
+                      ng-change="includePosition(item.name)">
+          {{ item.friendlyName }}
+        </ion-checkbox>
+
+<div class="item item-divider"> Majors </div>
+        
+        <ion-checkbox ng-repeat="item in majors"
+                      ng-model="item.checked" 
+                      ng-checked="item.checked"
+                      ng-change="includeMajor(item.name)">
+          {{ item.friendlyName }}
+        </ion-checkbox>
+
+        <div class="list card">
+          <div class="item item-avatar">
+            <img src="http://placekitten.com/30/30">
+            <h2>{{user.firstName}} {{user.lastName}}</h2>
+            <p>{{user.email}}</p>
+          </div>
+          <div class="item item-image">
+            <img src="http://placekitten.com/200/150">
+          </div>
+          <div class="item item-divider">Close the modal to change your info</div>
+        </div>
+      </ion-content>
+    </div>
+  </script>
+
+
+
+
+<script type="text/ng-template" id="catmodal.html">
     <div class="modal">
       <ion-header-bar>
         <h1 class="title">{{user.firstName}} {{user.lastName}}</h1>
@@ -144,6 +191,4 @@ header-shrink scroll-event-interval="5"
 
         !-- can i assign the filter here? --
         <div ng-repeat="c in filteredList = (companies |  filter:searchText | orderBy:sortType:asc)">
-
-
 -->

@@ -21,7 +21,7 @@ app.controller('MainCtrl', function($scope, $ionicSideMenuDelegate, AttendeesSer
  $scope.allCompanies = CareerFairService.getCompanies();
 
  // filter this one by user prefs... filtering makes a new array anyway but just testing shiz
- $scope.companies = CareerFairService.getCompanies();
+ $scope.companies = $scope.allCompanies; //CareerFairService.getCompanies();
  //$scope.booths = CareerFairService.getBooths();
  
  //  console.log("companies 1 2 3", $scope.companies[0], $scope.companies[1], $scope.companies[2]);
@@ -42,6 +42,7 @@ app.controller('MainCtrl', function($scope, $ionicSideMenuDelegate, AttendeesSer
 //$scope.sortProp = 'name';  this just always sets it on return
 // same effect as initially sorting by booth int he html template
 
+  //c in filteredList = (companies |  filter:searchText | orderBy:sortType:asc)" class="item-thumbnail-left" href="#/app/companies/{{c.nameId}}">
 
 
   $scope.majorsIncluded = []; // 'cs'
@@ -104,11 +105,11 @@ app.controller('MainCtrl', function($scope, $ionicSideMenuDelegate, AttendeesSer
           for (m = 0; m < $scope.majors.length; m++)
             includedMajors[m] = $scope.majors[m].name;
         }
-        console.log("comp:", company.name, " ", company["ee"]);
+        //console.log("comp:", company.name, " ", company["ee"]);
         
-        console.log("does company match filters?");
-        console.log(includedPositions);
-        console.log(includedMajors);
+        //console.log("does company match filters?");
+        //console.log(includedPositions);
+        //console.log(includedMajors);
         // only show companies matching the users filter requirements
         for (i = 0; i < includedPositions.length; i++)
         {
@@ -163,14 +164,12 @@ app.controller('CompanyListCtrl', function($scope, $ionicModal) {
 
   $ionicModal.fromTemplateUrl('modal.html', { //templates/settings
     scope: $scope
-  }).then(function(modal) {
-    $scope.modal = modal
-  })
+  }).then(function(modal) {$scope.modal = modal;})
 
   $scope.openModal = function() {
-    console.log('hello');
+    console.log('modal opened');
 
-   $scope.modal.show()
+   $scope.modal.show();
   };
 
   $scope.closeModal = function() { $scope.modal.hide() };
@@ -271,7 +270,7 @@ app.controller('FilterSettingsCtrl', function($scope) {
 
 
 
-
+/*
 //
 // Check-in
 //
@@ -322,4 +321,4 @@ app.controller('AttendeeActivityCtrl', function($scope) {
     }
   };
   
-});
+});*/
