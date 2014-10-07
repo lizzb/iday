@@ -58,7 +58,10 @@ Showing {{(allCompanies | filter:userFilter | instantNameSearch:searchString ).l
             ng-click="clearSearch()"> </button>
   </ion-header-bar>
 
-
+<!-- ng-model="company.starred"<ion-toggle class="item item-icon-left"
+          ng-model="company.starred" toggle-class="toggle-royal">
+      <i class="icon royal"
+          ng-class="company.starred ? 'ion-ios7-star':'ion-ios7-star-outline'"></i> -->
 
   <!--ion-header-bar class="bar-subheader item-input-inset">
 <button class="button button-small button-positive button-outline icon"
@@ -88,7 +91,20 @@ Showing {{(allCompanies | filter:userFilter | instantNameSearch:searchString ).l
              {{ c.name }}  <!-- <h2> <i></i> {{ c.name }}</h2> h2 makes it harder to fit on one line-->
              <span class="item-note">{{ c.room }}</span>
 
-             <i class="icon favorite" ng-class="c.starred ? 'ion-ios7-star' : 'ion-ios7-star-outline'"></i>
+
+
+             <!-- class="icon favorite" ng-class="c.starred ? 'ion-ios7-star' : 'ion-ios7-star-outline'"></i-->
+             <button ng-click="toggleFavorite(c);" class=" icon button button-icon favorite" ng-class="c.starred ? 'ion-ios7-star' : 'ion-ios7-star-outline'"></button>
+
+             <!--a class="button button-icon icon ion-settings"></a-->
+           
+
+              <!--i class="icon icon-circle ion-star" ng-class="c.starred ? 'icon-circle' : 'icon-circle-outline'"  ></i-->
+         
+          
+
+
+
 
              <p>{{ c.industry }}<!-- {{ c.room }}.... {{ c.id }} -->
 
@@ -147,7 +163,7 @@ Showing {{(allCompanies | filter:userFilter | instantNameSearch:searchString ).l
           {{ item.friendlyName }}
         </ion-checkbox>
 
-        <div class="list card">
+        <!--div class="list card">
           <div class="item item-avatar">
             <img src="http://placekitten.com/30/30">
             <h2>{{user.firstName}} {{user.lastName}}</h2>
@@ -157,7 +173,7 @@ Showing {{(allCompanies | filter:userFilter | instantNameSearch:searchString ).l
             <img src="http://placekitten.com/200/150">
           </div>
           <div class="item item-divider">Close the modal to change your info</div>
-        </div>
+        </div-->
       </ion-content>
     </div>
   </script>
@@ -165,7 +181,7 @@ Showing {{(allCompanies | filter:userFilter | instantNameSearch:searchString ).l
 
 
 
-<script type="text/ng-template" id="catmodal.html">
+<!--script type="text/ng-template" id="catmodal.html">
     <div class="modal">
       <ion-header-bar>
         <h1 class="title">{{user.firstName}} {{user.lastName}}</h1>
@@ -187,7 +203,7 @@ Showing {{(allCompanies | filter:userFilter | instantNameSearch:searchString ).l
         </div>
       </ion-content>
     </div>l
-  </script>
+  </script-->
 
 
     <!--

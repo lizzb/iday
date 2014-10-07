@@ -1,12 +1,20 @@
 <ion-side-menus>
-
+<!--style>
+#nav-back-button i{
+ font-size: 60px;
+}
+#nav-hamburger-button i {
+  font-size: 60px;
+}
+</style-->
   <ion-side-menu-content>
     <ion-nav-bar class="bar-dark" animation="no-animation">
-      <ion-nav-back-button class="button-icon ion-arrow-left-c">
+      <ion-nav-back-button class="button-icon ion-ios7-arrow-back"><!-- id="nav-back-button"  or class -->
+      <!--SPACE ion-arrow-left-c ion-chevron-left-->&nbsp;&nbsp;
       </ion-nav-back-button>
     </ion-nav-bar>
     <ion-nav-buttons side="left">
-      <button class="button button-icon button-clear ion-navicon" ng-click="toggleLeft()">
+      <button class="button button-icon button-clear button-large ion-navicon" ng-click="toggleLeft()"><!-- nav-hamburger-button-->
       </button>
     </ion-nav-buttons>
     <ion-nav-view animation="no-animation" name="menuContent"></ion-nav-view>

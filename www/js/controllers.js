@@ -148,6 +148,7 @@ app.controller('MainCtrl', function($scope, $ionicSideMenuDelegate, AttendeesSer
 app.controller('CompanyListCtrl', function($scope, $ionicScrollDelegate, $ionicModal) {
   //$scope.companies = companies;
   
+  $scope.toggleFavorite = function(company) {}; //{ $scope.companies.getCompanycompany.favorite = !company.favorite; };
   
   $scope.clearSearch = function() {
     $scope.searchString = '';
