@@ -1,0 +1,113 @@
+
+<ion-view title="Feedback Survey" left-buttons="leftButtons">
+<ion-content>
+
+
+<h1> Industry Day 2014 Student Survey </h1>
+
+<label class="item item-input item-select">
+<div class="input-label"> Major </div>
+    <select>
+      <option>Undecided</option>
+      <option>Applied Math</option>
+      <option>Biomedical Engineering</option>
+      <option>Chemical Engineering</option>
+      <option>Civil Engineering</option>
+      <option>Computer Engineering</option>
+      <option>Computer Science (McCormick)</option>
+      <option>Computer Science (Weinberg)</option>
+      <option>Electrical Engineering</option>
+      <option>Environmental Engineering</option>
+      <option>Industrial Engineering</option>
+      <option>MaDE</option>
+      <option>Material Science &amp; Engineering</option>
+      <option>Mechanical Engineering</option>
+      <option>Non-Engineering</option>
+      <option selected>Not Specified</option>
+      <!--
+      <option>Economics</option>
+      <option>ISP</option>
+      <option>MMM</option>
+      <option>MSIT</option>
+      <option>MPDD</option>
+      <option>MSIA</option>
+      -->
+    </select>
+</label>
+
+<label class="item item-input item-select">
+    <div class="input-label"> Class </div>
+    <select>
+      <option>Freshman</option>
+      <option>Sophomore</option>
+      <option>Junior</option>
+      <option>Senior</option>
+      <option>Fifth Year</option>
+      <option>Master's</option>
+      <option selected>Not Specified</option>
+    </select>
+</label>
+
+<label class="item item-input item-select">
+    <div class="input-label"> Position you are interested in: </div>
+    <select>
+      <option>Permanent/Full-Time</option>
+      <option>Internship</option>
+      <option>Co-op</option>
+      <option selected>Not Specified</option>
+    </select>
+</label>
+
+<ion-item>
+How did you find out about Industry Day? (check all that apply)
+</ion-item>
+SWE Member SWE Website Advertisement around campus Facebook Word of mouth Other:
+<ion-item>
+How did you prepare for Industry Day? (check all that apply)
+</ion-item>
+Brought Resume
+Researched Companies
+Used SWE Website
+Other:
+<ion-item>Was the date convenient for you?</ion-item>
+Yes No
+<ion-item>Was the time convenient for you?</ion-item>
+Yes No
+<ion-checkbox ng-model="isChecked">Checkbox Label</ion-checkbox>
+
+<ion-checkbox ng-model="convenientDate.checked"
+              ng-true-value="Yes"
+              ng-false-value="No">
+    Was the date convenient for you?
+    <span class="item-note positive">{{convenientDate.checked}}</span>
+</ion-checkbox>
+
+
+<ion-checkbox ng-model="convenientDate.checked"
+              ng-true-value="Yes"
+              ng-false-value="No">
+    Was the date convenient for you?
+    <span class="item-note positive">{{convenientDate.checked}}</span>
+</ion-checkbox>
+
+
+<div class="list">
+
+  
+
+</div>
+
+<ion-item>Was the location convenient for you?</ion-item>
+Yes No
+<ion-item>Number of companies with whom you spoke:</ion-item>
+1-5 6-10 11-20 21+
+<ion-item>Please comment on your overall opinion of Industry Day and list possible areas of improvement.</ion-item>
+<p class="padding">
+Thank you for attending Industry Day, and best of luck! - The Society of Women of Engineers</p>
+
+
+</ion-content>
+</ion-view>
+
+
+

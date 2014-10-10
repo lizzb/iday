@@ -34,6 +34,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url: "/credits",
       views: { 'menuContent' :{ templateUrl: "templates/credits.html", controller: "MainCtrl" } } /*FilterSettingsCtrl*/
     })
+
+    .state('sidemenu.feedback', {
+      url: "/feedback",
+      views: { 'menuContent' :{ templateUrl: "templates/survey.html", controller: "MainCtrl" } } /*FilterSettingsCtrl*/
+    })
+    
     
 
     
