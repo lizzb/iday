@@ -1,9 +1,64 @@
 
+
+
+
 <ion-view title="Feedback Survey" left-buttons="leftButtons">
+
 <ion-content>
+
+<!--form class="list" ng-show="showForm">
+<div class="item item-divider"> Attendee Info </div>
+<label class="item item-input">
+  <input type="text" placeholder="First Name" ng-model="attendee.firstname">
+</label>
+<label class="item item-input">
+  <input type="text" placeholder="Last Name" ng-model="attendee.lastname">
+</label>
+<div class="item item-divider">
+  Shirt Size
+</div>
+<ion-radio ng-repeat="shirtSize in shirtSizes"
+           ng-value="shirtSize.value"
+           ng-model="attendee.shirtSize">
+  {{ shirtSize.text }}
+</ion-radio>
+<div class="item item-divider">
+  Lunch
+</div>
+<ion-toggle ng-model="attendee.vegetarian">
+  Vegetarian
+</ion-toggle>
+<div class="padding">
+  <button class="button button-block" ng-click="submit()">Checkin</button>
+</div>
+</form>
+
+<div ng-hide="showForm">
+<pre ng-bind="attendee | json"></pre> 
+<a href="#/event/attendees">View attendees</a>
+</div-->
+
 
 
 <h1> Industry Day 2014 Student Survey </h1>
+
+<form class="list" ng-show="showForm">
+
+<div class="item item-divider"> Attendee Info </div>
+
+<!--label class="item item-input">
+  <input type="text" placeholder="First Name" ng-model="attendee.firstname">
+</label>
+<label class="item item-input">
+  <input type="text" placeholder="Last Name" ng-model="attendee.lastname">
+</label-->
+
+<!--div class="item item-divider"> Shirt Size </div>
+<ion-radio ng-repeat="m in survey_majors"
+           ng-value="m.value"
+           ng-model="attendee.major">
+  {{ m.text }}
+</ion-radio-->
 
 <label class="item item-input item-select">
 <div class="input-label"> Major </div>
@@ -58,52 +113,163 @@
     </select>
 </label>
 
-<ion-item>
-How did you find out about Industry Day? (check all that apply)
-</ion-item>
-SWE Member SWE Website Advertisement around campus Facebook Word of mouth Other:
-<ion-item>
-How did you prepare for Industry Day? (check all that apply)
-</ion-item>
-Brought Resume
-Researched Companies
-Used SWE Website
-Other:
-<ion-item>Was the date convenient for you?</ion-item>
-Yes No
-<ion-item>Was the time convenient for you?</ion-item>
-Yes No
-<ion-checkbox ng-model="isChecked">Checkbox Label</ion-checkbox>
 
-<ion-checkbox ng-model="convenientDate.checked"
-              ng-true-value="Yes"
-              ng-false-value="No">
-    Was the date convenient for you?
-    <span class="item-note positive">{{convenientDate.checked}}</span>
-</ion-checkbox>
+<div class="item item-divider">
+How did you prepare for Industry Day?<br>(check all that apply)
+</div>
+<!--p class="padding"-->
+<ion-checkbox>Brought Resume</ion-checkbox>
+<ion-checkbox>Researched Companies</ion-checkbox>
+<ion-checkbox>Used Web App</ion-checkbox>
+<ion-checkbox>Used SWE Website</ion-checkbox>
+<ion-checkbox>Asked peers for advice</ion-checkbox>
+<ion-checkbox>Other:</ion-checkbox>
+<!--/p-->
 
 
-<ion-checkbox ng-model="convenientDate.checked"
-              ng-true-value="Yes"
-              ng-false-value="No">
-    Was the date convenient for you?
-    <span class="item-note positive">{{convenientDate.checked}}</span>
-</ion-checkbox>
 
 
-<div class="list">
 
-  
 
+
+
+
+<div class="item item-divider">
+How did you find out about Industry Day?<br>(check all that apply)
 </div>
 
-<ion-item>Was the location convenient for you?</ion-item>
-Yes No
-<ion-item>Number of companies with whom you spoke:</ion-item>
-1-5 6-10 11-20 21+
-<ion-item>Please comment on your overall opinion of Industry Day and list possible areas of improvement.</ion-item>
+
+<!--p class="padding"-->
+<ion-checkbox> SWE Member </ion-checkbox>
+<ion-checkbox> SWE Website </ion-checkbox>
+<ion-checkbox> Advertisement around campus </ion-checkbox>
+<ion-checkbox> Facebook event </ion-checkbox>
+<ion-checkbox> Facebook group/listserv blast </ion-checkbox>
+<ion-checkbox> Word of mouth </ion-checkbox>
+<ion-checkbox> Other: </ion-checkbox>
+
+<!--/p-->
+
+
+
+
+
+<!--div class="item item-divider">
+How did you prepare for Industry Day? (check all that apply)
+</div>
+<div class="list">
+
+<li>
+<label class="item-checkbox">
+<div class="checkbox checkbox-input-hidden">
+<input type="checkbox"><i class="checkbox-icon"></i>
+</div>Brought Resume
+</label>
+</li>
+<li>
+<label class="item-checkbox">
+<div class="checkbox checkbox-input-hidden">
+<input type="checkbox"><i class="checkbox-icon"></i>
+</div>Researched Companies
+</label>
+<li>
+<label class="item-checkbox">
+<div class="checkbox checkbox-input-hidden">
+<input type="checkbox"><i class="checkbox-icon"></i>
+</div>Used Web App
+</label>
+</li>
+<li>
+<label class="item-checkbox">
+<div class="checkbox checkbox-input-hidden">
+<input type="checkbox"><i class="checkbox-icon"></i>
+</div>Used SWE Website
+</label>
+</li>
+<li>
+<label class="item-checkbox">
+<div class="checkbox checkbox-input-hidden">
+<input type="checkbox"><i class="checkbox-icon"></i>
+</div>Other:
+</label>
+</li></div-->
+
+
+
+
+
+
+<!--
+
+<ion-checkbox ng-model="isChecked">Checkbox Label</ion-checkbox> -->
+
+
+
+<div class="item item-divider"> Event Logistics </div>
+<!--ion-toggle ng-model="attendee.vegetarian"> Vegetarian </ion-toggle-->
+
+<ion-checkbox ng-model="convenientDate.checked"
+              ng-true-value="Yes"
+              ng-false-value="No">
+    Was the date convenient for you?
+    <span class="item-note positive">{{convenientDate.checked}}</span>
+</ion-checkbox>
+
+
+<ion-checkbox ng-model="convenientTime.checked"
+              ng-true-value="Yes"
+              ng-false-value="No">
+    Was the time convenient for you?
+    <span class="item-note positive">{{convenientTime.checked}}</span>
+</ion-checkbox>
+
+<ion-checkbox ng-model="convenientLocation.checked"
+              ng-true-value="Yes"
+              ng-false-value="No">
+    Was the location convenient for you?
+    <span class="item-note positive">{{convenientLocation.checked}}</span>
+</ion-checkbox>
+
+
+
+
+<!--ion-item>Was the location convenient for you?</ion-item>
+Yes No-->
+
+
+
+
+<div class="item item-divider">
+Number of companies with whom you spoke:
+
+<p class="padding">
+<ion-radio>1-5</ion-radio>
+<ion-radio>6-10</ion-radio>
+<ion-radio>11-20</ion-radio>
+<ion-radio>21+</ion-radio>
+</p>
+</div>
+
+<ion-item>
+<p class="padding">Please comment on your overall opinion of Industry Day and list possible areas of improvement.</p>
+</ion-item>
+
+
+
+
+<div class="padding">
+  <button class="button button-block" ng-click="submit()">Checkin</button>
+</div>
+
+
+</form>
+
+<div ng-hide="showForm">
+<pre ng-bind="attendee | json"></pre> 
+<a href="#/event/attendees">View attendees</a>
 <p class="padding">
 Thank you for attending Industry Day, and best of luck! - The Society of Women of Engineers</p>
+</div>
 
 
 </ion-content>
