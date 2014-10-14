@@ -66,18 +66,23 @@ viewBox="{{startX}} {{startY}} {{mapWidth}} {{mapHeight}}">
 
 <g>
 
-      
+      <!-- 
+      ng-mouseenter="tooltipIsVisible = true"
+             ng-mouseleave="tooltipIsVisible = false"
+             ng-click="dialogIsVisible = true">
+             -->
       <!-- ng-click="go('iday/companies/{{b.compId}}')" -->
-    <g ng-repeat="b in booths | reverse" ng-click="tooltipIsVisible = !tooltipIsVisible">
+    <g ng-repeat="b in booths | reverse"
+    ng-click="tooltipIsVisible = !tooltipIsVisible">
 
 
     <g ng-attr-transform="translate({{b.x}}, {{b.y}})">
 
 
-<g id="{{b.compId}}-tooltip" class="st18 tooltip" ng-show="tooltipIsVisible" ng-click="go('iday/companies/{{b.compId}}')">
+<g id="{{b.compId}}-tooltip" class="st18 tooltip dialog" ng-show="tooltipIsVisible" ng-click="go('iday/companies/{{b.compId}}')">
 <!-- possibly apply ng class to display favorites diff color? -->
-        <path id="background"
-              class="tooltip-bg" fill="#dff"
+<!--class="tooltip-bg" fill="#dff"-->
+        <path id="new-tooltip" fill="#fff"
               d="
               M -35, -75
               L  90, -75
@@ -86,14 +91,34 @@ viewBox="{{startX}} {{startY}} {{mapWidth}} {{mapHeight}}">
               L  30,-3 
               L  22,-10 
               L -35,-10 Z"></path>       
-        <text x="-20" y="-30" class="tooltip-label"> Click for details </text>
+        <text x="-20" y="-27" class="tooltip-label"> Booth # {{b.bNum}} </text>
+        <text x="-20" y="-13" class="tooltip-label"> Click for details </text>
         <image class="compLogo" 
              x="-30" y="-70"
              width="120" height="30"
              ng-xlink-href="http://lizzb.github.io/iday/www/img/logos/{{b.compId}}/wide.png" 
              xlink:href=""/>
+<!--
+             <rect class="notst23" x="118" y="85" height="213" width="350" fill="white" stroke="lime" rx="5" ry="5"/>
+              
+        <text x="138" y="117" class="st25 dialog-title">{{b.compId}} details</text>
+        
+        <line class="st24 dialog-divider" x1="118.883" y1="140.512" x2="467.833" y2="140.512"></line>
 
+        <g id="closebutton" class="st21" ng-click="dialogIsVisible = false">
+              
+ <rect  x="390" y="98" width="64.5" height="30" rx="4" ry="4" fill="black" class="st25 close-button"></rect>
+            <!--path class="st25" d="M454.5,124.5c0,2.209-1.791,4-4,4h-57c-2.209,0-4-1.791-4-4v-23c0-2.209,1.791-4,4-4h57
+        c2.209,0,4,1.791,4,4V124.5z"></path>
+          
+          <text x="404" y="118" class="close-label st0">Close</text>
+-->
       </g>
+
+      
+
+  
+      
 
 
     <!-- need to add an ng-if rotate property exists to avoid plethora of errors in console -->
@@ -282,6 +307,7 @@ st0{fill:#FFFFFF;}
   fill-opacity: 1;
 }
 
+.new-tooltip { display:inline; opacity:0.85; fill: #fff; stroke: lime;}
 .close-button {/*st25*/}
 .dialog-divider {/*st24*/}
 
